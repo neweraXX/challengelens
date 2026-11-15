@@ -18,6 +18,6 @@ Repository: `https://github.com/neweraXX/challengelens`
 
 App: `https://challengelens.onrender.com`
 
-Video: `<VIDEO_URL>`
+Video: `https://youtu.be/CQxjMUFcmE4`
 
 Post: `<X_POST_URL>`

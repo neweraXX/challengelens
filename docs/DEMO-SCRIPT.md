@@ -29,7 +29,7 @@ Replace `https://challengelens.onrender.com` with the deployed origin. Local equ
 | API view | `https://challengelens.onrender.com/api` |
 | Held receipt, if available | `https://challengelens.onrender.com/api/receipts/<RECEIPT_ID>`; substitute an actual completed reviewed receipt ID |
 | Reppo critique and policy | `procedures/changes.jsonl`; `src/reppo/policy.ts` |
-| Closing links | `https://challengelens.onrender.com`, `https://github.com/neweraXX/challengelens`, `<VIDEO_URL>` |
+| Closing links | `https://challengelens.onrender.com`, `https://github.com/neweraXX/challengelens`, `https://youtu.be/CQxjMUFcmE4` |
 
 ## Pre-recording checklist
 
