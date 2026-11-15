@@ -1,0 +1,360 @@
+{
+  "schema_version": "timing-holdout2-1",
+  "seed": "challengelens-holdout2-2026-11-14",
+  "fixed_time_policy": {
+    "version": "fixed-time-v1",
+    "required": "Ancillary date plus clock/timezone or ISO instant; dated hourly/daily candles can use their stated timezone. Windows need two clock endpoints.",
+    "allowed": [
+      "crypto price at stated time/candle",
+      "Up or Down dated candles",
+      "sports with explicit scheduled date/time",
+      "between X and Y fixed observation windows"
+    ],
+    "excluded": "YES on a by/before-date proposition; Gamma timestamps alone; date-only deadlines; other event-occurrence markets"
+  },
+  "source_sha256": "77bd0df281f56482bc5c08c386a3c304fcf789a9d36572cae930a3514f908514",
+  "pool_sha256": "ef7978711b70699cb903bbf968c42c8150740b2450a3f8e81eedd2001c9be708",
+  "eligible_pool": 114,
+  "cases": [
+    {
+      "case_id": "timing-92379328ae3866b09a84c180",
+      "packet_hash": "620aa14d1609794000a299199feb16f9d20ea2d9448cbf1cdfeda6b6a1c87088",
+      "event_group": "event:id:11142"
+    },
+    {
+      "case_id": "timing-2f6b0d2a24de6556c62f6f3d",
+      "packet_hash": "0e75f5a079f697895d30f34d3d20ff99f5bf7e9bcb17f7921cece464f138ee16",
+      "event_group": "event:id:99369"
+    },
+    {
+      "case_id": "timing-f73e6e7c0c08e136431fc6e2",
+      "packet_hash": "c14337c86ab68458730e0d76d2fdd439ab8bd64cb9440c995d58f347e032a03f",
+      "event_group": "event:id:901896"
+    },
+    {
+      "case_id": "timing-92905e0ed344ce29137357a0",
+      "packet_hash": "175fec69c574ef2728561835f4e2112e32a4f39890a8468e2afd6edb5d80a74b",
+      "event_group": "event:id:107510"
+    },
+    {
+      "case_id": "timing-707d7068defb927e10d4e5a3",
+      "packet_hash": "b9a9c70a371ff7eb8f12432250dd833fb5804d7bec433b8250079d5ed93c0609",
+      "event_group": "event:id:43387"
+    },
+    {
+      "case_id": "timing-6ff01107a8e19c83e38765e7",
+      "packet_hash": "81edc3e78fbe0b66b31a08d1ff96579bdefb3149c2df854bb0c234c7908fcf6c",
+      "event_group": "event:id:901767"
+    },
+    {
+      "case_id": "timing-cd46c0076d3176c522ccb6aa",
+      "packet_hash": "2dfda57df290a45204f6d369b4a3c81355b7852d6308599b9363241a7c085c62",
+      "event_group": "event:id:44848"
+    },
+    {
+      "case_id": "timing-d1b226870f97c911ab0425ca",
+      "packet_hash": "956121ff31d7f5177ada472ce8e4eef2cf2800e25d711714a3add08e14b95d55",
+      "event_group": "event:id:901429"
+    },
+    {
+      "case_id": "timing-e7447ba2bc515fa6f86975f2",
+      "packet_hash": "0eb91928aada64e15bed066492491f22aba0a31929d89f44e98aa113196bf374",
+      "event_group": "event:id:12393"
+    },
+    {
+      "case_id": "timing-7ac8d4c92fd8436f63900814",
+      "packet_hash": "9e9925406a140a424c4d706fc0caeacd5c2f84e05a33b2d10e0a2fe3ffe0d797",
+      "event_group": "event:id:902337"
+    },
+    {
+      "case_id": "timing-23d1a0b9daa7a4184a09c01b",
+      "packet_hash": "ac6647f1a450367933dff1dfbe4e9218468f3b52062c66b1c19e02e10d6dc201",
+      "event_group": "event:id:44613"
+    },
+    {
+      "case_id": "timing-c440caaa1639eb85a4d573e3",
+      "packet_hash": "b902cd460da27e60adac460e4bac8a6270db2e54a987389276e80797fad50afb",
+      "event_group": "event:id:99369"
+    },
+    {
+      "case_id": "timing-25b9b671ddb741bb202fde14",
+      "packet_hash": "cb5560db56310e91070c2bb2748d8b0279e94d7b049427b636d5866e9d7f2421",
+      "event_group": "event:id:48658"
+    },
+    {
+      "case_id": "timing-f3e07372d5df011753035188",
+      "packet_hash": "b1122c4572ed96ae5ec64fac48d02e00a24b7d60eecb4cf18fe0273c717e02fd",
+      "event_group": "event:id:101701"
+    },
+    {
+      "case_id": "timing-f84a888a4d11b6c1c535b924",
+      "packet_hash": "455effe6f2028daf19880a43a4cb964c4d4dee2e3c7615c11e5e8dd6e150df9b",
+      "event_group": "event:id:105628"
+    },
+    {
+      "case_id": "timing-3c03aea54f136b0d6f686d22",
+      "packet_hash": "083a8b2399bd093d76484193af3f1bcabc54e6e4b5a226c89aaec2ee0de333c7",
+      "event_group": "event:id:51492"
+    },
+    {
+      "case_id": "timing-a5214f4942af8ae4b75dd0bb",
+      "packet_hash": "8fde6cdbafb33d0522199ce3bdeb42db2994d1d47d4de8f0e0d464f67824daf0",
+      "event_group": "event:id:902830"
+    },
+    {
+      "case_id": "timing-b255c05954f4056d2a1f235d",
+      "packet_hash": "2c5ab1b1fb5d9fdbbbe9f0e6312d1e2ae9629c5b6ecbfd18a39ecb870b3d522c",
+      "event_group": "event:id:105197"
+    },
+    {
+      "case_id": "timing-b4256803c98708b6ead53c4d",
+      "packet_hash": "649617afd23be7f4c0d16b1e63a6efc88e0ae3e461a2b7fd57c61c28b9da5160",
+      "event_group": "event:id:44563"
+    },
+    {
+      "case_id": "timing-490b7a42563339b8c3f0fe63",
+      "packet_hash": "0248443d16d0330d7aefc0e42b4ed51e5ddd146a9630d9c3703ee2c9fc8987c9",
+      "event_group": "event:id:901543"
+    },
+    {
+      "case_id": "timing-7f97edabf0e9dd5715c5d4e8",
+      "packet_hash": "4abb4d00fa311d3a329d23839407fa795640a011f36405f4bf5ff1713e834de7",
+      "event_group": "event:id:11142"
+    },
+    {
+      "case_id": "timing-9124a05113027fedf20368d4",
+      "packet_hash": "68a59f1cf7c5f70bce02d1d8c46c13b1b963f9d4a6b0f1e480d7b4a47df07fd0",
+      "event_group": "event:id:78914"
+    },
+    {
+      "case_id": "timing-1d43f2c6a965de1e69a84976",
+      "packet_hash": "d82207f48fae67c2fde4e62ab934f994fa2bbf0b8776c6b8a89b06f3b597e4a0",
+      "event_group": "event:id:65709"
+    },
+    {
+      "case_id": "timing-2c605c61d082661a2bc94130",
+      "packet_hash": "63af098a7bc8e5657a78ad83a6687b7cab379c4cb4287783a9d9cb36706df0b0",
+      "event_group": "event:id:48658"
+    },
+    {
+      "case_id": "timing-23736d2b9f6d333b7443b161",
+      "packet_hash": "86600c43af7333797af78c8569875e1d144f601335e3a30acbd66d58513fc8c2",
+      "event_group": "event:id:902890"
+    },
+    {
+      "case_id": "timing-b9d868b32fa0f08ca1b5f023",
+      "packet_hash": "d1a4869da3c9db476244308890d1f3f6a58bd63d71834a5e75affb7d86fb462e",
+      "event_group": "event:id:90236"
+    },
+    {
+      "case_id": "timing-5e0ad8c6d906ab9fbb2ffcd1",
+      "packet_hash": "b7868619b671ed5b3f7f1f05b40c3bb753585cc227cf09a3e90af2f017155f01",
+      "event_group": "event:id:901606"
+    },
+    {
+      "case_id": "timing-bcb248ec935ebe6dd3bdd044",
+      "packet_hash": "5ca0f8a004496241c86639bc57e2e6780b2eda60c3ca97ee98d0bb7dcc944f3b",
+      "event_group": "event:id:79127"
+    },
+    {
+      "case_id": "timing-cd15a02b3f60f4400eb7ec40",
+      "packet_hash": "e2ca43bdadfeb96d1825dbeca57c68ade05f07de988a4dcb2ca7d82774817265",
+      "event_group": "event:id:94765"
+    },
+    {
+      "case_id": "timing-fb8d7da55baea58ce712eca0",
+      "packet_hash": "04ce6cd2cfa20147ae6b2170a4ee24994ab1562016dd362829d65d94827e7e91",
+      "event_group": "event:id:46658"
+    },
+    {
+      "case_id": "timing-6e097f7a1394474175e910a3",
+      "packet_hash": "c9d0dc58a130151bce5e09cb8b44a17d62ff7ebae13abcc3875bdea2a17afc17",
+      "event_group": "event:id:42350"
+    },
+    {
+      "case_id": "timing-223ddcb293a3d11c12966fc9",
+      "packet_hash": "a9422ad7bc59aeb88ec23da8395027b4b75ef1da450d02280afebb0c14f6cfcc",
+      "event_group": "event:id:42191"
+    },
+    {
+      "case_id": "timing-56aa0db99e59570f9718c5dc",
+      "packet_hash": "ad0cfeb1d053d8f874201155443fdc1db9b4b7238770652e26b09b82b31f3e74",
+      "event_group": "event:id:56686"
+    },
+    {
+      "case_id": "timing-d02af76d7c0c0797c40a784c",
+      "packet_hash": "7ccad949dce18cbc1b6e8efd56564f846de160d572ded8c0df237e6f1938f698",
+      "event_group": "event:id:901327"
+    },
+    {
+      "case_id": "timing-8dcaafffc17bd391c5d85525",
+      "packet_hash": "d6489ffd2164fcbab39230aa1644487b30e30f0c1c165919ffdf89fb7c948976",
+      "event_group": "event:id:61643"
+    },
+    {
+      "case_id": "timing-698794f5361c8f63e90635d8",
+      "packet_hash": "1f80b1ac77b85e916dc72a1df709a5172ad22482ed02b77da99add218e673abb",
+      "event_group": "event:id:77868"
+    },
+    {
+      "case_id": "timing-f9398e34f94dd700b289237c",
+      "packet_hash": "8651603cb7882ce71ed96d247d3dfeb24a99544e4bc71fe869ff7e4e1560dbc0",
+      "event_group": "event:id:43534"
+    },
+    {
+      "case_id": "timing-30288224d2ab17785ab0a6a6",
+      "packet_hash": "891ff05802b7d1b71578c88a6659a8b7cdf3ba8e1c8264034d829aa95c276dfb",
+      "event_group": "event:id:112299"
+    },
+    {
+      "case_id": "timing-41b5fbf430b38e3fa4ebb5d1",
+      "packet_hash": "e146320cf9650bdf7a1b2ef8b66a487142305aaaf59cdf09e4779d7c49c1b724",
+      "event_group": "event:id:125454"
+    },
+    {
+      "case_id": "timing-fdbf2165cc11f9ebe7e8d1bd",
+      "packet_hash": "3b56af5692df9dc3dd61d749aa826d7d2abae4c20d65a09391be1fdcae15d2d3",
+      "event_group": "event:id:44848"
+    },
+    {
+      "case_id": "timing-9c9eff9854e7ef41035f6f37",
+      "packet_hash": "c536f800ec640daaada92dc3ef5a18b147b2e03a1ed84c688961db461d8eba20",
+      "event_group": "event:id:62375"
+    },
+    {
+      "case_id": "timing-f2cb18b4f090322efb584430",
+      "packet_hash": "181c4c97b232d7c1590c7a0124240f9214d7dbedc77f37b68969047f9792f09e",
+      "event_group": "event:id:53432"
+    },
+    {
+      "case_id": "timing-b4f248cfb463c97b0623595c",
+      "packet_hash": "e91ba3841bd1bca1069487227f3f3b3b5afabee005d9da6580088526a1822cfd",
+      "event_group": "event:id:901910"
+    },
+    {
+      "case_id": "timing-72e10044ad8b5fd74236b4fb",
+      "packet_hash": "8d0504d05f3a609427935f95e7f9c9a2a1a257db7dd30697e4e1630157b420dd",
+      "event_group": "event:id:125454"
+    },
+    {
+      "case_id": "timing-26f73b36f56475b8b920db4e",
+      "packet_hash": "3834f48c0103a17e67859f707b48e30fb938b4170ca2a7daa3d2d6ec22ab777a",
+      "event_group": "event:id:93219"
+    },
+    {
+      "case_id": "timing-5435104175237427d7a0d9dc",
+      "packet_hash": "a313a7d537e08029411fd35a746714340b9dee2f20e2a4ded8c49fe13002ef26",
+      "event_group": "event:id:111731"
+    },
+    {
+      "case_id": "timing-d5f37a1c2a730abd501ee88e",
+      "packet_hash": "f99b4bb04557ec9d726f954f32e4a696de09c6fa26dc7247e49ea06054463ebe",
+      "event_group": "event:id:102785"
+    },
+    {
+      "case_id": "timing-84b1624a8efdf6f19d4cfba5",
+      "packet_hash": "6f4e00ddb40bdafd184a82bfdb6ae7915919fcfda03e46eebb84c0249d4cb6c6",
+      "event_group": "event:id:87532"
+    },
+    {
+      "case_id": "timing-f00497d3ead831f8bced48b3",
+      "packet_hash": "d87d6d704d150ba833a0258ab33b991500b69e27e2b88e746a6b74db2650ed31",
+      "event_group": "event:id:105736"
+    },
+    {
+      "case_id": "timing-2aba4869c1471ecf350e96e6",
+      "packet_hash": "e788ed549bb06ed4342ce9d433e51d485e27cf1b23e2287568a2a938a1918345",
+      "event_group": "event:id:12310"
+    },
+    {
+      "case_id": "timing-869a43c2ec0399cd38e63f6d",
+      "packet_hash": "50a5ff2139d4096a5dc98e14ecb6d8b36c1180e3891363f5a65743788bbd97c1",
+      "event_group": "event:id:55250"
+    },
+    {
+      "case_id": "timing-2342fe13964f1d4c2926e937",
+      "packet_hash": "944ef70b40324021cb1b33d482c12ebeff5a4f2c333eaaa8629ca1becc34ad8b",
+      "event_group": "event:id:902760"
+    },
+    {
+      "case_id": "timing-59dcfc430751442ff4a95289",
+      "packet_hash": "b1e67b0c03ac7336ca4cfbe87d5c3632793aa0fd9ebd1b7c97b197282fcfd2ae",
+      "event_group": "event:id:73852"
+    },
+    {
+      "case_id": "timing-4b8e6c4b65981dd235de759c",
+      "packet_hash": "cd36fd5de89276e23b11344dc3e4b9c746d32369c6fc09a28bb4675ed84e95d4",
+      "event_group": "event:id:89366"
+    },
+    {
+      "case_id": "timing-4f35f9ae1462a170cae9537b",
+      "packet_hash": "68ea678df144c614449917f4a226f00fdfc6410a63cc2e3e0e32fcb9f09ca535",
+      "event_group": "event:id:55250"
+    },
+    {
+      "case_id": "timing-a1cc3049073cfa080318eb61",
+      "packet_hash": "a26ce0cde4bae788602774f9be74f4b3df4ddcfd2d440b61f5f509853f7991d6",
+      "event_group": "event:id:13093"
+    },
+    {
+      "case_id": "timing-4b57ddda53001a85a7ac92dd",
+      "packet_hash": "a2abe8df142b37b06d09b7cba65c3d86a763502b57051edcdba00be2bf508eb5",
+      "event_group": "event:id:58783"
+    },
+    {
+      "case_id": "timing-f61ca43ba448f4fdb4026d6f",
+      "packet_hash": "c06b801664c6c31e3b68f9a09418d49b1790a536f26309c64adc524d24611492",
+      "event_group": "event:id:67612"
+    },
+    {
+      "case_id": "timing-313db14fcf5513e7413d075f",
+      "packet_hash": "1726d3d7e0000c2d57e77a7b6813b1538c9dab7f3a6beb60ee67f4bd599761da",
+      "event_group": "event:id:113561"
+    },
+    {
+      "case_id": "timing-0a9b389af36cfd27fd7cb8cd",
+      "packet_hash": "d589018df41b587d0f9ef562cea3371ac579ef590dfe0c3daa1c52be118bbb08",
+      "event_group": "event:id:84467"
+    }
+  ],
+  "selection": {
+    "max_cases_per_event_group": 2,
+    "maximize_cases": true,
+    "balance": "minimum absolute label difference at maximum size",
+    "order": "seeded SHA256 of group and case ID"
+  },
+  "counts": {
+    "total": 60,
+    "event_groups": 54,
+    "labels": {
+      "PREMATURE": 28,
+      "TIMING_OK": 32
+    },
+    "categories": {
+      "crypto_fixed_time": 15,
+      "sports_in_game": 45
+    },
+    "kinds": {
+      "crypto_candle": 13,
+      "crypto_instant": 2,
+      "sports_scheduled": 45
+    }
+  },
+  "exclusions": {
+    "eligibility": {
+      "not_disputed": 49,
+      "gamma_not_uniquely_joined": 94,
+      "not_fixed_time": 239,
+      "sexual_content": 8,
+      "yes_by_before_deadline": 117,
+      "settled_50_50": 10,
+      "non_binary_proposal": 14,
+      "sensitive_personal_characteristics": 2
+    },
+    "exposed_case_id": 48,
+    "exposed_event_group": 3,
+    "event_cap": 3,
+    "exposed_ids": 48,
+    "exposed_groups": 41
+  }
+}

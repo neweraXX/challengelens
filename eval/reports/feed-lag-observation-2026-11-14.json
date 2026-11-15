@@ -1,0 +1,15 @@
+{
+  "note": "Observed on 2026-11-14 from Live desk screening around 03:05 UTC. For each Polymarket event whose sports feed already carried a finishedTimestamp, `proposal_minus_feed_final_seconds` is the proposal time minus that timestamp: negative means the proposal was submitted BEFORE the feed marked the game final. Ten events (about seven distinct games; the Peru vs. Bolivia event appears under four market groupings). Transcribed from the desk snapshot; a small, single-evening sample, not a bound on feed delay.",
+  "events": [
+    { "event": "Wright State Raiders vs. Samford Bulldogs", "proposal_minus_feed_final_seconds": -331 },
+    { "event": "Fairleigh Dickinson Knights vs. Oklahoma Sooners", "proposal_minus_feed_final_seconds": -230 },
+    { "event": "Peru vs. Bolivia - More Markets", "proposal_minus_feed_final_seconds": [-91, -90, -87] },
+    { "event": "Peru vs. Bolivia", "proposal_minus_feed_final_seconds": -87 },
+    { "event": "Peru vs. Bolivia - Exact Score", "proposal_minus_feed_final_seconds": -87 },
+    { "event": "Peru vs. Bolivia - Halftime Result", "proposal_minus_feed_final_seconds": -87 },
+    { "event": "College of Biblical Studies Ambassadors vs. Houston Christian Huskies", "proposal_minus_feed_final_seconds": -59 },
+    { "event": "Central Arkansas Bears vs. Arkansas Razorbacks", "proposal_minus_feed_final_seconds": -50 },
+    { "event": "Southeast Missouri State Redhawks vs. Kansas City Roos (W)", "proposal_minus_feed_final_seconds": -31 },
+    { "event": "Pacific Tigers vs. California Baptist Lancers (W)", "proposal_minus_feed_final_seconds": -30 }
+  ]
+}

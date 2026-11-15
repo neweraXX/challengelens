@@ -1,0 +1,15 @@
+{
+  "split": "sealed2",
+  "offline_arms": [
+    "checks-only"
+  ],
+  "blind": true,
+  "procedure_version": "timing-v8",
+  "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+  "gate_version": "gate-v8",
+  "models": {
+    "raw": "google/gemini-3.1-flash-lite",
+    "serv": "gemini-3.1-flash-lite"
+  },
+  "date": "2026-11-14T06:22:54.845Z"
+}

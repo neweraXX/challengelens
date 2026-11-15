@@ -1,0 +1,462 @@
+{
+  "schema_version": "timing-split-2",
+  "seed": "challengelens-timing-v1-2026-11-11",
+  "scope": "fixed-time",
+  "fixed_time_policy": {
+    "version": "fixed-time-v1",
+    "required": "Ancillary date plus clock/timezone or ISO instant; dated hourly/daily candles can use their stated timezone. Windows need two clock endpoints.",
+    "allowed": [
+      "crypto price at stated time/candle",
+      "Up or Down dated candles",
+      "sports with explicit scheduled date/time",
+      "between X and Y fixed observation windows"
+    ],
+    "excluded": "YES on a by/before-date proposition; Gamma timestamps alone; date-only deadlines; other event-occurrence markets"
+  },
+  "previous_split_archive": "data/archive/b2",
+  "source": {
+    "path": "data/pilot/candidates.jsonl",
+    "sha256": "77bd0df281f56482bc5c08c386a3c304fcf789a9d36572cae930a3514f908514",
+    "rows": 647
+  },
+  "selection": {
+    "dev": {
+      "PREMATURE": 8,
+      "TIMING_OK": 7
+    },
+    "sealed": {
+      "PREMATURE": 15,
+      "TIMING_OK": 15
+    },
+    "max_cases_per_event_group": 2,
+    "event_groups_disjoint": true,
+    "category_preference": [
+      "sports_in_game",
+      "crypto_fixed_time",
+      "fixed_window",
+      "deadline_no",
+      "politics_news",
+      "other"
+    ],
+    "method": "seeded category round-robin groups; exact quota dynamic program",
+    "grouping": "connected Gamma event ID/slug aliases; normalized title stem when no event alias exists"
+  },
+  "eligible": {
+    "total": 114,
+    "PREMATURE": 58,
+    "TIMING_OK": 56,
+    "outcome_flipped": 29,
+    "event_groups": 95,
+    "categories": {
+      "sports_in_game": 72,
+      "crypto_fixed_time": 29,
+      "fixed_window": 13,
+      "deadline_no": 0,
+      "politics_news": 0,
+      "other": 0
+    },
+    "fixed_time_kinds": {
+      "crypto_candle": 23,
+      "crypto_instant": 6,
+      "observation_window": 13,
+      "sports_scheduled": 72
+    }
+  },
+  "exclusions": {
+    "convention": "one primary reason per excluded row; eligible but unselected is separate",
+    "by_reason": {
+      "not_disputed": 49,
+      "gamma_not_uniquely_joined": 94,
+      "not_fixed_time": 239,
+      "sexual_content": 8,
+      "yes_by_before_deadline": 117,
+      "settled_50_50": 10,
+      "non_binary_proposal": 14,
+      "sensitive_personal_characteristics": 2
+    },
+    "total": 533
+  },
+  "eligible_not_selected": 69,
+  "splits": {
+    "dev": {
+      "counts": {
+        "total": 15,
+        "PREMATURE": 8,
+        "TIMING_OK": 7,
+        "outcome_flipped": 3,
+        "event_groups": 13,
+        "categories": {
+          "sports_in_game": 5,
+          "crypto_fixed_time": 4,
+          "fixed_window": 6,
+          "deadline_no": 0,
+          "politics_news": 0,
+          "other": 0
+        },
+        "fixed_time_kinds": {
+          "crypto_candle": 3,
+          "crypto_instant": 1,
+          "observation_window": 6,
+          "sports_scheduled": 5
+        }
+      },
+      "cases": [
+        {
+          "case_id": "timing-096b0fbae9b3a7989bd596a3",
+          "packet_hash": "6c52f91a0501addc6bb9a271e73b319f8ee729a587039a27c8d2e2b165c6a94d",
+          "event_group": "event:id:903077",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-0c1cbf3f0a15dae5928a91e1",
+          "packet_hash": "3ffeb3c8832325e4106e71e1f713e19f6b9bda58051554cd7d2e101feda26b8f",
+          "event_group": "event:id:901344",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-0c88438129ac80cba43c38fd",
+          "packet_hash": "e46c10d3fd0690531633ca6544325045cdc4bc9695af6c4e9a32e96020233af2",
+          "event_group": "event:id:104228",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-0d7374fc22efb92be7f6a743",
+          "packet_hash": "becd1a04c2f1402dc8f6422700833ed371f7de81d511d68b96f6ccc300a24796",
+          "event_group": "event:id:98343",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-0fabc28953d7a6f6a48ab7c3",
+          "packet_hash": "287b0f5d3ad029f1af6d5b32b8412c6a2fb7d9871a9d8e995d301f4905657280",
+          "event_group": "event:id:125501",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-1cb1c22e47ea5596f03eb22a",
+          "packet_hash": "4ab3d504b077af6b74320efda61300a0f9dd3197cf839f33c224663e6ed2b68d",
+          "event_group": "event:id:44845",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-4cfe8694807a8ed7a250f376",
+          "packet_hash": "45b884f400db4eb76318f46fd9ddd4042fec203eac9f4b61270d588648f1310d",
+          "event_group": "event:id:106958",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-5739e5b0742d895b75fe579e",
+          "packet_hash": "339d3e6efbc3d642b1f9e57d5616aa59e52e59964f9283cea13f98e049412324",
+          "event_group": "event:id:44723",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-7367529981e30893b74f7d4c",
+          "packet_hash": "743ebdb7e8f8b31acc6f73193c6e82354fb4834e46f3a913f0a1c670c6306bd3",
+          "event_group": "event:id:11895",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_instant"
+        },
+        {
+          "case_id": "timing-7e5b08cb0bbb8a44f261ef77",
+          "packet_hash": "1a6d70181d3e16a0da7c767cd6eb73080367662584a8698ad201a038c1fc53bd",
+          "event_group": "event:id:903280",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-9c9be4825222f0e577b2b6eb",
+          "packet_hash": "4e54c9c321f6381aaa56e9aa70f52422951a3916ced50f3e4cda5ccdb405f3a6",
+          "event_group": "event:id:125501",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-b011f1a97b470fa7094135e1",
+          "packet_hash": "f95d22820d40876a94f5f5bf504a5c4570f538254fb1bb631f4ff263a3dbb6cf",
+          "event_group": "event:id:69762",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-d0703d8ea538e2707c5a3427",
+          "packet_hash": "56ccb7ad6a25307504c48117fdc625427c97a68b5c32e881a03171a67abeac7f",
+          "event_group": "event:id:903077",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-f3947712a223d177e14d82b7",
+          "packet_hash": "0875e097b56964344368844ac66d0e1a028966592b61d6607790cf8830f50b90",
+          "event_group": "event:id:901760",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-f6b726ad2b41371c9b08bbf3",
+          "packet_hash": "4c2d9fb734f6531b787fd74b973a5200d3839e774e7355793f9b8fb45e552488",
+          "event_group": "event:id:74139",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        }
+      ]
+    },
+    "sealed": {
+      "counts": {
+        "total": 30,
+        "PREMATURE": 15,
+        "TIMING_OK": 15,
+        "outcome_flipped": 6,
+        "event_groups": 25,
+        "categories": {
+          "sports_in_game": 13,
+          "crypto_fixed_time": 10,
+          "fixed_window": 7,
+          "deadline_no": 0,
+          "politics_news": 0,
+          "other": 0
+        },
+        "fixed_time_kinds": {
+          "crypto_candle": 7,
+          "crypto_instant": 3,
+          "observation_window": 7,
+          "sports_scheduled": 13
+        }
+      },
+      "cases": [
+        {
+          "case_id": "timing-004e72d27dcb77fc2ba82b84",
+          "packet_hash": "3c304994cfbafedbb8a8ee5d19dfa43c5639c9d4ae193ccca519cc63cfd359d2",
+          "event_group": "event:id:10025",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-22cf74897e13da318bde6e20",
+          "packet_hash": "4b0b20ad8c578639b9c228004b46fbc519c1e28ff021eda33d959f8c8bbbc133",
+          "event_group": "event:id:901679",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-2baada428ff12c38920e1513",
+          "packet_hash": "0ecaeaa7e863ef81565fd2e12c8580dc21f2c0e5917598e7c9cc06a341e7170f",
+          "event_group": "event:id:11107",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-332d49ea744b73d220776e0c",
+          "packet_hash": "c8bd1b2b798504503696e8c58c30b6eda2c2a18b3853bd5e7dd578b514782627",
+          "event_group": "event:id:902793",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-33f304a3bcca7009c6a2c776",
+          "packet_hash": "18c6dd5e8456026bbeef48f4c780c7fe3f4374f72a3eeba91737f25eeb4de128",
+          "event_group": "event:id:10289",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-3434e4c78bf0b58e482b89b7",
+          "packet_hash": "29d77cb24a194fbe1fed1ef37d3d355ae5326ac62b009300e1f532bda996a3cd",
+          "event_group": "event:id:901428",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-3a53764690f526ada2d8a936",
+          "packet_hash": "4adcd5422c2902687340858aefd8182afba9473a9a308f95beac6b3fd3014fe9",
+          "event_group": "event:id:44846",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-3bf1ff81d046329005abc2c4",
+          "packet_hash": "50340c05b41df6fc70a34a851551dac155e69c31101f6a45e9ced630a6828ab0",
+          "event_group": "event:id:111968",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-436ad7572194bdd2da82feea",
+          "packet_hash": "a5f79b2fe64919afd2bb557d45a733fcb9c57d185f47af3a7afdf92386eea9e2",
+          "event_group": "event:id:77877",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-43af95ccfcd825f80f4ef8e1",
+          "packet_hash": "e0ccf4ac7f47917e934f7fca0795cd33204177b81a0b3315939b4b97ba5a7816",
+          "event_group": "event:id:44847",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-488a759447fcbd7b4ab6f0dd",
+          "packet_hash": "487bcbf3ca2d0f54b27ed120948268646a1ee3a1347f015b324106724a41dc9c",
+          "event_group": "event:id:44539",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-4af0104b0becbc47c3e6e9c3",
+          "packet_hash": "07dfc770640b926600288c35ac6e0338998c7c98dac31b04a70412a62e4bc4bc",
+          "event_group": "event:id:77431",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_instant"
+        },
+        {
+          "case_id": "timing-4ba65ad0a4ebaf8a7627fc7a",
+          "packet_hash": "993c3238d7f50546254fcf71479ff77e46d6892d7a5ffdf700931164da4af232",
+          "event_group": "event:id:75274",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-4d9f67b65858a9cd25f405e1",
+          "packet_hash": "e4d903db2b2da758adcd87538a4b92eebe12b5ecac08897d59ccde7661406d1c",
+          "event_group": "event:id:44589",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-52ec1203baf5f9fd0f059ef5",
+          "packet_hash": "2610b115cdf8e791ddea689c9245ea80b601ff1802bb011080bca5c74fae3a2a",
+          "event_group": "event:id:44847",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-6f78cbae38b41f649ae82740",
+          "packet_hash": "fe615881d98096551818c6b35c3a63333384039079aa7f8e0cf93a1676737011",
+          "event_group": "event:id:10025",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-7cb6e9dd69abab754bd58796",
+          "packet_hash": "f259a588f1d22ddd8204e99a69f7e6df0a909e2f17c48416c4f089e70a518a34",
+          "event_group": "event:id:11201",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_instant"
+        },
+        {
+          "case_id": "timing-7faf653c86d4223a42763f92",
+          "packet_hash": "015185302807d6945065c8f9848a7e5f8268d0a0c13d009eeee17f145d51f42f",
+          "event_group": "event:id:44846",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-8207479d9b4cd255e3d83300",
+          "packet_hash": "99d64dc35f970fefb97dd30a3aee02572d3f93bdd5d7bc2e967a48f4151c3e80",
+          "event_group": "event:id:11201",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_instant"
+        },
+        {
+          "case_id": "timing-8a88ac94768471e8fc386e6b",
+          "packet_hash": "86963d40e66f4fc1024d15b5c68fbdafff345f7053e0d9312ea6f6761eb0d1aa",
+          "event_group": "event:id:58249",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-a08253bd956c88e164899faf",
+          "packet_hash": "1804300b73d799c4abe5556f7970829e2234e2820ada53acccfecc92214e697f",
+          "event_group": "event:id:11351",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-a3ffdb3993fb20060c1c76d6",
+          "packet_hash": "3ffa59a0a1130c842f851644e964c5bc7864b73ef368fa23dbaa7e6e716f3d1e",
+          "event_group": "event:id:51793",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-b1fcf0e4ef9ed96ad32a2d8d",
+          "packet_hash": "8a1a2b82247a66b897ae6e1e9a24b5bde08c2bf11fad81df68dc1be9b173fbfb",
+          "event_group": "event:id:89357",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-b79d4f449b47481c53841ea5",
+          "packet_hash": "845c931d0a8a2629ae2c6f536a68bd4399cf47bea72a174c91802c2e208145b0",
+          "event_group": "event:id:10089",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-c2636a6ed58eb5bf7f81f2e7",
+          "packet_hash": "7f0ae4cc27265c9f9e3bbb09c1fdf833cbeac0846845b6c7365555457e15dbfb",
+          "event_group": "event:id:10435",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-ca02793c098df91ad1552752",
+          "packet_hash": "fb7cdbf102988d6b1473abb6485e8f934c49b9752bf655701a3455e372d7878b",
+          "event_group": "event:id:100513",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-ca6e7e777bfdfa9e63ea96c0",
+          "packet_hash": "eadd9fd9b09bc90d4263c5e6b91a16ce1c7e22b54b2fb2e9223993fb4ca4c3c9",
+          "event_group": "event:id:77877",
+          "category": "crypto_fixed_time",
+          "fixed_time_kind": "crypto_candle"
+        },
+        {
+          "case_id": "timing-d47a733ac5fb6e182bcdef1e",
+          "packet_hash": "129bb3cc2ea8da0458a9a4a9242789e5a66e4da75a8601716179cea577e5154e",
+          "event_group": "event:id:10643",
+          "category": "fixed_window",
+          "fixed_time_kind": "observation_window"
+        },
+        {
+          "case_id": "timing-ed17ea38838fc218ab9129c4",
+          "packet_hash": "9a5d349d70965b3477eb0d2a26534a097cfd0e2d5d2e12ed3c4bf4635ccc3ca8",
+          "event_group": "event:id:11871",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        },
+        {
+          "case_id": "timing-ff69ddc32f4115fcf144e998",
+          "packet_hash": "d8777d7697689283af08e99e8f2f3be9b3811cf61579d4475d36a5a65b84c905",
+          "event_group": "event:id:12534",
+          "category": "sports_in_game",
+          "fixed_time_kind": "sports_scheduled"
+        }
+      ]
+    }
+  },
+  "files": {
+    "data/dev/packets.jsonl": "61d04d8662e6e50cae8035dd41b8f805ab9bc3cc9fe4ebee77e4292e84561c07",
+    "data/dev/labels.jsonl": "baaaf3c67b2c8834103fcecb29ac558a2da59b2f532cdec47cdd80ba9b185bb7",
+    "data/sealed/packets.jsonl": "56df3c5759bba559d88760d1d52cc518aefdb39b6783803135338043d70899ec",
+    "data/sealed/labels.jsonl": "a077380285ee182af9e5bb0cba419a4ee0515e252f95549f915144ffa1f78c1c",
+    "data/dev/review.md": "afda7435091e2f5f24abc335ecdc60873658f0c217b56f33001d2fe99399ca71"
+  },
+  "assumptions": [
+    "TOO_EARLY maps to PREMATURE; binary equality/flip maps to TIMING_OK as instructed, without receipt verification.",
+    "TIMING_OK is a proxy: binary settlement does not prove the proposal was timely or timing is identifiable from these inputs.",
+    "Ancillary bytes are preserved as base rules; authoritative historical updates/resets are not reconstructed.",
+    "Scheduling fields are current Gamma discovery metadata, not verified historical event times; startDate may be listing time.",
+    "Privacy exclusions use conservative keyword rules; manual review can require rebuilding before evaluation.",
+    "Fixed-time regex selection screens date/time/candle/window wording; it does not prove the governing time or actual game completion."
+  ]
+}

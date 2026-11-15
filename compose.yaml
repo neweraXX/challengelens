@@ -1,0 +1,70 @@
+name: challengelens
+
+x-runtime: &runtime
+  image: challengelens:node24
+  build:
+    context: .
+    dockerfile: Dockerfile
+  user: node
+  working_dir: /app
+  init: true
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 128
+  mem_limit: 1g
+  cpus: 1.0
+  tmpfs:
+    - /tmp:rw,noexec,nosuid,size=256m,mode=1777
+  volumes:
+    - type: bind
+      source: .
+      target: /app
+
+services:
+  offline:
+    <<: *runtime
+    network_mode: none
+    environment: {}
+    # Mount only code, installed dependencies and public data. In particular,
+    # the optional .secrets/proxies.txt file is not exposed to this service.
+    volumes:
+      - ./package.json:/app/package.json:ro
+      - ./tsconfig.json:/app/tsconfig.json:ro
+      - ./config:/app/config:ro
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ./tests:/app/tests:ro
+      - ./node_modules:/app/node_modules:ro
+      - ./data:/app/data
+    command: [npm, run, typecheck]
+
+  collect:
+    <<: *runtime
+    # Only these two environment variables are forwarded from the invoking shell.
+    # Do not add env_file or mount the shared keys file.
+    environment:
+      POLYMARKET_PROXY: ${POLYMARKET_PROXY:-}
+      POLYMARKET_PROXY_LIST: ${POLYMARKET_PROXY_LIST:-}
+    command: [npm, run, pilot]
+
+  infer:
+    <<: *runtime
+    # Network on. Only these two keys are forwarded; no proxy or shared env file.
+    environment:
+      SERV_API_KEY: ${SERV_API_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+    volumes:
+      - ./package.json:/app/package.json:ro
+      - ./tsconfig.json:/app/tsconfig.json:ro
+      - ./config:/app/config:ro
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ./node_modules:/app/node_modules:ro
+      - ./data/dev:/app/data/dev:ro
+      - ./eval:/app/eval
+    command: [npm, run, "pilot:eval"]
+
+  # Future services:
+  # app: SERV_API_KEY only; configure its own writable project cache later.
+  # buyer: ephemeral testnet wallet; no real credentials.

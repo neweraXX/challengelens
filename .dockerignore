@@ -1,0 +1,15 @@
+.git
+node_modules
+data
+.env*
+**/.env*
+.secrets
+**/.secrets
+*.log
+.DS_Store
+dist
+
+data/sealed2/
+eval/sealed/
+eval/sealed2/
+.tmp/

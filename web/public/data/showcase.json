@@ -1,0 +1,2651 @@
+[
+  {
+    "final_decision": "NOT_SUPPORTED_NOW",
+    "final_reason": "PREMATURE",
+    "action": "WAIT",
+    "evidence_as_of_proposal": {
+      "game_finished": false,
+      "feed_final_delay_minutes": 375.875,
+      "source": "polymarket_gamma_event"
+    },
+    "gate": {
+      "version": "gate-v8",
+      "template": "sports",
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2025-09-16T17:05:00.000Z",
+      "serv_time": {
+        "utc": "2025-09-16T17:05:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2025-09-16T17:05:00Z",
+        "mismatch_seconds": 0
+      },
+      "serv_clock_corrected": false,
+      "agreement": "SERV_ONLY",
+      "gate_reason": "feed marked the game final 375.88 min after the proposal (negative inference)",
+      "serv_self_inconsistent": true,
+      "sports": {
+        "start_utc": "2025-09-16T22:45:00.000Z",
+        "rules_start_utc": "2025-09-16T17:05:00.000Z",
+        "gamma_start_utc": "2025-09-16T22:45:00.000Z",
+        "estimated_end_utc": "2025-09-17T04:45:00.000Z",
+        "duration_hours": 6,
+        "sport": "baseball",
+        "explicit_end_utc": null
+      },
+      "sports_scope": "FULL_GAME_RESULT",
+      "notes": [],
+      "evidence": {
+        "game_finished": false,
+        "feed_final_delay_minutes": 375.875,
+        "source": "polymarket_gamma_event"
+      }
+    },
+    "needs": [
+      "NEED_GAME_FINAL"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_GAME_FINAL",
+        "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+      }
+    ],
+    "evidence": {
+      "kind": "sports_feed",
+      "source": "polymarket_gamma_event",
+      "event_id": "44845",
+      "slug": "mlb-atl-wsh-2025-09-16",
+      "ended": true,
+      "finished_utc": "2025-09-17T03:36:14.500Z",
+      "score": "5-0",
+      "period": "FT",
+      "fetched_at": "2026-11-14T06:38:06.615Z"
+    },
+    "game_finished_utc": "2025-09-17T03:36:14.500Z",
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "NOT_SUPPORTED_NOW",
+      "final_reason": "PREMATURE",
+      "action": "WAIT",
+      "evidence_as_of_proposal": {
+        "game_finished": false,
+        "feed_final_delay_minutes": 375.875,
+        "source": "polymarket_gamma_event"
+      },
+      "gate": {
+        "version": "gate-v8",
+        "template": "sports",
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2025-09-16T17:05:00.000Z",
+        "serv_time": {
+          "utc": "2025-09-16T17:05:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2025-09-16T17:05:00Z",
+          "mismatch_seconds": 0
+        },
+        "serv_clock_corrected": false,
+        "agreement": "SERV_ONLY",
+        "gate_reason": "feed marked the game final 375.88 min after the proposal (negative inference)",
+        "serv_self_inconsistent": true,
+        "sports": {
+          "start_utc": "2025-09-16T22:45:00.000Z",
+          "rules_start_utc": "2025-09-16T17:05:00.000Z",
+          "gamma_start_utc": "2025-09-16T22:45:00.000Z",
+          "estimated_end_utc": "2025-09-17T04:45:00.000Z",
+          "duration_hours": 6,
+          "sport": "baseball",
+          "explicit_end_utc": null
+        },
+        "sports_scope": "FULL_GAME_RESULT",
+        "notes": [],
+        "evidence": {
+          "game_finished": false,
+          "feed_final_delay_minutes": 375.875,
+          "source": "polymarket_gamma_event"
+        }
+      },
+      "needs": [
+        "NEED_GAME_FINAL"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_GAME_FINAL",
+          "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+        }
+      ],
+      "evidence": {
+        "kind": "sports_feed",
+        "source": "polymarket_gamma_event",
+        "event_id": "44845",
+        "slug": "mlb-atl-wsh-2025-09-16",
+        "ended": true,
+        "finished_utc": "2025-09-17T03:36:14.500Z",
+        "score": "5-0",
+        "period": "FT",
+        "fetched_at": "2026-11-14T06:38:06.615Z"
+      },
+      "packet_hash": "4ab3d504b077af6b74320efda61300a0f9dd3197cf839f33c224663e6ed2b68d",
+      "case_id": "timing-1cb1c22e47ea5596f03eb22a",
+      "market_id": null,
+      "proposal_time_utc": "2025-09-16T21:20:22.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "d72691f2-dcf7-44bc-8cf7-92b77eb68ce6",
+      "serv_verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for September 16 at 1:05PM ET",
+            "explanation": "The proposed market is for an MLB game scheduled for 1:05PM ET on September 16, 2025. The proposal was submitted at 21:20 UTC, which is prior to the scheduled game start time. As the game has not been completed or even begun at the time of the proposal, it is premature."
+          }
+        },
+        "sports": {
+          "league_or_sport": "MLB",
+          "stated_start_utc": "2025-09-16T17:05:00Z",
+          "explicit_end_utc": "2025-09-16T17:05:00Z"
+        },
+        "decisive_local": {
+          "date": "2025-09-16",
+          "time": "13:05",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2025-09-16T17:05:00Z"
+      },
+      "evidence_hash": "f690eaaa7081b86adee6561654b5adf12b0c5f8cd2564de91f788f900a891294",
+      "receipt_id": "8bc26453-7faa-49be-89a7-0734a8c5572d",
+      "created_at": "2026-11-14T06:38:06.641Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "5596b52bb6e330ca716ea1e93e7694cfac478c781c2e8aae82affd5cd27f769b"
+    },
+    "case_id": "timing-1cb1c22e47ea5596f03eb22a",
+    "packet_hash": "4ab3d504b077af6b74320efda61300a0f9dd3197cf839f33c224663e6ed2b68d",
+    "event_group": "event:id:44845",
+    "title": "Braves vs. Nationals",
+    "category": "sports_in_game",
+    "fixed_time_kind": "sports_scheduled",
+    "rules_text": "q: title: Braves vs. Nationals, description: In the upcoming MLB game, scheduled for September 16 at 1:05PM ET:\nIf the Atlanta Braves win, the market will resolve to “Braves”.\nIf the Washington Nationals win, the market will resolve to “Nationals”.\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up game, this market will resolve 50-50.\nTo know when a postponed game will be played, please check the home team's schedule on MLB.com for the listed team and look for the game described as a makeup game. timestamp: 1757923206 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Nationals, p2 to Braves, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:8a667535eb42f942186c30e70c72483612e0854b",
+    "proposal_time_utc": "2025-09-16T21:20:22.000Z",
+    "dispute_time_utc": "2025-09-16T21:23:28.000Z",
+    "settlement_time_utc": "2025-09-21T00:46:04.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0x7df4e333f2305ca89879ddd222d7978200b650b6877d47fb7ca5890eddbbebdf",
+    "bond": "100000000",
+    "reward": "2000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1757923210-0x1fa8a8cf36e10357bce7251a1748ac00f6e17813937356fe41f221f7f5620ae7",
+    "proposal_tx_hash": "0xf77cfcd2ad5425fa43164a05275967827a36547f6a336b1196be40d34d485528",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2025-09-15T08:00:56.34724Z",
+        "endDate": "2025-09-23T17:05:00Z",
+        "startDateIso": "2025-09-15",
+        "endDateIso": "2025-09-23",
+        "gameStartTime": "2025-09-16 22:45:00+00"
+      },
+      "events": [
+        {
+          "startDate": "2025-09-15T08:15:29.121305Z",
+          "endDate": "2025-09-16T17:05:00Z",
+          "startTime": "2025-09-16T22:45:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Braves vs. Nationals",
+      "rules_text": "q: title: Braves vs. Nationals, description: In the upcoming MLB game, scheduled for September 16 at 1:05PM ET:\nIf the Atlanta Braves win, the market will resolve to “Braves”.\nIf the Washington Nationals win, the market will resolve to “Nationals”.\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up game, this market will resolve 50-50.\nTo know when a postponed game will be played, please check the home team's schedule on MLB.com for the listed team and look for the game described as a makeup game. timestamp: 1757923206 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Nationals, p2 to Braves, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:8a667535eb42f942186c30e70c72483612e0854b",
+      "proposal_time_utc": "2025-09-16T21:20:22.000Z",
+      "proposed_value": "1000000000000000000",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2025-09-15T08:00:56.34724Z",
+          "endDate": "2025-09-23T17:05:00Z",
+          "startDateIso": "2025-09-15",
+          "endDateIso": "2025-09-23",
+          "gameStartTime": "2025-09-16 22:45:00+00"
+        },
+        "events": [
+          {
+            "startDate": "2025-09-15T08:15:29.121305Z",
+            "endDate": "2025-09-16T17:05:00Z",
+            "startTime": "2025-09-16T22:45:00Z"
+          }
+        ]
+      },
+      "evidence_as_of_proposal": {
+        "game_finished": false,
+        "feed_final_delay_minutes": 375.875,
+        "source": "polymarket_gamma_event"
+      }
+    },
+    "verdict": {
+      "decision": "NOT_SUPPORTED_NOW",
+      "reason": "PREMATURE",
+      "checks": {
+        "timing": {
+          "status": "FAIL",
+          "clause_quote": "scheduled for September 16 at 1:05PM ET",
+          "explanation": "The proposed market is for an MLB game scheduled for 1:05PM ET on September 16, 2025. The proposal was submitted at 21:20 UTC, which is prior to the scheduled game start time. As the game has not been completed or even begun at the time of the proposal, it is premature."
+        }
+      },
+      "sports": {
+        "league_or_sport": "MLB",
+        "stated_start_utc": "2025-09-16T17:05:00Z",
+        "explicit_end_utc": "2025-09-16T17:05:00Z"
+      },
+      "decisive_local": {
+        "date": "2025-09-16",
+        "time": "13:05",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2025-09-16T17:05:00Z"
+    },
+    "clause_offsets": {
+      "start": 71,
+      "end": 110
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2025-09-16T17:05:00.000Z",
+    "gamma_time_utc": "2025-09-16T22:45:00.000Z",
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "NOT_SUPPORTED_NOW",
+    "final_reason": "PREMATURE",
+    "action": "WAIT",
+    "gate": {
+      "version": "gate-v8",
+      "template": "sports",
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2023-02-27T00:30:00.000Z",
+      "serv_time": {
+        "utc": "2023-02-27T00:30:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2023-02-27T00:30:00Z",
+        "mismatch_seconds": 0
+      },
+      "serv_clock_corrected": false,
+      "agreement": "NA",
+      "gate_reason": "before sports start",
+      "serv_self_inconsistent": false,
+      "sports": {
+        "start_utc": "2023-02-27T00:30:00.000Z",
+        "rules_start_utc": null,
+        "gamma_start_utc": "2023-02-27T00:30:00.000Z",
+        "estimated_end_utc": "2023-02-27T04:30:00.000Z",
+        "duration_hours": 4,
+        "sport": "basketball",
+        "explicit_end_utc": null
+      },
+      "sports_scope": "FULL_GAME_RESULT",
+      "notes": [
+        "Estimated basketball duration: +4h; completion unverified."
+      ],
+      "evidence": null
+    },
+    "needs": [
+      "NEED_GAME_FINAL"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_GAME_FINAL",
+        "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+      }
+    ],
+    "evidence": null,
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "NOT_SUPPORTED_NOW",
+      "final_reason": "PREMATURE",
+      "action": "WAIT",
+      "gate": {
+        "version": "gate-v8",
+        "template": "sports",
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2023-02-27T00:30:00.000Z",
+        "serv_time": {
+          "utc": "2023-02-27T00:30:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2023-02-27T00:30:00Z",
+          "mismatch_seconds": 0
+        },
+        "serv_clock_corrected": false,
+        "agreement": "NA",
+        "gate_reason": "before sports start",
+        "serv_self_inconsistent": false,
+        "sports": {
+          "start_utc": "2023-02-27T00:30:00.000Z",
+          "rules_start_utc": null,
+          "gamma_start_utc": "2023-02-27T00:30:00.000Z",
+          "estimated_end_utc": "2023-02-27T04:30:00.000Z",
+          "duration_hours": 4,
+          "sport": "basketball",
+          "explicit_end_utc": null
+        },
+        "sports_scope": "FULL_GAME_RESULT",
+        "notes": [
+          "Estimated basketball duration: +4h; completion unverified."
+        ],
+        "evidence": null
+      },
+      "needs": [
+        "NEED_GAME_FINAL"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_GAME_FINAL",
+          "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+        }
+      ],
+      "evidence": null,
+      "packet_hash": "3ffeb3c8832325e4106e71e1f713e19f6b9bda58051554cd7d2e101feda26b8f",
+      "case_id": "timing-0c1cbf3f0a15dae5928a91e1",
+      "market_id": null,
+      "proposal_time_utc": "2023-02-25T05:25:10.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "0fcbf5d7-8503-48c7-b5f2-bf82c950bde1",
+      "serv_verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for February 26 at 7:30 PM",
+            "explanation": "The proposal was submitted on February 25, 2023, which is before the game start time of February 26, 2023, at 7:30 PM. The game has not yet taken place; therefore, the market is not yet ready for resolution."
+          }
+        },
+        "sports": {
+          "league_or_sport": "NBA",
+          "stated_start_utc": "2023-02-27T00:30:00Z",
+          "explicit_end_utc": "2023-04-17T04:59:59Z"
+        },
+        "decisive_local": {
+          "date": "2023-02-26",
+          "time": "19:30",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2023-02-27T00:30:00Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "d3a81521-8c8a-4373-ae28-b4dde5125668",
+      "created_at": "2026-11-14T06:38:07.333Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "5d6e20c243edf10d25af007ccd235c4d74259e8fb2b8f38b3c2bc777b0e618a3"
+    },
+    "case_id": "timing-0c1cbf3f0a15dae5928a91e1",
+    "packet_hash": "3ffeb3c8832325e4106e71e1f713e19f6b9bda58051554cd7d2e101feda26b8f",
+    "event_group": "event:id:901344",
+    "title": "NBA: Golden State Warriors vs. Minnesota Timberwolves 2023-02-26",
+    "category": "sports_in_game",
+    "fixed_time_kind": "sports_scheduled",
+    "rules_text": "q: title: NBA: Golden State Warriors vs. Minnesota Timberwolves 2023-02-26, description: In the upcoming NBA game, scheduled for February 26 at 7:30 PM:\n\nIf the Golden State Warriors win, the market will resolve to “Warriors”.\n\nIf the Minnesota Timberwolves win, the market will resolve to “Timberwolves”.\n\n If the game is not completed by April 16, 2023 (11:59:59 PM EST), the market will resolve 50-50. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Timberwolves, p2 to Warriors, p3 to unknown/50-50,initializer:b2996aa129c65849cd1fa04cbd15a16a62675b01",
+    "proposal_time_utc": "2023-02-25T05:25:10.000Z",
+    "dispute_time_utc": "2023-02-25T06:33:17.000Z",
+    "settlement_time_utc": "2023-03-01T20:21:57.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0x9baf437ee12dda4052864e3caf94cb67f24d7618378aa8c8552c79cfa08eacc4",
+    "bond": "500000000",
+    "reward": "5000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1677294550-0x79dc2af696825da90ce6c52a3d2a1e44b52489cb250d8ae2ab2487750e335586",
+    "proposal_tx_hash": "0x44305bac583196c1faec675c431d69bc9af36e59c5130b7f804781419e679ae7",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2023-02-26T00:00:00Z",
+        "endDate": "2023-02-26T00:00:00Z",
+        "startDateIso": "2023-02-26",
+        "endDateIso": "2023-02-26",
+        "gameStartTime": "2023-02-27 00:30:00+00"
+      },
+      "events": [
+        {
+          "startDate": "2023-02-26T00:00:00Z",
+          "endDate": "2023-02-26T00:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "NBA: Golden State Warriors vs. Minnesota Timberwolves 2023-02-26",
+      "rules_text": "q: title: NBA: Golden State Warriors vs. Minnesota Timberwolves 2023-02-26, description: In the upcoming NBA game, scheduled for February 26 at 7:30 PM:\n\nIf the Golden State Warriors win, the market will resolve to “Warriors”.\n\nIf the Minnesota Timberwolves win, the market will resolve to “Timberwolves”.\n\n If the game is not completed by April 16, 2023 (11:59:59 PM EST), the market will resolve 50-50. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Timberwolves, p2 to Warriors, p3 to unknown/50-50,initializer:b2996aa129c65849cd1fa04cbd15a16a62675b01",
+      "proposal_time_utc": "2023-02-25T05:25:10.000Z",
+      "proposed_value": "1000000000000000000",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2023-02-26T00:00:00Z",
+          "endDate": "2023-02-26T00:00:00Z",
+          "startDateIso": "2023-02-26",
+          "endDateIso": "2023-02-26",
+          "gameStartTime": "2023-02-27 00:30:00+00"
+        },
+        "events": [
+          {
+            "startDate": "2023-02-26T00:00:00Z",
+            "endDate": "2023-02-26T00:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "NOT_SUPPORTED_NOW",
+      "reason": "PREMATURE",
+      "checks": {
+        "timing": {
+          "status": "FAIL",
+          "clause_quote": "scheduled for February 26 at 7:30 PM",
+          "explanation": "The proposal was submitted on February 25, 2023, which is before the game start time of February 26, 2023, at 7:30 PM. The game has not yet taken place; therefore, the market is not yet ready for resolution."
+        }
+      },
+      "sports": {
+        "league_or_sport": "NBA",
+        "stated_start_utc": "2023-02-27T00:30:00Z",
+        "explicit_end_utc": "2023-04-17T04:59:59Z"
+      },
+      "decisive_local": {
+        "date": "2023-02-26",
+        "time": "19:30",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2023-02-27T00:30:00Z"
+    },
+    "clause_offsets": {
+      "start": 115,
+      "end": 151
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": null,
+    "gamma_time_utc": "2023-02-27T00:30:00.000Z",
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "SUPPORTED_NOW",
+    "final_reason": null,
+    "action": "PROCEED",
+    "gate": {
+      "version": "gate-v8",
+      "template": "crypto_candle_interval",
+      "code_cutoff_utc": "2025-12-18T21:00:00.000Z",
+      "serv_decisive_time_utc": "2025-12-18T21:00:00.000Z",
+      "serv_time": {
+        "utc": "2025-12-18T21:00:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2025-12-18T21:00:03Z",
+        "mismatch_seconds": 3
+      },
+      "serv_clock_corrected": false,
+      "agreement": "AGREE",
+      "gate_reason": "both cutoffs passed",
+      "serv_self_inconsistent": false,
+      "sports": null,
+      "notes": [
+        "Hourly candle: start +1 hour."
+      ],
+      "evidence": null
+    },
+    "needs": [],
+    "need_details": [],
+    "evidence": null,
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "SUPPORTED_NOW",
+      "final_reason": null,
+      "action": "PROCEED",
+      "gate": {
+        "version": "gate-v8",
+        "template": "crypto_candle_interval",
+        "code_cutoff_utc": "2025-12-18T21:00:00.000Z",
+        "serv_decisive_time_utc": "2025-12-18T21:00:00.000Z",
+        "serv_time": {
+          "utc": "2025-12-18T21:00:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2025-12-18T21:00:03Z",
+          "mismatch_seconds": 3
+        },
+        "serv_clock_corrected": false,
+        "agreement": "AGREE",
+        "gate_reason": "both cutoffs passed",
+        "serv_self_inconsistent": false,
+        "sports": null,
+        "notes": [
+          "Hourly candle: start +1 hour."
+        ],
+        "evidence": null
+      },
+      "needs": [],
+      "need_details": [],
+      "evidence": null,
+      "packet_hash": "45b884f400db4eb76318f46fd9ddd4042fec203eac9f4b61270d588648f1310d",
+      "case_id": "timing-4cfe8694807a8ed7a250f376",
+      "market_id": null,
+      "proposal_time_utc": "2025-12-18T21:00:03.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "ffc2642a-a2f7-4b23-b963-3b77e02cb186",
+      "serv_verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "the close price is greater than or equal to the open price for the ETH/USDT 1 hour candle that begins on the time and date specified in the title",
+            "explanation": "The market refers to a 1-hour candle starting at 3 PM ET on December 18, 2025. This candle ends at 4 PM ET. The proposal was submitted at 4 PM ET, coinciding with the completion of the observation period, making it valid for resolution."
+          }
+        },
+        "sports": {
+          "league_or_sport": "Crypto Finance",
+          "stated_start_utc": "2025-12-18T20:00:00Z",
+          "explicit_end_utc": "2025-12-18T21:00:00Z"
+        },
+        "decisive_local": {
+          "date": "2025-12-18",
+          "time": "16:00",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2025-12-18T21:00:03Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "0d72aabb-2f4c-4969-86cb-655751b65322",
+      "created_at": "2026-11-14T06:38:07.341Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "69c8d65680532d5fd425e63203cf8ba0db2393a726fc5d4bed44ef34195f198a"
+    },
+    "case_id": "timing-4cfe8694807a8ed7a250f376",
+    "packet_hash": "45b884f400db4eb76318f46fd9ddd4042fec203eac9f4b61270d588648f1310d",
+    "event_group": "event:id:106958",
+    "title": "Ethereum Up or Down - December 18, 3PM ET",
+    "category": "crypto_fixed_time",
+    "fixed_time_kind": "crypto_candle",
+    "rules_text": "q: title: Ethereum Up or Down - December 18, 3PM ET, description: This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the ETH/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, specifically the ETH/USDT pair (https://www.binance.com/en/trade/ETH_USDT). The close « C » and open « O » displayed at the top of the graph for the relevant \"1H\" candle will be used once the data for that candle is finalized.\n\nPlease note that this market is about the price according to Binance ETH/USDT, not according to other sources or spot markets. market_id: 950515 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Down, p2 to Up, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2025-12-18T21:00:03.000Z",
+    "dispute_time_utc": "2025-12-18T21:01:25.000Z",
+    "settlement_time_utc": "2025-12-22T00:42:24.000Z",
+    "settlement_label": "flipped",
+    "settlement_value": "0",
+    "settlement_tx_hash": "0x5d1712cbf16b158af136cb474ab14058f918dc151266f6e6373dbb21886440b0",
+    "bond": "500000000",
+    "reward": "2000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1765916053-0x8c120a0af0509039c46b9590a83cfdf463922ed5431e4b6c624f790ac570726c",
+    "proposal_tx_hash": "0xce24ae7ed006c70ad0b6ee0dafd4aeebc941103908e5213d9c2145a51aac21a3",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2025-12-16T20:15:15.5534Z",
+        "endDate": "2025-12-18T21:00:00Z",
+        "startDateIso": "2025-12-16",
+        "endDateIso": "2025-12-18",
+        "eventStartTime": "2025-12-18T20:00:00Z"
+      },
+      "events": [
+        {
+          "startDate": "2025-12-16T20:20:08.28681Z",
+          "endDate": "2025-12-18T21:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Ethereum Up or Down - December 18, 3PM ET",
+      "rules_text": "q: title: Ethereum Up or Down - December 18, 3PM ET, description: This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the ETH/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, specifically the ETH/USDT pair (https://www.binance.com/en/trade/ETH_USDT). The close « C » and open « O » displayed at the top of the graph for the relevant \"1H\" candle will be used once the data for that candle is finalized.\n\nPlease note that this market is about the price according to Binance ETH/USDT, not according to other sources or spot markets. market_id: 950515 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Down, p2 to Up, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2025-12-18T21:00:03.000Z",
+      "proposed_value": "1000000000000000000",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2025-12-16T20:15:15.5534Z",
+          "endDate": "2025-12-18T21:00:00Z",
+          "startDateIso": "2025-12-16",
+          "endDateIso": "2025-12-18",
+          "eventStartTime": "2025-12-18T20:00:00Z"
+        },
+        "events": [
+          {
+            "startDate": "2025-12-16T20:20:08.28681Z",
+            "endDate": "2025-12-18T21:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "SUPPORTED_NOW",
+      "reason": null,
+      "checks": {
+        "timing": {
+          "status": "PASS",
+          "clause_quote": "the close price is greater than or equal to the open price for the ETH/USDT 1 hour candle that begins on the time and date specified in the title",
+          "explanation": "The market refers to a 1-hour candle starting at 3 PM ET on December 18, 2025. This candle ends at 4 PM ET. The proposal was submitted at 4 PM ET, coinciding with the completion of the observation period, making it valid for resolution."
+        }
+      },
+      "sports": {
+        "league_or_sport": "Crypto Finance",
+        "stated_start_utc": "2025-12-18T20:00:00Z",
+        "explicit_end_utc": "2025-12-18T21:00:00Z"
+      },
+      "decisive_local": {
+        "date": "2025-12-18",
+        "time": "16:00",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2025-12-18T21:00:03Z"
+    },
+    "clause_offsets": {
+      "start": 102,
+      "end": 247
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2025-12-18T20:00:00.000Z",
+    "gamma_time_utc": "2025-12-18T20:00:00.000Z",
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "SUPPORTED_NOW",
+    "final_reason": null,
+    "action": "PROCEED",
+    "gate": {
+      "version": "gate-v8",
+      "template": "observation_window",
+      "code_cutoff_utc": "2024-01-01T05:00:00.000Z",
+      "serv_decisive_time_utc": "2024-01-01T05:00:00.000Z",
+      "serv_time": {
+        "utc": "2024-01-01T05:00:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2024-01-01T04:59:00Z",
+        "mismatch_seconds": 60
+      },
+      "serv_clock_corrected": false,
+      "agreement": "AGREE",
+      "gate_reason": "both cutoffs passed",
+      "serv_self_inconsistent": false,
+      "sports": null,
+      "notes": [
+        "Inclusive 11:59 PM end: add one minute."
+      ],
+      "evidence": null
+    },
+    "needs": [],
+    "need_details": [],
+    "evidence": null,
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "SUPPORTED_NOW",
+      "final_reason": null,
+      "action": "PROCEED",
+      "gate": {
+        "version": "gate-v8",
+        "template": "observation_window",
+        "code_cutoff_utc": "2024-01-01T05:00:00.000Z",
+        "serv_decisive_time_utc": "2024-01-01T05:00:00.000Z",
+        "serv_time": {
+          "utc": "2024-01-01T05:00:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2024-01-01T04:59:00Z",
+          "mismatch_seconds": 60
+        },
+        "serv_clock_corrected": false,
+        "agreement": "AGREE",
+        "gate_reason": "both cutoffs passed",
+        "serv_self_inconsistent": false,
+        "sports": null,
+        "notes": [
+          "Inclusive 11:59 PM end: add one minute."
+        ],
+        "evidence": null
+      },
+      "needs": [],
+      "need_details": [],
+      "evidence": null,
+      "packet_hash": "6c52f91a0501addc6bb9a271e73b319f8ee729a587039a27c8d2e2b165c6a94d",
+      "case_id": "timing-096b0fbae9b3a7989bd596a3",
+      "market_id": null,
+      "proposal_time_utc": "2024-01-04T23:15:37.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "c2d889bb-a3d2-4899-b45e-0b8f40e62f1d",
+      "serv_verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET",
+            "explanation": "The proposal was submitted on January 4, 2024, which is after the market's stated closing time of December 31, 2023, 11:59 PM ET. Because the period for observation has fully concluded, the market is ready for resolution."
+          }
+        },
+        "sports": null,
+        "decisive_local": {
+          "date": "2023-12-31",
+          "time": "23:59",
+          "timezone": "ET",
+          "adjust_minutes": 1
+        },
+        "decisive_time_utc": "2024-01-01T04:59:00Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "184891ac-ed1f-4958-ba11-7aa3da2bf3ff",
+      "created_at": "2026-11-14T06:38:07.349Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "ad27a564df9afa2b89677a264253ebac5d4b7eedc47930bd164c5818db1ab0a6"
+    },
+    "case_id": "timing-096b0fbae9b3a7989bd596a3",
+    "packet_hash": "6c52f91a0501addc6bb9a271e73b319f8ee729a587039a27c8d2e2b165c6a94d",
+    "event_group": "event:id:903077",
+    "title": "Will US attack Yemen in 2023?",
+    "category": "fixed_window",
+    "fixed_time_kind": "observation_window",
+    "rules_text": "q: title: Will US attack Yemen in 2023?, description: This market will resolve to \"Yes\" if the United States of America initiates a military attack on Yemeni soil, airspace, or maritime territory between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"military attack\" is any use of force executed by the US on Yemeni soil, airspace, or maritime territory (e.g. if a Houthi weapons depot on Yemeni soil is subject to a US missile strike, this market will resolve to \"Yes\") that is officially acknowledged by the U.S. federal government or a consensus of credible reporting. This includes, but is not limited to, airstrikes, naval attacks, or ground invasions. Cyber attacks, sanctions, or diplomatic actions will not count.\n\nThe US striking an unmanned aerial vehicle or projectile over Yemeni territory in a defensive capacity will NOT count toward a \"Yes\" resolution. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2024-01-04T23:15:37.000Z",
+    "dispute_time_utc": "2024-01-05T00:31:12.000Z",
+    "settlement_time_utc": "2024-01-08T00:25:25.000Z",
+    "settlement_label": "upheld",
+    "settlement_value": "0",
+    "settlement_tx_hash": "0xf85fec1f12e07e0252902a00ddca8eeb52dfe8ea54ca66e8d7622dc7c4283d79",
+    "bond": "500000000",
+    "reward": "5000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1704178228-0xc29d183f311235823a746b13dfdcc0bb222e51c1821376bd81e0e951300cf232",
+    "proposal_tx_hash": "0xa081306d9e877b4ddf7b4ceb2b938d48edeae0b418bcc81c33c624b4f939c230",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2023-12-14T19:38:23.149Z",
+        "endDate": "2023-12-31T00:00:00Z",
+        "startDateIso": "2023-12-14",
+        "endDateIso": "2023-12-31"
+      },
+      "events": [
+        {
+          "startDate": "2023-12-14T19:38:23.149Z",
+          "endDate": "2023-12-31T00:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Will US attack Yemen in 2023?",
+      "rules_text": "q: title: Will US attack Yemen in 2023?, description: This market will resolve to \"Yes\" if the United States of America initiates a military attack on Yemeni soil, airspace, or maritime territory between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"military attack\" is any use of force executed by the US on Yemeni soil, airspace, or maritime territory (e.g. if a Houthi weapons depot on Yemeni soil is subject to a US missile strike, this market will resolve to \"Yes\") that is officially acknowledged by the U.S. federal government or a consensus of credible reporting. This includes, but is not limited to, airstrikes, naval attacks, or ground invasions. Cyber attacks, sanctions, or diplomatic actions will not count.\n\nThe US striking an unmanned aerial vehicle or projectile over Yemeni territory in a defensive capacity will NOT count toward a \"Yes\" resolution. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2024-01-04T23:15:37.000Z",
+      "proposed_value": "0",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2023-12-14T19:38:23.149Z",
+          "endDate": "2023-12-31T00:00:00Z",
+          "startDateIso": "2023-12-14",
+          "endDateIso": "2023-12-31"
+        },
+        "events": [
+          {
+            "startDate": "2023-12-14T19:38:23.149Z",
+            "endDate": "2023-12-31T00:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "SUPPORTED_NOW",
+      "reason": null,
+      "checks": {
+        "timing": {
+          "status": "PASS",
+          "clause_quote": "between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET",
+          "explanation": "The proposal was submitted on January 4, 2024, which is after the market's stated closing time of December 31, 2023, 11:59 PM ET. Because the period for observation has fully concluded, the market is ready for resolution."
+        }
+      },
+      "sports": null,
+      "decisive_local": {
+        "date": "2023-12-31",
+        "time": "23:59",
+        "timezone": "ET",
+        "adjust_minutes": 1
+      },
+      "decisive_time_utc": "2024-01-01T04:59:00Z"
+    },
+    "clause_offsets": {
+      "start": 196,
+      "end": 264
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2024-12-14T17:00:00.000Z",
+    "gamma_time_utc": null,
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "NOT_SUPPORTED_NOW",
+    "final_reason": "PREMATURE",
+    "action": "WAIT",
+    "evidence_as_of_proposal": {
+      "game_finished": false,
+      "feed_final_delay_minutes": 57.23113333333333,
+      "source": "polymarket_gamma_event"
+    },
+    "gate": {
+      "version": "gate-v8",
+      "template": "sports",
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2026-01-10T02:00:00.000Z",
+      "serv_time": {
+        "utc": "2026-01-10T02:00:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2026-01-10T03:45:32Z",
+        "mismatch_seconds": 6332
+      },
+      "serv_clock_corrected": true,
+      "agreement": "SERV_ONLY",
+      "gate_reason": "feed marked the game final 57.23 min after the proposal (negative inference)",
+      "serv_self_inconsistent": true,
+      "sports": {
+        "start_utc": "2026-01-10T02:00:00.000Z",
+        "rules_start_utc": null,
+        "gamma_start_utc": "2026-01-10T02:00:00.000Z",
+        "estimated_end_utc": "2026-01-10T06:00:00.000Z",
+        "duration_hours": 4,
+        "sport": "hockey",
+        "explicit_end_utc": null
+      },
+      "sports_scope": "FULL_GAME_RESULT",
+      "notes": [
+        "SERV UTC clock corrected from its stated local date/time/timezone."
+      ],
+      "evidence": {
+        "game_finished": false,
+        "feed_final_delay_minutes": 57.23113333333333,
+        "source": "polymarket_gamma_event"
+      }
+    },
+    "needs": [
+      "NEED_GAME_FINAL"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_GAME_FINAL",
+        "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+      }
+    ],
+    "evidence": {
+      "kind": "sports_feed",
+      "source": "polymarket_gamma_event",
+      "event_id": "104228",
+      "slug": "nhl-stl-utah-2026-01-09",
+      "ended": true,
+      "finished_utc": "2026-01-10T04:42:45.868Z",
+      "score": "2-4",
+      "period": "VFT",
+      "fetched_at": "2026-11-14T06:38:08.040Z"
+    },
+    "game_finished_utc": "2026-01-10T04:42:45.868Z",
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "NOT_SUPPORTED_NOW",
+      "final_reason": "PREMATURE",
+      "action": "WAIT",
+      "evidence_as_of_proposal": {
+        "game_finished": false,
+        "feed_final_delay_minutes": 57.23113333333333,
+        "source": "polymarket_gamma_event"
+      },
+      "gate": {
+        "version": "gate-v8",
+        "template": "sports",
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2026-01-10T02:00:00.000Z",
+        "serv_time": {
+          "utc": "2026-01-10T02:00:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2026-01-10T03:45:32Z",
+          "mismatch_seconds": 6332
+        },
+        "serv_clock_corrected": true,
+        "agreement": "SERV_ONLY",
+        "gate_reason": "feed marked the game final 57.23 min after the proposal (negative inference)",
+        "serv_self_inconsistent": true,
+        "sports": {
+          "start_utc": "2026-01-10T02:00:00.000Z",
+          "rules_start_utc": null,
+          "gamma_start_utc": "2026-01-10T02:00:00.000Z",
+          "estimated_end_utc": "2026-01-10T06:00:00.000Z",
+          "duration_hours": 4,
+          "sport": "hockey",
+          "explicit_end_utc": null
+        },
+        "sports_scope": "FULL_GAME_RESULT",
+        "notes": [
+          "SERV UTC clock corrected from its stated local date/time/timezone."
+        ],
+        "evidence": {
+          "game_finished": false,
+          "feed_final_delay_minutes": 57.23113333333333,
+          "source": "polymarket_gamma_event"
+        }
+      },
+      "needs": [
+        "NEED_GAME_FINAL"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_GAME_FINAL",
+          "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+        }
+      ],
+      "evidence": {
+        "kind": "sports_feed",
+        "source": "polymarket_gamma_event",
+        "event_id": "104228",
+        "slug": "nhl-stl-utah-2026-01-09",
+        "ended": true,
+        "finished_utc": "2026-01-10T04:42:45.868Z",
+        "score": "2-4",
+        "period": "VFT",
+        "fetched_at": "2026-11-14T06:38:08.040Z"
+      },
+      "packet_hash": "e46c10d3fd0690531633ca6544325045cdc4bc9695af6c4e9a32e96020233af2",
+      "case_id": "timing-0c88438129ac80cba43c38fd",
+      "market_id": null,
+      "proposal_time_utc": "2026-01-10T03:45:32.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "ca254675-b0e7-451f-b729-8e41ba877c7d",
+      "serv_verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for January 9 at 9:00PM ET",
+            "explanation": "The market involves an NHL game scheduled for January 9 at 9:00PM ET. Evidence at the time of proposal indicates that the game has not yet finished. As the game completion is not yet established, the proposal is premature."
+          }
+        },
+        "sports": {
+          "league_or_sport": "NHL",
+          "stated_start_utc": "2026-01-10T02:00:00Z",
+          "explicit_end_utc": "2026-01-10T02:00:00Z"
+        },
+        "decisive_local": {
+          "date": "2026-01-09",
+          "time": "21:00",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2026-01-10T03:45:32Z"
+      },
+      "evidence_hash": "d29691751050610f2722b203f29b6630be34d2054b119cae9dc1dc38b7d88fff",
+      "receipt_id": "1fd3f9a2-a725-404b-b013-7c8a6ab7df26",
+      "created_at": "2026-11-14T06:38:08.045Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "58f02665eb3c75136d73e415f1692a1e3024a7a568b11656279900f215e46c0b"
+    },
+    "case_id": "timing-0c88438129ac80cba43c38fd",
+    "packet_hash": "e46c10d3fd0690531633ca6544325045cdc4bc9695af6c4e9a32e96020233af2",
+    "event_group": "event:id:104228",
+    "title": "Blues vs. Utah",
+    "category": "sports_in_game",
+    "fixed_time_kind": "sports_scheduled",
+    "rules_text": "q: title: Blues vs. Utah, description: In the upcoming NHL game, scheduled for January 9 at 9:00PM ET:\nIf the Blues win, the market will resolve to \"Blues\".\nIf the Utah win, the market will resolve to \"Utah\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up game, this market will resolve 50-50.\nThe result will be determined based on the final score including any overtime periods and shootouts. In the event of a shootout, one goal will be added to the winning team's score for the purpose of resolution. market_id: 927976 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Utah, p2 to Blues, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2026-01-10T03:45:32.000Z",
+    "dispute_time_utc": "2026-01-10T03:46:44.000Z",
+    "settlement_time_utc": "2026-01-14T18:34:02.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0x2d295e6904fb89a0bb6836a601bf52ee1617a4c2c2d3910ac2e33433409296e2",
+    "bond": "500000000",
+    "reward": "2000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1765643431-0x4a98376c762d4a6efef7a7bec259bc752653cae9f2b6e5cca0877d8db71fbd36",
+    "proposal_tx_hash": "0x35be9b2207f7f63b1eec52a0ad9de7f8f817a46f7be39f48467e22bc15ac8cd4",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2025-12-13T16:31:17.436754Z",
+        "endDate": "2026-01-10T02:00:00Z",
+        "startDateIso": "2025-12-13",
+        "endDateIso": "2026-01-10",
+        "gameStartTime": "2026-01-10 02:00:00+00"
+      },
+      "events": [
+        {
+          "startDate": "2025-12-13T16:36:37.484579Z",
+          "endDate": "2026-01-10T02:00:00Z",
+          "startTime": "2026-01-10T02:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Blues vs. Utah",
+      "rules_text": "q: title: Blues vs. Utah, description: In the upcoming NHL game, scheduled for January 9 at 9:00PM ET:\nIf the Blues win, the market will resolve to \"Blues\".\nIf the Utah win, the market will resolve to \"Utah\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up game, this market will resolve 50-50.\nThe result will be determined based on the final score including any overtime periods and shootouts. In the event of a shootout, one goal will be added to the winning team's score for the purpose of resolution. market_id: 927976 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Utah, p2 to Blues, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2026-01-10T03:45:32.000Z",
+      "proposed_value": "0",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2025-12-13T16:31:17.436754Z",
+          "endDate": "2026-01-10T02:00:00Z",
+          "startDateIso": "2025-12-13",
+          "endDateIso": "2026-01-10",
+          "gameStartTime": "2026-01-10 02:00:00+00"
+        },
+        "events": [
+          {
+            "startDate": "2025-12-13T16:36:37.484579Z",
+            "endDate": "2026-01-10T02:00:00Z",
+            "startTime": "2026-01-10T02:00:00Z"
+          }
+        ]
+      },
+      "evidence_as_of_proposal": {
+        "game_finished": false,
+        "feed_final_delay_minutes": 57.23113333333333,
+        "source": "polymarket_gamma_event"
+      }
+    },
+    "verdict": {
+      "decision": "NOT_SUPPORTED_NOW",
+      "reason": "PREMATURE",
+      "checks": {
+        "timing": {
+          "status": "FAIL",
+          "clause_quote": "scheduled for January 9 at 9:00PM ET",
+          "explanation": "The market involves an NHL game scheduled for January 9 at 9:00PM ET. Evidence at the time of proposal indicates that the game has not yet finished. As the game completion is not yet established, the proposal is premature."
+        }
+      },
+      "sports": {
+        "league_or_sport": "NHL",
+        "stated_start_utc": "2026-01-10T02:00:00Z",
+        "explicit_end_utc": "2026-01-10T02:00:00Z"
+      },
+      "decisive_local": {
+        "date": "2026-01-09",
+        "time": "21:00",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2026-01-10T03:45:32Z"
+    },
+    "clause_offsets": {
+      "start": 65,
+      "end": 101
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": null,
+    "gamma_time_utc": "2026-01-10T02:00:00.000Z",
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "NOT_SUPPORTED_NOW",
+    "final_reason": "PREMATURE",
+    "action": "WAIT",
+    "earliest_utc": "2024-08-13T04:00:00.000Z",
+    "gate": {
+      "version": "gate-v8",
+      "template": null,
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2024-08-13T04:00:00.000Z",
+      "serv_time": {
+        "utc": "2024-08-13T04:00:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2024-08-13T02:36:34Z",
+        "mismatch_seconds": 5006
+      },
+      "serv_clock_corrected": true,
+      "agreement": "SERV_ONLY",
+      "gate_reason": "before cutoff",
+      "serv_self_inconsistent": true,
+      "sports": null,
+      "notes": [
+        "SERV UTC clock corrected from its stated local date/time/timezone."
+      ],
+      "evidence": null
+    },
+    "needs": [
+      "WAIT_UNTIL"
+    ],
+    "need_details": [
+      {
+        "code": "WAIT_UNTIL",
+        "text": "Wait until 2024-08-13T04:00:00.000Z, then check again",
+        "earliest_utc": "2024-08-13T04:00:00.000Z"
+      }
+    ],
+    "evidence": null,
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "NOT_SUPPORTED_NOW",
+      "final_reason": "PREMATURE",
+      "action": "WAIT",
+      "earliest_utc": "2024-08-13T04:00:00.000Z",
+      "gate": {
+        "version": "gate-v8",
+        "template": null,
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2024-08-13T04:00:00.000Z",
+        "serv_time": {
+          "utc": "2024-08-13T04:00:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2024-08-13T02:36:34Z",
+          "mismatch_seconds": 5006
+        },
+        "serv_clock_corrected": true,
+        "agreement": "SERV_ONLY",
+        "gate_reason": "before cutoff",
+        "serv_self_inconsistent": true,
+        "sports": null,
+        "notes": [
+          "SERV UTC clock corrected from its stated local date/time/timezone."
+        ],
+        "evidence": null
+      },
+      "needs": [
+        "WAIT_UNTIL"
+      ],
+      "need_details": [
+        {
+          "code": "WAIT_UNTIL",
+          "text": "Wait until 2024-08-13T04:00:00.000Z, then check again",
+          "earliest_utc": "2024-08-13T04:00:00.000Z"
+        }
+      ],
+      "evidence": null,
+      "packet_hash": "743ebdb7e8f8b31acc6f73193c6e82354fb4834e46f3a913f0a1c670c6306bd3",
+      "case_id": "timing-7367529981e30893b74f7d4c",
+      "market_id": null,
+      "proposal_time_utc": "2024-08-13T02:36:34.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "57db61c4-2795-4e1f-85d7-4782606c0927",
+      "serv_verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "This market will resolve to \"Yes\" if Trump says \"Crypto\" during his interview with Elon Musk currently scheduled for August 12.",
+            "explanation": "The interview occurred on August 12, 2024. The proposal submitted on August 13, 2024, follows the completion of the observation period for the scheduled event."
+          }
+        },
+        "sports": {
+          "league_or_sport": "N/A",
+          "stated_start_utc": null,
+          "explicit_end_utc": null
+        },
+        "decisive_local": {
+          "date": "2024-08-12",
+          "time": "23:59",
+          "timezone": "ET",
+          "adjust_minutes": 1
+        },
+        "decisive_time_utc": "2024-08-13T02:36:34Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "48bb21b5-5669-46a4-a02b-bd267a14ea78",
+      "created_at": "2026-11-14T06:38:08.051Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "c8eee98e2497eb7cf0c0dd7353059588c97f04adc8a76104634b2b827da58714"
+    },
+    "case_id": "timing-7367529981e30893b74f7d4c",
+    "packet_hash": "743ebdb7e8f8b31acc6f73193c6e82354fb4834e46f3a913f0a1c670c6306bd3",
+    "event_group": "event:id:11895",
+    "title": "Will Trump say \"Crypto\" during Elon interview?",
+    "category": "crypto_fixed_time",
+    "fixed_time_kind": "crypto_instant",
+    "rules_text": "q: title: Will Trump say \"Crypto\" during Elon interview?, description: On Tuesday, Donald Trump said he will do \"a major interview with Elon Musk\" on the night of Monday, August 12.\n\nThis market will resolve to \"Yes\" if Trump says \"Crypto\" during his interview with Elon Musk currently scheduled for August 12. Otherwise, the market will resolve to \"No\".  If no interview between Musk and Trump is publicly released by August 23, 2024, 11:59 PM ET this market will resolve to \"No\".\n\nAny usage of the word regardless of context will count toward the resolution of this market.\n\nPluralization/possessive of the word will count toward the resolution of this market, however other forms will NOT count.\n\nCompound words will count as long as \"Crypto\" is part of the compound word and references the meaning which refers to decentralized cryptocurrencies.\n\nThe resolution source will be the first publicly released footage of the interview, which includes substantial and continuous content.  res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2024-08-13T02:36:34.000Z",
+    "dispute_time_utc": "2024-08-13T02:39:54.000Z",
+    "settlement_time_utc": "2024-08-17T00:30:37.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0x9075c1ab1271ea8fbafe1eab17124848540c01bbc181afb4410f53d22b54cbff",
+    "bond": "500000000",
+    "reward": "5000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1723052817-0xf26bc121a224b8f016fdf461ce11ce086022af9b82e4b4878a4ae4641f8e6df6",
+    "proposal_tx_hash": "0x7138ef0dfd36eed3f4b9652d2f3c46a0ce67507d52ffa913b7df4f94eef45ec7",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2024-08-12T23:12:53.8Z",
+        "endDate": "2024-08-23T12:00:00Z",
+        "startDateIso": "2024-08-12",
+        "endDateIso": "2024-08-23"
+      },
+      "events": [
+        {
+          "startDate": "2024-08-07T17:56:49.576222Z",
+          "endDate": "2024-08-12T12:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Will Trump say \"Crypto\" during Elon interview?",
+      "rules_text": "q: title: Will Trump say \"Crypto\" during Elon interview?, description: On Tuesday, Donald Trump said he will do \"a major interview with Elon Musk\" on the night of Monday, August 12.\n\nThis market will resolve to \"Yes\" if Trump says \"Crypto\" during his interview with Elon Musk currently scheduled for August 12. Otherwise, the market will resolve to \"No\".  If no interview between Musk and Trump is publicly released by August 23, 2024, 11:59 PM ET this market will resolve to \"No\".\n\nAny usage of the word regardless of context will count toward the resolution of this market.\n\nPluralization/possessive of the word will count toward the resolution of this market, however other forms will NOT count.\n\nCompound words will count as long as \"Crypto\" is part of the compound word and references the meaning which refers to decentralized cryptocurrencies.\n\nThe resolution source will be the first publicly released footage of the interview, which includes substantial and continuous content.  res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2024-08-13T02:36:34.000Z",
+      "proposed_value": "0",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2024-08-12T23:12:53.8Z",
+          "endDate": "2024-08-23T12:00:00Z",
+          "startDateIso": "2024-08-12",
+          "endDateIso": "2024-08-23"
+        },
+        "events": [
+          {
+            "startDate": "2024-08-07T17:56:49.576222Z",
+            "endDate": "2024-08-12T12:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "SUPPORTED_NOW",
+      "reason": null,
+      "checks": {
+        "timing": {
+          "status": "PASS",
+          "clause_quote": "This market will resolve to \"Yes\" if Trump says \"Crypto\" during his interview with Elon Musk currently scheduled for August 12.",
+          "explanation": "The interview occurred on August 12, 2024. The proposal submitted on August 13, 2024, follows the completion of the observation period for the scheduled event."
+        }
+      },
+      "sports": {
+        "league_or_sport": "N/A",
+        "stated_start_utc": null,
+        "explicit_end_utc": null
+      },
+      "decisive_local": {
+        "date": "2024-08-12",
+        "time": "23:59",
+        "timezone": "ET",
+        "adjust_minutes": 1
+      },
+      "decisive_time_utc": "2024-08-13T02:36:34Z"
+    },
+    "clause_offsets": {
+      "start": 183,
+      "end": 310
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2024-08-13T03:59:00.000Z",
+    "gamma_time_utc": null,
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "INSUFFICIENT_EVIDENCE",
+    "final_reason": null,
+    "action": "NEED_EVIDENCE",
+    "gate": {
+      "version": "gate-v8",
+      "template": "sports",
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2025-10-27T06:00:00.000Z",
+      "serv_time": {
+        "utc": "2025-10-27T06:00:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2025-10-27T08:41:59Z",
+        "mismatch_seconds": 9719
+      },
+      "serv_clock_corrected": true,
+      "agreement": "NA",
+      "gate_reason": "needs proof the game finished",
+      "serv_self_inconsistent": false,
+      "sports": {
+        "start_utc": "2025-10-27T06:00:00.000Z",
+        "rules_start_utc": "2025-10-27T06:00:00.000Z",
+        "gamma_start_utc": "2025-10-27T06:00:00.000Z",
+        "estimated_end_utc": "2025-10-27T14:00:00.000Z",
+        "duration_hours": 8,
+        "sport": "tennis",
+        "explicit_end_utc": null
+      },
+      "sports_scope": "FULL_GAME_RESULT",
+      "notes": [
+        "Estimated tennis duration: +8h; completion unverified.",
+        "SERV UTC clock corrected from its stated local date/time/timezone."
+      ],
+      "evidence": null
+    },
+    "needs": [
+      "NEED_GAME_FINAL"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_GAME_FINAL",
+        "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+      }
+    ],
+    "evidence": {
+      "kind": "sports_feed",
+      "source": "polymarket_gamma_event",
+      "event_id": "65708",
+      "slug": "wta-inglis-wang-2025-10-27",
+      "ended": true,
+      "finished_utc": null,
+      "score": "4-6, 7-6(8-6), 3-6",
+      "period": "FT",
+      "fetched_at": "2026-11-14T06:38:08.962Z"
+    },
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "INSUFFICIENT_EVIDENCE",
+      "final_reason": null,
+      "action": "NEED_EVIDENCE",
+      "gate": {
+        "version": "gate-v8",
+        "template": "sports",
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2025-10-27T06:00:00.000Z",
+        "serv_time": {
+          "utc": "2025-10-27T06:00:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2025-10-27T08:41:59Z",
+          "mismatch_seconds": 9719
+        },
+        "serv_clock_corrected": true,
+        "agreement": "NA",
+        "gate_reason": "needs proof the game finished",
+        "serv_self_inconsistent": false,
+        "sports": {
+          "start_utc": "2025-10-27T06:00:00.000Z",
+          "rules_start_utc": "2025-10-27T06:00:00.000Z",
+          "gamma_start_utc": "2025-10-27T06:00:00.000Z",
+          "estimated_end_utc": "2025-10-27T14:00:00.000Z",
+          "duration_hours": 8,
+          "sport": "tennis",
+          "explicit_end_utc": null
+        },
+        "sports_scope": "FULL_GAME_RESULT",
+        "notes": [
+          "Estimated tennis duration: +8h; completion unverified.",
+          "SERV UTC clock corrected from its stated local date/time/timezone."
+        ],
+        "evidence": null
+      },
+      "needs": [
+        "NEED_GAME_FINAL"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_GAME_FINAL",
+          "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+        }
+      ],
+      "evidence": {
+        "kind": "sports_feed",
+        "source": "polymarket_gamma_event",
+        "event_id": "65708",
+        "slug": "wta-inglis-wang-2025-10-27",
+        "ended": true,
+        "finished_utc": null,
+        "score": "4-6, 7-6(8-6), 3-6",
+        "period": "FT",
+        "fetched_at": "2026-11-14T06:38:08.962Z"
+      },
+      "packet_hash": "4fb98cf3c22e44a3d2c229217c757c5f0c320521a56ce0b8ded65a2a6a600660",
+      "case_id": "timing-03f6685dda14a9978d3de5e1",
+      "market_id": null,
+      "proposal_time_utc": "2025-10-27T08:41:59.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "4caaa4fd-9e8d-4819-bf82-b53e9a6d1066",
+      "serv_verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "scheduled for October 27 at 2:00AM ET",
+            "explanation": "The tennis match is scheduled for October 27, 2025, at 2:00AM ET. The proposal was submitted at 8:41AM UTC (4:41AM ET) on October 27. As the match is ongoing or has not yet concluded with official WTA confirmation of the result, there is insufficient evidence to determine the outcome at this time."
+          }
+        },
+        "sports": {
+          "league_or_sport": "Tennis",
+          "stated_start_utc": "2025-10-27T06:00:00Z",
+          "explicit_end_utc": "2025-11-03T06:00:00Z"
+        },
+        "decisive_local": {
+          "date": "2025-10-27",
+          "time": "02:00",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2025-10-27T08:41:59Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "846308fc-da74-4c09-a883-0309e0a42f88",
+      "created_at": "2026-11-14T06:38:11.130Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "29f38c16846a8ac9949655214a48b6161e1103bf769664a1bce9e123cf6607fc"
+    },
+    "case_id": "timing-03f6685dda14a9978d3de5e1",
+    "packet_hash": "4fb98cf3c22e44a3d2c229217c757c5f0c320521a56ce0b8ded65a2a6a600660",
+    "event_group": "event:id:65708",
+    "title": "Prudential Hong Kong Tennis Open: Maddison Inglis vs Yafan Wang",
+    "category": "sports_in_game",
+    "fixed_time_kind": "sports_scheduled",
+    "rules_text": "q: title: Prudential Hong Kong Tennis Open: Maddison Inglis vs Yafan Wang, description: This is a polymarket on the tennis match between Maddison Inglis and Yafan Wang in the Prudential Hong Kong Tennis Open, scheduled for October 27 at 2:00AM ET.\n\nThis market will resolve to 'Inglis' if Maddison Inglis advances against Yafan Wang.\n\nThis market will resolve to 'Wang' if Yafan Wang advances against Maddison Inglis.\n\nIf the match is canceled (not played at all), ends in a tie, or is delayed beyond 7 days from the scheduled date without a winner determined, this market will resolve to 50-50.\n\nIf the match ends in a walkover (player withdraws before the start and the other advances automatically), this market will resolve in favor of the player(s) who officially advances to the next round.\n\nThe primary resolution source will be official information from the WTA Tour. A consensus of credible reporting may also be used. market_id: 650601 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Wang, p2 to Inglis, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2025-10-27T08:41:59.000Z",
+    "dispute_time_utc": "2025-10-27T08:51:51.000Z",
+    "settlement_time_utc": "2025-10-31T00:41:17.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0xbdd871c06959c4562487c018b203e6a6b147601a5fd23987a2e76be614db1da2",
+    "bond": "500000000",
+    "reward": "2000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1761494417-0x477eb10d15de3e0638cf8874e27234e8675e744352f9515d51460e62c37f7a1d",
+    "proposal_tx_hash": "0xbb3210864477424b13d0818722cb1ad8d57455687de2ff950ea724734409c04c",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2025-10-26T16:01:10.14046Z",
+        "endDate": "2025-11-03T06:00:00Z",
+        "startDateIso": "2025-10-26",
+        "endDateIso": "2025-11-03",
+        "gameStartTime": "2025-10-27 06:00:00+00"
+      },
+      "events": [
+        {
+          "startDate": "2025-10-26T16:10:37.592751Z",
+          "endDate": "2025-11-03T06:00:00Z",
+          "startTime": "2025-10-27T06:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Prudential Hong Kong Tennis Open: Maddison Inglis vs Yafan Wang",
+      "rules_text": "q: title: Prudential Hong Kong Tennis Open: Maddison Inglis vs Yafan Wang, description: This is a polymarket on the tennis match between Maddison Inglis and Yafan Wang in the Prudential Hong Kong Tennis Open, scheduled for October 27 at 2:00AM ET.\n\nThis market will resolve to 'Inglis' if Maddison Inglis advances against Yafan Wang.\n\nThis market will resolve to 'Wang' if Yafan Wang advances against Maddison Inglis.\n\nIf the match is canceled (not played at all), ends in a tie, or is delayed beyond 7 days from the scheduled date without a winner determined, this market will resolve to 50-50.\n\nIf the match ends in a walkover (player withdraws before the start and the other advances automatically), this market will resolve in favor of the player(s) who officially advances to the next round.\n\nThe primary resolution source will be official information from the WTA Tour. A consensus of credible reporting may also be used. market_id: 650601 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Wang, p2 to Inglis, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2025-10-27T08:41:59.000Z",
+      "proposed_value": "0",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2025-10-26T16:01:10.14046Z",
+          "endDate": "2025-11-03T06:00:00Z",
+          "startDateIso": "2025-10-26",
+          "endDateIso": "2025-11-03",
+          "gameStartTime": "2025-10-27 06:00:00+00"
+        },
+        "events": [
+          {
+            "startDate": "2025-10-26T16:10:37.592751Z",
+            "endDate": "2025-11-03T06:00:00Z",
+            "startTime": "2025-10-27T06:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "reason": null,
+      "checks": {
+        "timing": {
+          "status": "UNKNOWN",
+          "clause_quote": "scheduled for October 27 at 2:00AM ET",
+          "explanation": "The tennis match is scheduled for October 27, 2025, at 2:00AM ET. The proposal was submitted at 8:41AM UTC (4:41AM ET) on October 27. As the match is ongoing or has not yet concluded with official WTA confirmation of the result, there is insufficient evidence to determine the outcome at this time."
+        }
+      },
+      "sports": {
+        "league_or_sport": "Tennis",
+        "stated_start_utc": "2025-10-27T06:00:00Z",
+        "explicit_end_utc": "2025-11-03T06:00:00Z"
+      },
+      "decisive_local": {
+        "date": "2025-10-27",
+        "time": "02:00",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2025-10-27T08:41:59Z"
+    },
+    "clause_offsets": {
+      "start": 209,
+      "end": 246
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2025-10-27T06:00:00.000Z",
+    "gamma_time_utc": "2025-10-27T06:00:00.000Z",
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "INSUFFICIENT_EVIDENCE",
+    "final_reason": null,
+    "action": "NEED_EVIDENCE",
+    "gate": {
+      "version": "gate-v8",
+      "template": "sports",
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2025-09-07T20:20:00.000Z",
+      "serv_time": {
+        "utc": "2025-09-07T20:20:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2025-09-07T22:01:34Z",
+        "mismatch_seconds": 6094
+      },
+      "serv_clock_corrected": true,
+      "agreement": "NA",
+      "gate_reason": "needs proof the game finished",
+      "serv_self_inconsistent": true,
+      "sports": {
+        "start_utc": "2025-09-07T20:20:00.000Z",
+        "rules_start_utc": "2025-09-07T20:20:00.000Z",
+        "gamma_start_utc": null,
+        "estimated_end_utc": "2025-09-08T01:20:00.000Z",
+        "duration_hours": 5,
+        "sport": "football",
+        "explicit_end_utc": null
+      },
+      "sports_scope": "FULL_GAME_THRESHOLD",
+      "notes": [
+        "Estimated football duration: +5h; completion unverified.",
+        "SERV UTC clock corrected from its stated local date/time/timezone."
+      ],
+      "evidence": null
+    },
+    "needs": [
+      "NEED_GAME_FINAL"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_GAME_FINAL",
+        "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+      }
+    ],
+    "evidence": null,
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "INSUFFICIENT_EVIDENCE",
+      "final_reason": null,
+      "action": "NEED_EVIDENCE",
+      "gate": {
+        "version": "gate-v8",
+        "template": "sports",
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2025-09-07T20:20:00.000Z",
+        "serv_time": {
+          "utc": "2025-09-07T20:20:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2025-09-07T22:01:34Z",
+          "mismatch_seconds": 6094
+        },
+        "serv_clock_corrected": true,
+        "agreement": "NA",
+        "gate_reason": "needs proof the game finished",
+        "serv_self_inconsistent": true,
+        "sports": {
+          "start_utc": "2025-09-07T20:20:00.000Z",
+          "rules_start_utc": "2025-09-07T20:20:00.000Z",
+          "gamma_start_utc": null,
+          "estimated_end_utc": "2025-09-08T01:20:00.000Z",
+          "duration_hours": 5,
+          "sport": "football",
+          "explicit_end_utc": null
+        },
+        "sports_scope": "FULL_GAME_THRESHOLD",
+        "notes": [
+          "Estimated football duration: +5h; completion unverified.",
+          "SERV UTC clock corrected from its stated local date/time/timezone."
+        ],
+        "evidence": null
+      },
+      "needs": [
+        "NEED_GAME_FINAL"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_GAME_FINAL",
+          "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+        }
+      ],
+      "evidence": null,
+      "packet_hash": "52788ee3d997b9235097059165c7c49460a20206d408c0190f53f3bb2e43c0c5",
+      "case_id": "timing-472f4497136436a4cc22578a",
+      "market_id": null,
+      "proposal_time_utc": "2025-09-07T22:01:34.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "7c294c02-a48c-4dac-9a28-2e44a2524847",
+      "serv_verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for September 7, 2025, 4:20 PM ET",
+            "explanation": "The market concerns a specific NFL game scheduled for 4:20 PM ET on September 7, 2025. As the proposal was submitted at 22:01 UTC (approximately 6:01 PM ET), and the event is a sports match requiring completion evidence which is not provided, the proposal is premature for resolution."
+          }
+        },
+        "sports": {
+          "league_or_sport": "NFL",
+          "stated_start_utc": "2025-09-07T20:20:00Z",
+          "explicit_end_utc": "2025-09-08T00:00:00Z"
+        },
+        "decisive_local": {
+          "date": "2025-09-07",
+          "time": "16:20",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2025-09-07T22:01:34Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "6910ebcd-d5fe-4497-a4eb-fc88c1a26f36",
+      "created_at": "2026-11-14T06:38:14.704Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "455dd0b2cc6fa3b93c3b080f05ef771d089a28b7204f0940c2ab229335c00f6d"
+    },
+    "case_id": "timing-472f4497136436a4cc22578a",
+    "packet_hash": "52788ee3d997b9235097059165c7c49460a20206d408c0190f53f3bb2e43c0c5",
+    "event_group": "event:id:42445",
+    "title": "Will Tutu Atwell score a Touchdown in the Texans vs. Rams game?",
+    "category": "sports_in_game",
+    "fixed_time_kind": "sports_scheduled",
+    "rules_text": "q: title: Will Tutu Atwell score a Touchdown in the Texans vs. Rams game?, description: This market will resolve to “Yes” if the listed player scores one or more rushing or receiving touchdown in the 2025-26 NFL Week 1 matchup between the Houston Texans and Los Angeles Rams, scheduled for September 7, 2025, 4:20 PM ET. Otherwise, this market will resolve to “No”.\n\nPassing, Special teams, and Defensive TDs will not count.\n\nIf this game is postponed after December 31, 2025 (11:59 PM ET) or canceled, this market will resolve to “No”.\n\nThe resolution source for this market will be official information from the NFL. market_id: 589922 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2025-09-07T22:01:34.000Z",
+    "dispute_time_utc": "2025-09-07T22:02:26.000Z",
+    "settlement_time_utc": "2025-09-11T22:51:19.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0x268580fcfc1c32c0edee6a27bb9bb93db2cf753c7275b5346b2f11f5fe53a039",
+    "bond": "500000000",
+    "reward": "5000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1757246454-0x4386e862d5b4f07d3ce2e1f3ee865e01714820d4eb839f5697bf666290c70a41",
+    "proposal_tx_hash": "0xf97643b1ede7fde8894c502409a47932c6298bb3d5276cb3e47ac46d5f4e2e94",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2025-09-07T12:01:42.95055Z",
+        "endDate": "2025-09-08T00:00:00Z",
+        "startDateIso": "2025-09-07",
+        "endDateIso": "2025-09-08"
+      },
+      "events": [
+        {
+          "startDate": "2025-09-07T12:02:58.747093Z",
+          "endDate": "2025-09-08T00:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Will Tutu Atwell score a Touchdown in the Texans vs. Rams game?",
+      "rules_text": "q: title: Will Tutu Atwell score a Touchdown in the Texans vs. Rams game?, description: This market will resolve to “Yes” if the listed player scores one or more rushing or receiving touchdown in the 2025-26 NFL Week 1 matchup between the Houston Texans and Los Angeles Rams, scheduled for September 7, 2025, 4:20 PM ET. Otherwise, this market will resolve to “No”.\n\nPassing, Special teams, and Defensive TDs will not count.\n\nIf this game is postponed after December 31, 2025 (11:59 PM ET) or canceled, this market will resolve to “No”.\n\nThe resolution source for this market will be official information from the NFL. market_id: 589922 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2025-09-07T22:01:34.000Z",
+      "proposed_value": "0",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2025-09-07T12:01:42.95055Z",
+          "endDate": "2025-09-08T00:00:00Z",
+          "startDateIso": "2025-09-07",
+          "endDateIso": "2025-09-08"
+        },
+        "events": [
+          {
+            "startDate": "2025-09-07T12:02:58.747093Z",
+            "endDate": "2025-09-08T00:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "NOT_SUPPORTED_NOW",
+      "reason": "PREMATURE",
+      "checks": {
+        "timing": {
+          "status": "FAIL",
+          "clause_quote": "scheduled for September 7, 2025, 4:20 PM ET",
+          "explanation": "The market concerns a specific NFL game scheduled for 4:20 PM ET on September 7, 2025. As the proposal was submitted at 22:01 UTC (approximately 6:01 PM ET), and the event is a sports match requiring completion evidence which is not provided, the proposal is premature for resolution."
+        }
+      },
+      "sports": {
+        "league_or_sport": "NFL",
+        "stated_start_utc": "2025-09-07T20:20:00Z",
+        "explicit_end_utc": "2025-09-08T00:00:00Z"
+      },
+      "decisive_local": {
+        "date": "2025-09-07",
+        "time": "16:20",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2025-09-07T22:01:34Z"
+    },
+    "clause_offsets": {
+      "start": 276,
+      "end": 319
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2025-09-07T20:20:00.000Z",
+    "gamma_time_utc": null,
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "NOT_SUPPORTED_NOW",
+    "final_reason": "PREMATURE",
+    "action": "WAIT",
+    "evidence_as_of_proposal": {
+      "event_occurred": false,
+      "scanned_until_utc": "2025-09-18T16:49:44.000Z",
+      "source": "binance_klines_1m"
+    },
+    "gate": {
+      "version": "gate-v8",
+      "template": null,
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2025-09-22T04:00:00.000Z",
+      "serv_time": {
+        "utc": "2025-09-22T04:00:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2025-09-18T16:49:44.000Z",
+        "mismatch_seconds": 299416
+      },
+      "serv_clock_corrected": true,
+      "agreement": "SERV_ONLY",
+      "gate_reason": "event had not occurred at proposal time (price scan)",
+      "serv_self_inconsistent": false,
+      "sports": null,
+      "notes": [
+        "SERV UTC clock corrected from its stated local date/time/timezone."
+      ],
+      "evidence": {
+        "event_occurred": false,
+        "scanned_until_utc": "2025-09-18T16:49:44.000Z",
+        "source": "binance_klines_1m"
+      }
+    },
+    "needs": [
+      "NEED_EVENT_OCCURRED"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_EVENT_OCCURRED",
+        "text": "Show the event already happened inside the window: an early YES or reached line needs event evidence; verify the live score"
+      }
+    ],
+    "evidence": {
+      "kind": "price_touch",
+      "source": "binance_klines_1m",
+      "symbol": "SOLUSDT",
+      "target": 250,
+      "direction": "high",
+      "window_start_utc": "2025-09-15T04:00:00.000Z",
+      "scanned_until_utc": "2025-09-18T16:49:59.999Z",
+      "first_touch_utc": "2025-09-18T16:49:59.999Z",
+      "candles_scanned": 228,
+      "touch_semantics": "final_high_low"
+    },
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": "2025-09-18T16:49:59.999Z",
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "NOT_SUPPORTED_NOW",
+      "final_reason": "PREMATURE",
+      "action": "WAIT",
+      "evidence_as_of_proposal": {
+        "event_occurred": false,
+        "scanned_until_utc": "2025-09-18T16:49:44.000Z",
+        "source": "binance_klines_1m"
+      },
+      "gate": {
+        "version": "gate-v8",
+        "template": null,
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2025-09-22T04:00:00.000Z",
+        "serv_time": {
+          "utc": "2025-09-22T04:00:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2025-09-18T16:49:44.000Z",
+          "mismatch_seconds": 299416
+        },
+        "serv_clock_corrected": true,
+        "agreement": "SERV_ONLY",
+        "gate_reason": "event had not occurred at proposal time (price scan)",
+        "serv_self_inconsistent": false,
+        "sports": null,
+        "notes": [
+          "SERV UTC clock corrected from its stated local date/time/timezone."
+        ],
+        "evidence": {
+          "event_occurred": false,
+          "scanned_until_utc": "2025-09-18T16:49:44.000Z",
+          "source": "binance_klines_1m"
+        }
+      },
+      "needs": [
+        "NEED_EVENT_OCCURRED"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_EVENT_OCCURRED",
+          "text": "Show the event already happened inside the window: an early YES or reached line needs event evidence; verify the live score"
+        }
+      ],
+      "evidence": {
+        "kind": "price_touch",
+        "source": "binance_klines_1m",
+        "symbol": "SOLUSDT",
+        "target": 250,
+        "direction": "high",
+        "window_start_utc": "2025-09-15T04:00:00.000Z",
+        "scanned_until_utc": "2025-09-18T16:49:59.999Z",
+        "first_touch_utc": "2025-09-18T16:49:59.999Z",
+        "candles_scanned": 228,
+        "touch_semantics": "final_high_low"
+      },
+      "packet_hash": "339d3e6efbc3d642b1f9e57d5616aa59e52e59964f9283cea13f98e049412324",
+      "case_id": "timing-5739e5b0742d895b75fe579e",
+      "market_id": null,
+      "proposal_time_utc": "2025-09-18T16:49:44.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "51f28683-c4d7-4799-8614-403e03bf5975",
+      "serv_verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "from 12:00 AM ET on the first date to 11:59 PM ET on the last",
+            "explanation": "The observation window for this market extends until 11:59 PM ET on September 21, 2025. As the proposal was submitted on September 18, 2025, the market period is still ongoing and has not reached its conclusion, rendering a final determination premature."
+          }
+        },
+        "sports": null,
+        "decisive_local": {
+          "date": "2025-09-21",
+          "time": "23:59",
+          "timezone": "ET",
+          "adjust_minutes": 1
+        },
+        "decisive_time_utc": "2025-09-18T16:49:44.000Z"
+      },
+      "evidence_hash": "65df3c611eb8ea16030f60b2479e2a1a1bf688554b8fec7e063e77356404ed6f",
+      "receipt_id": "d914e42d-b0bb-4de1-8335-03bd0f4ff208",
+      "created_at": "2026-11-14T06:38:17.286Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "bd0fad172b16dbfff1915820241e5f5599a16008e4fa43ee6f77265db8c08475"
+    },
+    "case_id": "timing-5739e5b0742d895b75fe579e",
+    "packet_hash": "339d3e6efbc3d642b1f9e57d5616aa59e52e59964f9283cea13f98e049412324",
+    "event_group": "event:id:44723",
+    "title": "Will Solana reach $250 September 15-21?",
+    "category": "crypto_fixed_time",
+    "fixed_time_kind": "crypto_candle",
+    "rules_text": "q: title: Will Solana reach $250 September 15-21?, description: This market will immediately resolve to \"Yes\" if any Binance 1-minute candle for SOL/USDT during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"High\" price equal to or greater than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the SOL/USDT \"High\" prices available at https://www.binance.com/en/trade/SOL_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance SOL/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market. market_id: 598289 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2025-09-18T16:49:44.000Z",
+    "dispute_time_utc": "2025-09-18T17:09:06.000Z",
+    "settlement_time_utc": "2025-09-21T00:47:04.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0x83779a52e56f7f8a8d86610b133463872815201359e09e844d572a94a9485bc0",
+    "bond": "500000000",
+    "reward": "5000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1757908874-0x07963fff26f95a11eca6ac77a5f20e365bf310d8d61879173e129d74ae2f5af7",
+    "proposal_tx_hash": "0x41ef5bea8bda4eda8a1bcf28fb525c71126d4c10b6477045b5f810977514c9be",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2025-09-15T04:03:30.874Z",
+        "endDate": "2025-09-22T04:00:00Z",
+        "startDateIso": "2025-09-15",
+        "endDateIso": "2025-09-22"
+      },
+      "events": [
+        {
+          "startDate": "2025-09-15T04:12:15.022435Z",
+          "endDate": "2025-09-22T04:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Will Solana reach $250 September 15-21?",
+      "rules_text": "q: title: Will Solana reach $250 September 15-21?, description: This market will immediately resolve to \"Yes\" if any Binance 1-minute candle for SOL/USDT during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"High\" price equal to or greater than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the SOL/USDT \"High\" prices available at https://www.binance.com/en/trade/SOL_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance SOL/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market. market_id: 598289 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2025-09-18T16:49:44.000Z",
+      "proposed_value": "1000000000000000000",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2025-09-15T04:03:30.874Z",
+          "endDate": "2025-09-22T04:00:00Z",
+          "startDateIso": "2025-09-15",
+          "endDateIso": "2025-09-22"
+        },
+        "events": [
+          {
+            "startDate": "2025-09-15T04:12:15.022435Z",
+            "endDate": "2025-09-22T04:00:00Z"
+          }
+        ]
+      },
+      "evidence_as_of_proposal": {
+        "event_occurred": false,
+        "scanned_until_utc": "2025-09-18T16:49:44.000Z",
+        "source": "binance_klines_1m"
+      }
+    },
+    "verdict": {
+      "decision": "NOT_SUPPORTED_NOW",
+      "reason": "PREMATURE",
+      "checks": {
+        "timing": {
+          "status": "FAIL",
+          "clause_quote": "from 12:00 AM ET on the first date to 11:59 PM ET on the last",
+          "explanation": "The observation window for this market extends until 11:59 PM ET on September 21, 2025. As the proposal was submitted on September 18, 2025, the market period is still ongoing and has not reached its conclusion, rendering a final determination premature."
+        }
+      },
+      "sports": null,
+      "decisive_local": {
+        "date": "2025-09-21",
+        "time": "23:59",
+        "timezone": "ET",
+        "adjust_minutes": 1
+      },
+      "decisive_time_utc": "2025-09-18T16:49:44.000Z"
+    },
+    "clause_offsets": {
+      "start": 200,
+      "end": 261
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2025-09-15T04:00:00.000Z",
+    "gamma_time_utc": null,
+    "early_needs_evidence": true
+  },
+  {
+    "final_decision": "INSUFFICIENT_EVIDENCE",
+    "final_reason": null,
+    "action": "NEED_EVIDENCE",
+    "gate": {
+      "version": "gate-v8",
+      "template": "observation_window",
+      "code_cutoff_utc": "2024-01-21T05:00:00.000Z",
+      "serv_decisive_time_utc": "2024-01-21T05:00:00.000Z",
+      "serv_time": {
+        "utc": "2024-01-21T05:00:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2024-01-21T04:59:00Z",
+        "mismatch_seconds": 60
+      },
+      "serv_clock_corrected": false,
+      "agreement": "AGREE",
+      "gate_reason": "early YES needs event evidence",
+      "serv_self_inconsistent": false,
+      "sports": null,
+      "notes": [
+        "Inclusive 11:59 PM end: add one minute."
+      ],
+      "evidence": null
+    },
+    "needs": [
+      "NEED_EVENT_OCCURRED"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_EVENT_OCCURRED",
+        "text": "Show the event already happened inside the window: an early YES or reached line needs event evidence; verify the live score"
+      }
+    ],
+    "evidence": null,
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "INSUFFICIENT_EVIDENCE",
+      "final_reason": null,
+      "action": "NEED_EVIDENCE",
+      "gate": {
+        "version": "gate-v8",
+        "template": "observation_window",
+        "code_cutoff_utc": "2024-01-21T05:00:00.000Z",
+        "serv_decisive_time_utc": "2024-01-21T05:00:00.000Z",
+        "serv_time": {
+          "utc": "2024-01-21T05:00:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2024-01-21T04:59:00Z",
+          "mismatch_seconds": 60
+        },
+        "serv_clock_corrected": false,
+        "agreement": "AGREE",
+        "gate_reason": "early YES needs event evidence",
+        "serv_self_inconsistent": false,
+        "sports": null,
+        "notes": [
+          "Inclusive 11:59 PM end: add one minute."
+        ],
+        "evidence": null
+      },
+      "needs": [
+        "NEED_EVENT_OCCURRED"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_EVENT_OCCURRED",
+          "text": "Show the event already happened inside the window: an early YES or reached line needs event evidence; verify the live score"
+        }
+      ],
+      "evidence": null,
+      "packet_hash": "1a6d70181d3e16a0da7c767cd6eb73080367662584a8698ad201a038c1fc53bd",
+      "case_id": "timing-7e5b08cb0bbb8a44f261ef77",
+      "market_id": null,
+      "proposal_time_utc": "2024-01-18T03:26:29.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "1742720a-b71d-4f47-a6bf-30731808c7d3",
+      "serv_verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET",
+            "explanation": "The market period extends until January 20, 2024, at 11:59 PM ET. The current proposal time is January 18, 2024, which precedes the defined observation window's conclusion. Consequently, the proposal is premature as the occurrence cannot yet be definitively settled for the full duration."
+          }
+        },
+        "sports": null,
+        "decisive_local": {
+          "date": "2024-01-20",
+          "time": "23:59",
+          "timezone": "ET",
+          "adjust_minutes": 1
+        },
+        "decisive_time_utc": "2024-01-21T04:59:00Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "584d18bb-8ab4-4ef6-a53c-7e9e22b88f19",
+      "created_at": "2026-11-14T06:38:19.113Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "7d498a0419ecb471ea3dc1ed29caad3216ee8de80578b0c28f822cd77d7592cf"
+    },
+    "case_id": "timing-7e5b08cb0bbb8a44f261ef77",
+    "packet_hash": "1a6d70181d3e16a0da7c767cd6eb73080367662584a8698ad201a038c1fc53bd",
+    "event_group": "event:id:903280",
+    "title": "Will Pakistan strike Iran by Saturday?",
+    "category": "fixed_window",
+    "fixed_time_kind": "observation_window",
+    "rules_text": "q: title: Will Pakistan strike Iran by Saturday?, description: This market will resolve to \"Yes\" if Pakistan initiates a military attack on Iranian soil, airspace, or maritime territory between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"military attack\" is any use of force executed by Pakistan on Iranian soil, airspace, or maritime territory (e.g. if an Islamic Revolutionary Guard weapons depot on Iranian soil is subject to a Pakistani missile strike, this market will resolve to \"Yes\") that is officially acknowledged by the Pakistani federal government or a consensus of credible reporting. This includes, but is not limited to, airstrikes, naval attacks, or ground invasions. Cyber attacks, sanctions, or diplomatic actions will not count.\n\nPakistan striking an unmanned aerial vehicle or projectile over Iranian territory in a defensive capacity will NOT count toward a \"Yes\" resolution. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2024-01-18T03:26:29.000Z",
+    "dispute_time_utc": "2024-01-18T04:22:49.000Z",
+    "settlement_time_utc": "2024-01-22T00:30:28.000Z",
+    "settlement_label": "TOO_EARLY",
+    "settlement_value": "-57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "settlement_tx_hash": "0x39ac6c34809ce66df54a3c55ca68a18ac884cfffb154d29456836f13453906a2",
+    "bond": "500000000",
+    "reward": "5000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1705525475-0xca5be32275605f0a652035ee7644c430914b4ca38fc56afc63b3bae4d9675ea1",
+    "proposal_tx_hash": "0x4491d258c6fbdefaa9dcbe6f7d05ce6e3145e847da269e86dd7a53d9f5cee1e9",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2024-01-17T21:05:28.256Z",
+        "endDate": "2024-01-20T00:00:00Z",
+        "startDateIso": "2024-01-17",
+        "endDateIso": "2024-01-20"
+      },
+      "events": [
+        {
+          "startDate": "2024-01-17T21:05:28.256Z",
+          "endDate": "2024-01-20T00:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Will Pakistan strike Iran by Saturday?",
+      "rules_text": "q: title: Will Pakistan strike Iran by Saturday?, description: This market will resolve to \"Yes\" if Pakistan initiates a military attack on Iranian soil, airspace, or maritime territory between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"military attack\" is any use of force executed by Pakistan on Iranian soil, airspace, or maritime territory (e.g. if an Islamic Revolutionary Guard weapons depot on Iranian soil is subject to a Pakistani missile strike, this market will resolve to \"Yes\") that is officially acknowledged by the Pakistani federal government or a consensus of credible reporting. This includes, but is not limited to, airstrikes, naval attacks, or ground invasions. Cyber attacks, sanctions, or diplomatic actions will not count.\n\nPakistan striking an unmanned aerial vehicle or projectile over Iranian territory in a defensive capacity will NOT count toward a \"Yes\" resolution. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2024-01-18T03:26:29.000Z",
+      "proposed_value": "1000000000000000000",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2024-01-17T21:05:28.256Z",
+          "endDate": "2024-01-20T00:00:00Z",
+          "startDateIso": "2024-01-17",
+          "endDateIso": "2024-01-20"
+        },
+        "events": [
+          {
+            "startDate": "2024-01-17T21:05:28.256Z",
+            "endDate": "2024-01-20T00:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "NOT_SUPPORTED_NOW",
+      "reason": "PREMATURE",
+      "checks": {
+        "timing": {
+          "status": "FAIL",
+          "clause_quote": "between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET",
+          "explanation": "The market period extends until January 20, 2024, at 11:59 PM ET. The current proposal time is January 18, 2024, which precedes the defined observation window's conclusion. Consequently, the proposal is premature as the occurrence cannot yet be definitively settled for the full duration."
+        }
+      },
+      "sports": null,
+      "decisive_local": {
+        "date": "2024-01-20",
+        "time": "23:59",
+        "timezone": "ET",
+        "adjust_minutes": 1
+      },
+      "decisive_time_utc": "2024-01-21T04:59:00Z"
+    },
+    "clause_offsets": {
+      "start": 186,
+      "end": 252
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2024-01-16T17:00:00.000Z",
+    "gamma_time_utc": null,
+    "early_needs_evidence": true
+  },
+  {
+    "final_decision": "INSUFFICIENT_EVIDENCE",
+    "final_reason": null,
+    "action": "NEED_EVIDENCE",
+    "gate": {
+      "version": "gate-v8",
+      "template": "sports",
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2025-11-06T12:30:00.000Z",
+      "serv_time": {
+        "utc": "2025-11-06T12:30:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2025-11-06T14:28:15Z",
+        "mismatch_seconds": 7095
+      },
+      "serv_clock_corrected": true,
+      "agreement": "NA",
+      "gate_reason": "needs proof the game finished",
+      "serv_self_inconsistent": true,
+      "sports": {
+        "start_utc": "2025-11-06T12:30:00.000Z",
+        "rules_start_utc": "2025-11-06T12:30:00.000Z",
+        "gamma_start_utc": "2025-11-06T12:30:00.000Z",
+        "estimated_end_utc": null,
+        "duration_hours": null,
+        "sport": null,
+        "explicit_end_utc": null
+      },
+      "sports_scope": "FULL_GAME_THRESHOLD",
+      "notes": [
+        "SERV UTC clock corrected from its stated local date/time/timezone."
+      ],
+      "evidence": null
+    },
+    "needs": [
+      "NEED_GAME_FINAL"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_GAME_FINAL",
+        "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+      }
+    ],
+    "evidence": {
+      "kind": "sports_feed",
+      "source": "polymarket_gamma_event",
+      "event_id": "74139",
+      "slug": "cs2-jjh-gun5-2025-11-06",
+      "ended": true,
+      "finished_utc": null,
+      "score": "000-000|2-0|Bo3",
+      "period": "2/3",
+      "fetched_at": "2026-11-14T06:38:20.988Z"
+    },
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "INSUFFICIENT_EVIDENCE",
+      "final_reason": null,
+      "action": "NEED_EVIDENCE",
+      "gate": {
+        "version": "gate-v8",
+        "template": "sports",
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2025-11-06T12:30:00.000Z",
+        "serv_time": {
+          "utc": "2025-11-06T12:30:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2025-11-06T14:28:15Z",
+          "mismatch_seconds": 7095
+        },
+        "serv_clock_corrected": true,
+        "agreement": "NA",
+        "gate_reason": "needs proof the game finished",
+        "serv_self_inconsistent": true,
+        "sports": {
+          "start_utc": "2025-11-06T12:30:00.000Z",
+          "rules_start_utc": "2025-11-06T12:30:00.000Z",
+          "gamma_start_utc": "2025-11-06T12:30:00.000Z",
+          "estimated_end_utc": null,
+          "duration_hours": null,
+          "sport": null,
+          "explicit_end_utc": null
+        },
+        "sports_scope": "FULL_GAME_THRESHOLD",
+        "notes": [
+          "SERV UTC clock corrected from its stated local date/time/timezone."
+        ],
+        "evidence": null
+      },
+      "needs": [
+        "NEED_GAME_FINAL"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_GAME_FINAL",
+          "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+        }
+      ],
+      "evidence": {
+        "kind": "sports_feed",
+        "source": "polymarket_gamma_event",
+        "event_id": "74139",
+        "slug": "cs2-jjh-gun5-2025-11-06",
+        "ended": true,
+        "finished_utc": null,
+        "score": "000-000|2-0|Bo3",
+        "period": "2/3",
+        "fetched_at": "2026-11-14T06:38:20.988Z"
+      },
+      "packet_hash": "4c2d9fb734f6531b787fd74b973a5200d3839e774e7355793f9b8fb45e552488",
+      "case_id": "timing-f6b726ad2b41371c9b08bbf3",
+      "market_id": null,
+      "proposal_time_utc": "2025-11-06T14:28:15.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "c63410d3-abe0-413e-bc91-c030916d254f",
+      "serv_verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for November 6 at 7:30am ET",
+            "explanation": "The event is a sports match scheduled for 7:30 AM ET on November 6, 2025. The proposal was submitted at 14:28:15 UTC (9:28 AM ET). Since the match was not finished at the time of proposal, the status is premature."
+          }
+        },
+        "sports": {
+          "league_or_sport": "eSports",
+          "stated_start_utc": "2025-11-06T12:30:00Z",
+          "explicit_end_utc": "2025-11-06T18:30:00Z"
+        },
+        "decisive_local": {
+          "date": "2025-11-06",
+          "time": "07:30",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2025-11-06T14:28:15Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "1d974af3-1bb6-40c1-bdbc-bf49a21b07b8",
+      "created_at": "2026-11-14T06:38:22.770Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "c4c84c3bf8ede0e62d91a287caa6ae96f45b0e165e73a28e75132db803bdd44c"
+    },
+    "case_id": "timing-f6b726ad2b41371c9b08bbf3",
+    "packet_hash": "4c2d9fb734f6531b787fd74b973a5200d3839e774e7355793f9b8fb45e552488",
+    "event_group": "event:id:74139",
+    "title": "Games Total: O/U 2.5",
+    "category": "sports_in_game",
+    "fixed_time_kind": "sports_scheduled",
+    "rules_text": "q: title: Games Total: O/U 2.5, description: In the upcoming match between JiJieHao and GUN5 Esports, scheduled for November 6 at 7:30am ET:\n\nThis market will resolve to \"Over\" if JiJieHao and GUN5 Esports play 3 or more games in this series.\n\nIf fewer than 3 games are played, this market will resolve to \"Under\".\n\nThis market is based solely on the number of games played in the series, not which team wins.\n\nIf the series is postponed, this market will remain open until the series has been completed. \n\nIf the series is canceled entirely, with no make-up match, this market will resolve 50-50. market_id: 667248 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Under, p2 to Over, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+    "proposal_time_utc": "2025-11-06T14:28:15.000Z",
+    "dispute_time_utc": "2025-11-06T16:27:55.000Z",
+    "settlement_time_utc": "2025-11-10T00:41:47.000Z",
+    "settlement_label": "upheld",
+    "settlement_value": "0",
+    "settlement_tx_hash": "0xcb31b724e8109977257f7153486de47753d45e3178722568934a3c35541f4d43",
+    "bond": "500000000",
+    "reward": "2000000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1762390827-0x3315b70519c0ff38c02eddefd56e86fb98f90f25edef636a7c1b5470733333d6",
+    "proposal_tx_hash": "0xdf216f3231f52617a0f868f74995863d7c91c9767d7a22682f85d5a374cb2de2",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2025-11-06T01:01:15.782842Z",
+        "endDate": "2025-11-06T18:30:00Z",
+        "startDateIso": "2025-11-06",
+        "endDateIso": "2025-11-06",
+        "gameStartTime": "2025-11-06 12:30:00+00"
+      },
+      "events": [
+        {
+          "startDate": "2025-11-06T01:10:57.159356Z",
+          "endDate": "2025-11-06T18:30:00Z",
+          "startTime": "2025-11-06T12:30:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "Games Total: O/U 2.5",
+      "rules_text": "q: title: Games Total: O/U 2.5, description: In the upcoming match between JiJieHao and GUN5 Esports, scheduled for November 6 at 7:30am ET:\n\nThis market will resolve to \"Over\" if JiJieHao and GUN5 Esports play 3 or more games in this series.\n\nIf fewer than 3 games are played, this market will resolve to \"Under\".\n\nThis market is based solely on the number of games played in the series, not which team wins.\n\nIf the series is postponed, this market will remain open until the series has been completed. \n\nIf the series is canceled entirely, with no make-up match, this market will resolve 50-50. market_id: 667248 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Under, p2 to Over, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5",
+      "proposal_time_utc": "2025-11-06T14:28:15.000Z",
+      "proposed_value": "0",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2025-11-06T01:01:15.782842Z",
+          "endDate": "2025-11-06T18:30:00Z",
+          "startDateIso": "2025-11-06",
+          "endDateIso": "2025-11-06",
+          "gameStartTime": "2025-11-06 12:30:00+00"
+        },
+        "events": [
+          {
+            "startDate": "2025-11-06T01:10:57.159356Z",
+            "endDate": "2025-11-06T18:30:00Z",
+            "startTime": "2025-11-06T12:30:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "NOT_SUPPORTED_NOW",
+      "reason": "PREMATURE",
+      "checks": {
+        "timing": {
+          "status": "FAIL",
+          "clause_quote": "scheduled for November 6 at 7:30am ET",
+          "explanation": "The event is a sports match scheduled for 7:30 AM ET on November 6, 2025. The proposal was submitted at 14:28:15 UTC (9:28 AM ET). Since the match was not finished at the time of proposal, the status is premature."
+        }
+      },
+      "sports": {
+        "league_or_sport": "eSports",
+        "stated_start_utc": "2025-11-06T12:30:00Z",
+        "explicit_end_utc": "2025-11-06T18:30:00Z"
+      },
+      "decisive_local": {
+        "date": "2025-11-06",
+        "time": "07:30",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2025-11-06T14:28:15Z"
+    },
+    "clause_offsets": {
+      "start": 102,
+      "end": 139
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2025-11-06T12:30:00.000Z",
+    "gamma_time_utc": "2025-11-06T12:30:00.000Z",
+    "early_needs_evidence": false
+  },
+  {
+    "final_decision": "INSUFFICIENT_EVIDENCE",
+    "final_reason": null,
+    "action": "NEED_EVIDENCE",
+    "gate": {
+      "version": "gate-v8",
+      "template": "sports",
+      "code_cutoff_utc": null,
+      "serv_decisive_time_utc": "2023-04-13T23:05:00.000Z",
+      "serv_time": {
+        "utc": "2023-04-13T23:05:00.000Z",
+        "source": "computed_from_local",
+        "model_utc": "2023-04-14T01:32:27Z",
+        "mismatch_seconds": 8847
+      },
+      "serv_clock_corrected": true,
+      "agreement": "NA",
+      "gate_reason": "needs proof the game finished",
+      "serv_self_inconsistent": false,
+      "sports": {
+        "start_utc": "2023-04-13T23:05:00.000Z",
+        "rules_start_utc": "2023-04-13T23:05:00.000Z",
+        "gamma_start_utc": "2023-04-13T23:05:00.000Z",
+        "estimated_end_utc": "2023-04-14T05:05:00.000Z",
+        "duration_hours": 6,
+        "sport": "baseball",
+        "explicit_end_utc": null
+      },
+      "sports_scope": "FULL_GAME_RESULT",
+      "notes": [
+        "Estimated baseball duration: +6h; completion unverified.",
+        "SERV UTC clock corrected from its stated local date/time/timezone."
+      ],
+      "evidence": null
+    },
+    "needs": [
+      "NEED_GAME_FINAL"
+    ],
+    "need_details": [
+      {
+        "code": "NEED_GAME_FINAL",
+        "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+      }
+    ],
+    "evidence": null,
+    "game_finished_utc": null,
+    "game_finished_source": "Polymarket sports feed",
+    "first_touch_utc": null,
+    "first_touch_source": "Binance 1m candle",
+    "receipt": {
+      "final_decision": "INSUFFICIENT_EVIDENCE",
+      "final_reason": null,
+      "action": "NEED_EVIDENCE",
+      "gate": {
+        "version": "gate-v8",
+        "template": "sports",
+        "code_cutoff_utc": null,
+        "serv_decisive_time_utc": "2023-04-13T23:05:00.000Z",
+        "serv_time": {
+          "utc": "2023-04-13T23:05:00.000Z",
+          "source": "computed_from_local",
+          "model_utc": "2023-04-14T01:32:27Z",
+          "mismatch_seconds": 8847
+        },
+        "serv_clock_corrected": true,
+        "agreement": "NA",
+        "gate_reason": "needs proof the game finished",
+        "serv_self_inconsistent": false,
+        "sports": {
+          "start_utc": "2023-04-13T23:05:00.000Z",
+          "rules_start_utc": "2023-04-13T23:05:00.000Z",
+          "gamma_start_utc": "2023-04-13T23:05:00.000Z",
+          "estimated_end_utc": "2023-04-14T05:05:00.000Z",
+          "duration_hours": 6,
+          "sport": "baseball",
+          "explicit_end_utc": null
+        },
+        "sports_scope": "FULL_GAME_RESULT",
+        "notes": [
+          "Estimated baseball duration: +6h; completion unverified.",
+          "SERV UTC clock corrected from its stated local date/time/timezone."
+        ],
+        "evidence": null
+      },
+      "needs": [
+        "NEED_GAME_FINAL"
+      ],
+      "need_details": [
+        {
+          "code": "NEED_GAME_FINAL",
+          "text": "Confirm the game has finished: the sports feed has no completion record at proposal time"
+        }
+      ],
+      "evidence": null,
+      "packet_hash": "64a9e1fdf872159cc8ccac34c72efb593852833166dd308c07ea8430ed7f5af3",
+      "case_id": "timing-13e5bba81d4a57ba5c66e800",
+      "market_id": null,
+      "proposal_time_utc": "2023-04-14T01:32:27.000Z",
+      "model": "gemini-3.1-flash-lite",
+      "serv_request_id": "3e098474-abad-4981-aa4d-dcabdca59783",
+      "serv_verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "scheduled for April 13 at 7:05 PM ET",
+            "explanation": "The game was scheduled for April 13, 2023. The proposal was submitted after the game's start and intended observation window, providing sufficient time for the game to reach a conclusion."
+          }
+        },
+        "sports": {
+          "league_or_sport": "MLB",
+          "stated_start_utc": "2023-04-13T23:05:00Z",
+          "explicit_end_utc": "2023-04-13T23:05:00Z"
+        },
+        "decisive_local": {
+          "date": "2023-04-13",
+          "time": "19:05",
+          "timezone": "ET",
+          "adjust_minutes": 0
+        },
+        "decisive_time_utc": "2023-04-14T01:32:27Z"
+      },
+      "evidence_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "receipt_id": "c49ba894-ad2b-42b7-9cb5-e3118d999309",
+      "created_at": "2026-11-14T06:38:25.379Z",
+      "procedure_version": "timing-v8",
+      "procedure_sha256": "4e2d3341383fcdd4b10d2be4a45225a8a95bbf92ee20d7bc0e585efbccd9260f",
+      "gate_version": "gate-v8",
+      "receipt_sha256": "040327cf3018ab4e6147b14208f9e6cd2d0de3572ca9308e91742be3e637a212"
+    },
+    "case_id": "timing-13e5bba81d4a57ba5c66e800",
+    "packet_hash": "64a9e1fdf872159cc8ccac34c72efb593852833166dd308c07ea8430ed7f5af3",
+    "event_group": "event:id:901648",
+    "title": "MLB: New York Yankees vs. Minnesota Twins 2023-04-13",
+    "category": "sports_in_game",
+    "fixed_time_kind": "sports_scheduled",
+    "rules_text": "q: title: MLB: New York Yankees vs. Minnesota Twins 2023-04-13, description: In the upcoming MLB game, scheduled for April 13 at 7:05 PM ET:\n\nIf the New York Yankees win, the market will resolve to “Yankees”.\n\nIf the Minnesota Twins win, the market will resolve to “Twins”.\n\n If the game is not completed by April 27, 2023 (11:59:59 PM ET), the market will resolve 50-50. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Twins, p2 to Yankees, p3 to unknown/50-50,initializer:8c188d7c237d74210857d4e929af3b1fef04b594",
+    "proposal_time_utc": "2023-04-14T01:32:27.000Z",
+    "dispute_time_utc": "2023-04-14T01:33:17.000Z",
+    "settlement_time_utc": "2023-05-08T11:26:25.000Z",
+    "settlement_label": "flipped",
+    "settlement_value": "0",
+    "settlement_tx_hash": "0x4b5a23548baf55ae10202e10fdcfd5d91c1657ff1e1d8548b68313fd31f63d07",
+    "bond": "250000000",
+    "reward": "2500000",
+    "currency": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "request_id": "YES_OR_NO_QUERY-1681394230-0xd6eac5f36a5fd220a79badf61ab3ecdcf8fe22cc9cf60ded4fb3074438bab6d7",
+    "proposal_tx_hash": "0xa8c3486756dbdaaa104b2b4863c566788907fb757e6ff952001e5bb8dae7e5a1",
+    "gamma_scheduling": {
+      "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+      "market": {
+        "startDate": "2023-04-13T00:00:00Z",
+        "endDate": "2023-04-13T00:00:00Z",
+        "startDateIso": "2023-04-13",
+        "endDateIso": "2023-04-13",
+        "gameStartTime": "2023-04-13 23:05:00+00"
+      },
+      "events": [
+        {
+          "startDate": "2023-04-13T00:00:00Z",
+          "endDate": "2023-04-13T00:00:00Z"
+        }
+      ]
+    },
+    "model_inputs": {
+      "title": "MLB: New York Yankees vs. Minnesota Twins 2023-04-13",
+      "rules_text": "q: title: MLB: New York Yankees vs. Minnesota Twins 2023-04-13, description: In the upcoming MLB game, scheduled for April 13 at 7:05 PM ET:\n\nIf the New York Yankees win, the market will resolve to “Yankees”.\n\nIf the Minnesota Twins win, the market will resolve to “Twins”.\n\n If the game is not completed by April 27, 2023 (11:59:59 PM ET), the market will resolve 50-50. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Twins, p2 to Yankees, p3 to unknown/50-50,initializer:8c188d7c237d74210857d4e929af3b1fef04b594",
+      "proposal_time_utc": "2023-04-14T01:32:27.000Z",
+      "proposed_value": "1000000000000000000",
+      "gamma_scheduling": {
+        "provenance": "CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY",
+        "market": {
+          "startDate": "2023-04-13T00:00:00Z",
+          "endDate": "2023-04-13T00:00:00Z",
+          "startDateIso": "2023-04-13",
+          "endDateIso": "2023-04-13",
+          "gameStartTime": "2023-04-13 23:05:00+00"
+        },
+        "events": [
+          {
+            "startDate": "2023-04-13T00:00:00Z",
+            "endDate": "2023-04-13T00:00:00Z"
+          }
+        ]
+      }
+    },
+    "verdict": {
+      "decision": "SUPPORTED_NOW",
+      "reason": null,
+      "checks": {
+        "timing": {
+          "status": "PASS",
+          "clause_quote": "scheduled for April 13 at 7:05 PM ET",
+          "explanation": "The game was scheduled for April 13, 2023. The proposal was submitted after the game's start and intended observation window, providing sufficient time for the game to reach a conclusion."
+        }
+      },
+      "sports": {
+        "league_or_sport": "MLB",
+        "stated_start_utc": "2023-04-13T23:05:00Z",
+        "explicit_end_utc": "2023-04-13T23:05:00Z"
+      },
+      "decisive_local": {
+        "date": "2023-04-13",
+        "time": "19:05",
+        "timezone": "ET",
+        "adjust_minutes": 0
+      },
+      "decisive_time_utc": "2023-04-14T01:32:27Z"
+    },
+    "clause_offsets": {
+      "start": 103,
+      "end": 139
+    },
+    "raw_verdict": null,
+    "raw_run": null,
+    "rules_time_utc": "2023-04-13T23:05:00.000Z",
+    "gamma_time_utc": "2023-04-13T23:05:00.000Z",
+    "early_needs_evidence": false
+  }
+]

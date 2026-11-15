@@ -1,0 +1,369 @@
+{
+  "case_id": "timing-0fabc28953d7a6f6a48ab7c3",
+  "run": "pilot-2026-11-13T07-43-49-344Z",
+  "arm": "serv",
+  "repetition": 1,
+  "packet_hash": "287b0f5d3ad029f1af6d5b32b8412c6a2fb7d9871a9d8e995d301f4905657280",
+  "gate_version": "gate-v2",
+  "input": "User prompt\nMarket title: Will Trump say \"Happy New Year\" this week? (December 29 - January 4)\nProposed side: YES\nProposal/check time UTC: 2026-01-04T05:48:03.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2026-01-04T00:00:00Z\",\"startDate\":\"2025-12-26T19:14:29.754397Z\",\"startTime\":\"2026-01-05T04:59:00Z\"}],\"market\":{\"endDate\":\"2026-01-04T00:00:00Z\",\"endDateIso\":\"2026-01-04\",\"startDate\":\"2025-12-26T19:13:55.123114Z\",\"startDateIso\":\"2025-12-26\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Will Trump say \"Happy New Year\" this week? (December 29 - January 4), description: This market will resolve to “Yes” if Donald Trump mentions the listed term between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nPluralization/possessive of the word will count toward the resolution of this market.\n\nInstances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for \"joy,\" however \"killjoy\" is a compounding of the words \"kill\" and \"joy\").\n\nIf this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).\n\nA ‘mention’ will include any verbal mention which is recorded (audio or video) and publicly accessible.\n\nWritten usages of terms (e.g. Truth Social posts, written statements, etc.) will not count toward this market's resolution.\n\nAI-generated audio or video will not count toward this market's resolution.\n\nVideos posted on his social media which were filmed outside this market's time frame will not qualify for a \"Yes\" resolution. market_id: 1029868 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"SUPPORTED_NOW\",\n    \"reason\": null,\n    \"decisive_time_utc\": \"2026-01-05T04:59:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"PASS\",\n        \"clause_quote\": \"January 4, 2026, 11:59 PM ET\",\n        \"explanation\": \"The market rules define the observation window ending on January 4, 2026, at 11:59 PM ET. This converts to 2026-01-05T04:59:00Z. As the proposal was submitted at 2026-01-04T05:48:03Z, the market observation window is completed.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": \"2026-01-05T05:00:00.000Z\",\n  \"agreement\": \"AGREE\",\n  \"gate_reason\": \"early YES needs event evidence\",\n  \"serv_self_inconsistent\": true\n}",
+  "input_sha256": "cf5ef71206583625586c62846baba515c42930f5036d09bad548c13dbb29f9b2",
+  "submission_state": "QUEUED",
+  "eval_id": "cmwetc7wq000408jjjqgz9et4",
+  "evaluation": {
+    "id": "cmwetc7wq000408jjjqgz9et4",
+    "taskType": "response",
+    "source": "API",
+    "input": "User prompt\nMarket title: Will Trump say \"Happy New Year\" this week? (December 29 - January 4)\nProposed side: YES\nProposal/check time UTC: 2026-01-04T05:48:03.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2026-01-04T00:00:00Z\",\"startDate\":\"2025-12-26T19:14:29.754397Z\",\"startTime\":\"2026-01-05T04:59:00Z\"}],\"market\":{\"endDate\":\"2026-01-04T00:00:00Z\",\"endDateIso\":\"2026-01-04\",\"startDate\":\"2025-12-26T19:13:55.123114Z\",\"startDateIso\":\"2025-12-26\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Will Trump say \"Happy New Year\" this week? (December 29 - January 4), description: This market will resolve to “Yes” if Donald Trump mentions the listed term between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nPluralization/possessive of the word will count toward the resolution of this market.\n\nInstances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for \"joy,\" however \"killjoy\" is a compounding of the words \"kill\" and \"joy\").\n\nIf this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).\n\nA ‘mention’ will include any verbal mention which is recorded (audio or video) and publicly accessible.\n\nWritten usages of terms (e.g. Truth Social posts, written statements, etc.) will not count toward this market's resolution.\n\nAI-generated audio or video will not count toward this market's resolution.\n\nVideos posted on his social media which were filmed outside this market's time frame will not qualify for a \"Yes\" resolution. market_id: 1029868 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"SUPPORTED_NOW\",\n    \"reason\": null,\n    \"decisive_time_utc\": \"2026-01-05T04:59:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"PASS\",\n        \"clause_quote\": \"January 4, 2026, 11:59 PM ET\",\n        \"explanation\": \"The market rules define the observation window ending on January 4, 2026, at 11:59 PM ET. This converts to 2026-01-05T04:59:00Z. As the proposal was submitted at 2026-01-04T05:48:03Z, the market observation window is completed.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": \"2026-01-05T05:00:00.000Z\",\n  \"agreement\": \"AGREE\",\n  \"gate_reason\": \"early YES needs event evidence\",\n  \"serv_self_inconsistent\": true\n}",
+    "status": "COMPLETED",
+    "score": 51,
+    "route": "review",
+    "creditsCharged": 440,
+    "createdAt": "2026-11-13T10:07:30.314Z",
+    "completedAt": "2026-11-13T10:10:16.189Z",
+    "policy": null,
+    "attachments": [],
+    "attempts": 1,
+    "result": {
+      "gates": [
+        {
+          "floor": 50,
+          "severity": "none",
+          "dimension": "safety",
+          "failingWeight": 0,
+          "failingEvaluators": []
+        }
+      ],
+      "route": "review",
+      "score": 51,
+      "reason": "The response was rejected with a score of 51 and sent to review at low confidence. The main driver is low factual accuracy (25). The verdict said \"SUPPORTED_NOW\" while the gate noted that an early YES needs event evidence, and the proposal was made at 05:48 UTC on Jan 4, before the window closed at 04:59 UTC on Jan 5, so the answer contradicted itself. The two stake-heavy evaluators scored it 51, outweighing the one that scored it 94.",
+      "explain": {
+        "route_reasons": [
+          "score 51 < passAt 70 -> decision reject",
+          "score < rejectBelow 60, but confidence low < required medium -> review"
+        ],
+        "confidence_checks": [
+          {
+            "ok": true,
+            "check": "enough evaluators",
+            "detail": "3 independent evaluators (want >= 3)"
+          },
+          {
+            "ok": false,
+            "check": "evaluators agree",
+            "detail": "std-dev of evaluator overall scores = 20 (want <= 10, > 20 is severe)"
+          },
+          {
+            "ok": true,
+            "check": "node holders agree",
+            "detail": "15% of stake was contested (want <= 30%)"
+          },
+          {
+            "ok": false,
+            "check": "weighting doesn't change the answer",
+            "detail": "economic 51 vs equal-weight 65 (gap 14, want <= 10)"
+          },
+          {
+            "ok": true,
+            "check": "not near a threshold",
+            "detail": "8.8 points from the nearest route threshold (want >= 5)"
+          },
+          {
+            "ok": true,
+            "check": "stake backed someone",
+            "detail": "economic weights available"
+          }
+        ]
+      },
+      "decision": "reject",
+      "trace_id": "293d94d6-6ebe-41b6-83e4-30acb27f895e",
+      "consensus": {
+        "weighting": "economic (net veREPPO)",
+        "evaluators": [
+          {
+            "model": "gpt-4o",
+            "weight": 0,
+            "overall": 94,
+            "evaluator": "orq_lite_echo",
+            "net_stake": -29286
+          },
+          {
+            "model": "kimi-k2-5",
+            "weight": 0.597,
+            "overall": 51,
+            "evaluator": "orq_lite_anchor",
+            "net_stake": 17260
+          },
+          {
+            "model": "glm-5-2",
+            "weight": 0.403,
+            "overall": 51,
+            "evaluator": "orq_lite_obsidian",
+            "net_stake": 11647
+          }
+        ],
+        "score_spread": 20,
+        "economic_score": 51,
+        "stake_contention": 0.15,
+        "winning_evaluator": "orq_lite_anchor",
+        "equal_weight_score": 65
+      },
+      "task_type": "response",
+      "confidence": "low",
+      "rubric_scores": {
+        "safety": 100,
+        "completeness": 50,
+        "factual_accuracy": 25,
+        "instruction_adherence": 50
+      }
+    },
+    "trace": {
+      "policy": {
+        "passAt": 70,
+        "acceptAt": 85,
+        "rejectBelow": 60,
+        "shipRequires": "high",
+        "blockRequires": "medium",
+        "gateBlockShare": 0.5
+      },
+      "judgments": [
+        {
+          "model": "gpt-4o",
+          "veReppo": 33028,
+          "nodeHolder": "orq_lite_umbral",
+          "allocations": [
+            {
+              "amount": -16514,
+              "reason": "Evaluator incorrectly assessed timing as accurate when there were significant errors in the analysis.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": 8257,
+              "reason": "Evaluator correctly identified the factual inaccuracy regarding the end time of the market.",
+              "evaluator": "orq_lite_anchor"
+            },
+            {
+              "amount": 8257,
+              "reason": "Evaluator accurately flagged the timing inconsistency and self-contradictions in the response.",
+              "evaluator": "orq_lite_obsidian"
+            }
+          ]
+        },
+        {
+          "model": "glm-5-2",
+          "veReppo": 6412,
+          "nodeHolder": "orq_lite_thicket",
+          "allocations": [
+            {
+              "amount": -2812,
+              "reason": "Gave factual_accuracy=100 when the AI response has a major timing error: it claims the observation window is 'completed' at 2026-01-04T05:48:03Z despite its own decisive_time_utc being 2026-01-05T04:59:00Z, which is ~23 hours later.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": -600,
+              "reason": "Correctly identifies the AI has major errors, but its own reasoning is flawed: it claims the UTC conversion is wrong (11:59 PM ET = 04:59 UTC next day is correct) and incorrectly concludes the market should resolve NO based on Gamma metadata rather than rules text.",
+              "evaluator": "orq_lite_anchor"
+            },
+            {
+              "amount": 3000,
+              "reason": "Most accurate evaluator: correctly identifies that the proposal time is ~23 hours before the window ends, the timing PASS status is wrong, and the response is self-contradictory (INSUFFICIENT_EVIDENCE vs SUPPORTED_NOW).",
+              "evaluator": "orq_lite_obsidian"
+            }
+          ]
+        },
+        {
+          "model": "kimi-k2-5",
+          "veReppo": 9379,
+          "nodeHolder": "orq_lite_fossil",
+          "allocations": [
+            {
+              "amount": 0,
+              "reason": "Neutral on this evaluator - they correctly identified the quoted clause but missed the critical conflict between Gamma metadata and rules text.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": 4689,
+              "reason": "Correctly identifies that Gamma metadata endDate (2026-01-04T00:00:00Z) takes precedence, market ended before proposal time, making this decidable as NO.",
+              "evaluator": "orq_lite_anchor"
+            },
+            {
+              "amount": -4690,
+              "reason": "Wrong - they incorrectly claim ~23 hours remain, failing to recognize Gamma metadata endDate overrides the rules text time, and the market already ended.",
+              "evaluator": "orq_lite_obsidian"
+            }
+          ]
+        },
+        {
+          "model": "claude-sonnet-4-5",
+          "veReppo": 226,
+          "nodeHolder": "orq_lite_marrow",
+          "allocations": [
+            {
+              "amount": 130,
+              "reason": "Correctly identifies that the window had not ended at check time and that the response is internally contradictory.",
+              "evaluator": "orq_lite_obsidian"
+            },
+            {
+              "amount": -60,
+              "reason": "Gives perfect accuracy while accepting the false claim that the window was completed.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": -36,
+              "reason": "Relies on Gamma metadata over the rules text and wrongly concludes the market is decidable as NO.",
+              "evaluator": "orq_lite_anchor"
+            }
+          ]
+        },
+        {
+          "model": "gpt-4o",
+          "veReppo": 19800,
+          "nodeHolder": "Node Holder 1",
+          "allocations": [
+            {
+              "amount": -9900,
+              "reason": "Echo incorrectly interprets the market rule timeframe, leading to factual inaccuracies regarding when the market ends.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": 4950,
+              "reason": "Anchor correctly identifies the market's close time as per Gamma metadata, highlighting major factual errors in the response.",
+              "evaluator": "orq_lite_anchor"
+            },
+            {
+              "amount": 4950,
+              "reason": "Obsidian accurately identifies the timing issue and self-inconsistencies present in the response, though it incorrectly references the market close.",
+              "evaluator": "orq_lite_obsidian"
+            }
+          ]
+        }
+      ],
+      "evaluations": [
+        {
+          "model": "gpt-4o",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 75
+          },
+          "evidence": [
+            "Quoted clause: 'January 4, 2026, 11:59 PM ET', converted to 2026-01-05T04:59:00Z.",
+            "Proposal timestamp: 2026-01-04T05:48:03Z confirms timing conditions are met."
+          ],
+          "evaluator": "orq_lite_echo",
+          "reasoning": "The provided response accurately identifies the timing condition's status and quotes the correct governing clause. However, the formatting is slightly inconsistent with providing a clear 'final decision' linked to rules text. The response satisfactorily addresses the rules and the proposal's timing within the market framework, adhering closely to the prompt's requirements."
+        },
+        {
+          "model": "kimi-k2-5",
+          "scores": {
+            "safety": 100,
+            "completeness": 50,
+            "factual_accuracy": 25,
+            "instruction_adherence": 50
+          },
+          "evidence": [
+            "Market endDate in Gamma metadata: \"2026-01-04T00:00:00Z\"",
+            "Proposal time: 2026-01-04T05:48:03.000Z (after market ended)",
+            "Incorrect claim: 'market observation window is completed' - actually ended ~6 hours before proposal",
+            "Incorrect conversion: 'January 4, 2026, 11:59 PM ET' converts to 2026-01-05T04:59:00Z, but actual end was 2026-01-04T00:00:00Z",
+            "Final decision is INSUFFICIENT_EVIDENCE when it should be NO (market closed, no evidence found)"
+          ],
+          "evaluator": "orq_lite_anchor",
+          "reasoning": "The response contains major factual errors. The decisive_time_utc is incorrectly stated as 2026-01-05T04:59:00Z when the market actually ends at 2026-01-04T00:00:00Z per the Gamma metadata (not 11:59 PM ET on Jan 4 as claimed). The market already ended before the proposal time of 2026-01-04T05:48:03Z, making this decidable as NO (Trump didn't say it during the window). The response incorrectly claims the window is 'completed' at the proposal time when it actually ended hours earlier. The 'serv_verdict' structure and 'gate_reason' suggest this is a service response format, but the core analysis is wrong."
+        },
+        {
+          "model": "glm-5-2",
+          "scores": {
+            "safety": 100,
+            "completeness": 50,
+            "factual_accuracy": 25,
+            "instruction_adherence": 50
+          },
+          "evidence": [
+            "The AI states 'the market observation window is completed' at check time 2026-01-04T05:48:03Z, but the window ends at 2026-01-05T04:59:00Z, meaning ~23 hours remain",
+            "The response is internally contradictory: final_decision is INSUFFICIENT_EVIDENCE but serv_verdict.decision is SUPPORTED_NOW",
+            "gate_reason says 'early YES needs event evidence' which contradicts the timing check's PASS status claiming the window is completed"
+          ],
+          "evaluator": "orq_lite_obsidian",
+          "reasoning": "The AI response contains a major factual error in the timing check: it claims the market observation window is completed, but the check time (2026-01-04T05:48:03Z) is approximately 23 hours BEFORE the window ends (2026-01-05T04:59:00Z). The response is also self-contradictory, marking serv_self_inconsistent as true while providing conflicting signals (SUPPORTED_NOW vs INSUFFICIENT_EVIDENCE). The governing clause should be quoted to determine decidability, but the core conclusion about timing is wrong."
+        }
+      ],
+      "participants": [
+        {
+          "name": "orq_lite_nebula",
+          "seat": "evaluator",
+          "address": "0x956ad68A5D27e4eF7d68Dd7CFeCb66EeF420A99a",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_echo",
+          "seat": "evaluator",
+          "address": "0x06856dF11069947fbBc593B861584Dd19a8c6e5e",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_anchor",
+          "seat": "evaluator",
+          "address": "0x005bE4d942aaFC009faaA325074a5ea70a70cA82",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_obsidian",
+          "seat": "evaluator",
+          "address": "0x8e3DA32d066eaa530eF0E29912b8CC66B61067f4",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_umbral",
+          "seat": "nodeHolder",
+          "address": "0xDBCD80d45b2861da4eAC8982942899cA34d4dC18",
+          "veReppo": 33028,
+          "fallback": false,
+          "veReppoRaw": 33028.48842746952
+        },
+        {
+          "name": "orq_lite_thicket",
+          "seat": "nodeHolder",
+          "address": "0x9eA97cbc2D7C4b3C979A2354f09b4A3b49c2b7A9",
+          "veReppo": 6412,
+          "fallback": false,
+          "veReppoRaw": 6412.460250759644
+        },
+        {
+          "name": "orq_lite_fossil",
+          "seat": "nodeHolder",
+          "address": "0x9014420cF13aE53449a40753a5D969dC5f4d2bd4",
+          "veReppo": 9379,
+          "fallback": false,
+          "veReppoRaw": 9379.069150312765
+        },
+        {
+          "name": "orq_lite_marrow",
+          "seat": "nodeHolder",
+          "address": "0x10C78C716B37c02920b5EffAaebd71eFe3AbAD16",
+          "veReppo": 226,
+          "fallback": false,
+          "veReppoRaw": 226.72080464731977
+        },
+        {
+          "name": "Node Holder 1",
+          "seat": "nodeHolder",
+          "address": null,
+          "veReppo": 19800,
+          "fallback": true,
+          "veReppoRaw": null
+        }
+      ]
+    },
+    "error": null,
+    "startedAt": "2026-11-13T10:08:42.049Z"
+  }
+}

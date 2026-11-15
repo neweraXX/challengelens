@@ -1,0 +1,191 @@
+{
+ "sample_events": 2099,
+ "window": [
+  "2026-11-13T17:01:22Z",
+  "2026-11-14T02:03:07Z"
+ ],
+ "counts": {
+  "no feed": 392,
+  "non-sports": 1486,
+  "ended+ts": 176,
+  "ended,no ts": 45
+ },
+ "by_series": {
+  "vbbundesliga-games": {
+   "no feed": 1
+  },
+  "setkameua-games": {
+   "no feed": 93
+  },
+  "itf": {
+   "no feed": 40
+  },
+  "setkamecz-games": {
+   "no feed": 26
+  },
+  "dehl-2026": {
+   "no feed": 6
+  },
+  "setkawoua-games": {
+   "no feed": 12
+  },
+  "hblnh-games": {
+   "no feed": 6
+  },
+  "soccer-unl": {
+   "no feed": 10,
+   "ended+ts": 67
+  },
+  "fifa-friendly": {
+   "ended+ts": 20
+  },
+  "counter-strike": {
+   "ended,no ts": 31
+  },
+  "atp-doubles": {
+   "ended+ts": 9
+  },
+  "valorant": {
+   "ended,no ts": 3
+  },
+  "dota-2": {
+   "ended,no ts": 9
+  },
+  "wta": {
+   "ended+ts": 4
+  },
+  "setkamemd-games": {
+   "no feed": 29
+  },
+  "modus": {
+   "no feed": 16
+  },
+  "atp": {
+   "ended+ts": 10
+  },
+  "hbasobal-games": {
+   "no feed": 1
+  },
+  "cehl-2026": {
+   "no feed": 7
+  },
+  "clf-games": {
+   "no feed": 14
+  },
+  "cricadt10-games": {
+   "no feed": 8
+  },
+  "afcq-games": {
+   "no feed": 48
+  },
+  "serc-games": {
+   "no feed": 8
+  },
+  "coupe-de-france": {
+   "ended+ts": 14
+  },
+  "euroleague-basketball": {
+   "no feed": 3
+  },
+  "la-liga-2": {
+   "ended+ts": 5
+  },
+  "snhl-2026": {
+   "no feed": 4
+  },
+  "primeira-liga": {
+   "ended+ts": 1
+  },
+  "liiga-games": {
+   "no feed": 7
+  },
+  "cwbb": {
+   "ended+ts": 11
+  },
+  "bkplk-games": {
+   "no feed": 2
+  },
+  "international-cricket": {
+   "no feed": 2
+  },
+  "uru1-games": {
+   "no feed": 4
+  },
+  "es3-games": {
+   "no feed": 6
+  },
+  "copa-del-rey": {
+   "ended+ts": 5
+  },
+  "cricwbbl-games": {
+   "no feed": 2,
+   "ended+ts": 1
+  },
+  "cricnpl-games": {
+   "ended+ts": 1
+  },
+  "khl-2026": {
+   "no feed": 3
+  },
+  "concacaf-nations-league": {
+   "ended+ts": 12
+  },
+  "mobile-legends-bang-bang": {
+   "ended,no ts": 2
+  },
+  "vbliguea-games": {
+   "no feed": 2
+  },
+  "bkkls-games": {
+   "no feed": 1
+  },
+  "wta-doubles": {
+   "ended+ts": 2
+  },
+  "pro-a": {
+   "no feed": 1
+  },
+  "bkbbl": {
+   "no feed": 1
+  },
+  "bkaba": {
+   "no feed": 2
+  },
+  "ncaa-cbb": {
+   "ended+ts": 2
+  },
+  "vbplusliga-games": {
+   "no feed": 1
+  },
+  "nirl1-games": {
+   "no feed": 24
+  },
+  "vbvleague-games": {
+   "no feed": 1
+  },
+  "vbdivisao1-games": {
+   "no feed": 1
+  },
+  "soccer-nlc": {
+   "ended+ts": 1
+  },
+  "denmark-superliga": {
+   "ended+ts": 1
+  },
+  "ere-2025": {
+   "ended+ts": 1
+  },
+  "saudi-professional-league": {
+   "ended+ts": 2
+  },
+  "serie-b": {
+   "ended+ts": 1
+  },
+  "mex-2025": {
+   "ended+ts": 1
+  },
+  "scottish-premiership": {
+   "ended+ts": 5
+  }
+ }
+}

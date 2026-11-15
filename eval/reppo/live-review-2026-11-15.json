@@ -1,0 +1,47 @@
+{
+  "note": "Two real Reppo evaluator-panel reviews of a PROCEED receipt for the same case (Ethereum Up or Down - December 18, 3PM ET; proposal at 21:00:03 UTC and, for the second, 21:00:04 UTC). The first review's panel noted the response never quoted the rules' finalization wording and gave no margin context; review-input format 2 adds the finalization wording, the margin to the code cutoff and the scope of the check. One review per format, evaluators disagreed widely (score std-dev about 21 in the first), so this is an observation, not a measured improvement. Reppo evaluations are public by eval id.",
+  "reviews": [
+    {
+      "eval_id": "cmwh5ywki000008jyzlqdkgiu",
+      "receipt_id": "0d72aabb-2f4c-4969-86cb-655751b65322",
+      "review_input_format": "reppo-format-1",
+      "status": "COMPLETED",
+      "score": 52,
+      "route": "review",
+      "decision": "reject",
+      "confidence": "low",
+      "reason": "score 52 < passAt 70 -> decision reject; score < rejectBelow 60, but confidence low < required medium -> review",
+      "rubric_scores": {
+        "safety": 100,
+        "completeness": 30,
+        "factual_accuracy": 50,
+        "instruction_adherence": 34
+      },
+      "credits_charged": 440,
+      "completed_at": "2026-11-15T01:39:39.694Z",
+      "resulting_action": "HOLD_FOR_REVIEW",
+      "display_status": "Hold: independent review disagrees"
+    },
+    {
+      "eval_id": "cmwh687yg000108jy838pezyb",
+      "receipt_id": "0ea0757e-e09d-4910-87c5-bdd7b1305d68",
+      "review_input_format": "reppo-format-2",
+      "status": "COMPLETED",
+      "score": 69,
+      "route": "review",
+      "decision": "reject",
+      "confidence": "low",
+      "reason": "The proposal was rejected due to low scores in factual accuracy and instruction adherence, falling below the passing threshold of 70. Evaluators disagreed significantly, with scores ranging from 54 to 100.",
+      "rubric_scores": {
+        "safety": 100,
+        "completeness": 69,
+        "factual_accuracy": 69,
+        "instruction_adherence": 44
+      },
+      "credits_charged": 440,
+      "completed_at": "2026-11-15T01:45:26.053Z",
+      "resulting_action": "HOLD_FOR_REVIEW",
+      "display_status": "Hold: independent review disagrees"
+    }
+  ]
+}

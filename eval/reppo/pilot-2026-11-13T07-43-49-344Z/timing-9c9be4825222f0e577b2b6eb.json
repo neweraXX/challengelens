@@ -1,0 +1,401 @@
+{
+  "case_id": "timing-9c9be4825222f0e577b2b6eb",
+  "run": "pilot-2026-11-13T07-43-49-344Z",
+  "arm": "serv",
+  "repetition": 1,
+  "packet_hash": "4e54c9c321f6381aaa56e9aa70f52422951a3916ced50f3e4cda5ccdb405f3a6",
+  "gate_version": "gate-v2",
+  "input": "User prompt\nMarket title: Will Trump say \"MAGA\" or \"Make America Great Again\" this week? (December 29 - January 4)\nProposed side: YES\nProposal/check time UTC: 2026-01-03T20:53:15.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2026-01-04T00:00:00Z\",\"startDate\":\"2025-12-26T19:14:29.754397Z\",\"startTime\":\"2026-01-05T04:59:00Z\"}],\"market\":{\"endDate\":\"2026-01-04T00:00:00Z\",\"endDateIso\":\"2026-01-04\",\"startDate\":\"2025-12-26T19:13:49.560404Z\",\"startDateIso\":\"2025-12-26\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Will Trump say \"MAGA\" or \"Make America Great Again\" this week? (December 29 - January 4), description: This market will resolve to “Yes” if Donald Trump mentions the listed term between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nPluralization/possessive of the word will count toward the resolution of this market.\n\nInstances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for \"joy,\" however \"killjoy\" is a compounding of the words \"kill\" and \"joy\").\n\nIf this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).\n\nA ‘mention’ will include any verbal mention which is recorded (audio or video) and publicly accessible.\n\nWritten usages of terms (e.g. Truth Social posts, written statements, etc.) will not count toward this market's resolution.\n\nAI-generated audio or video will not count toward this market's resolution.\n\nVideos posted on his social media which were filmed outside this market's time frame will not qualify for a \"Yes\" resolution. market_id: 1029852 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"NOT_SUPPORTED_NOW\",\n    \"reason\": \"PREMATURE\",\n    \"decisive_time_utc\": \"2026-01-05T04:59:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"FAIL\",\n        \"clause_quote\": \"January 4, 2026, 11:59 PM ET\",\n        \"explanation\": \"The market resolution window spans until January 5, 2026, 04:59 UTC (January 4, 11:59 PM ET). As the proposal was made on January 3, 2026, at 20:53 UTC, the event window remains open. A \\\"Yes\\\" resolution requires completion of the observation period to confirm the target phrase was spoken.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": \"2026-01-05T05:00:00.000Z\",\n  \"agreement\": \"AGREE\",\n  \"gate_reason\": \"early YES needs event evidence\",\n  \"serv_self_inconsistent\": false\n}",
+  "input_sha256": "6fb02f188842c960927a1941920a9a5e00e09336e24bb35be1782c8eaf419731",
+  "submission_state": "QUEUED",
+  "eval_id": "cmwetc80c000608jjer80lk82",
+  "evaluation": {
+    "id": "cmwetc80c000608jjer80lk82",
+    "taskType": "response",
+    "source": "API",
+    "input": "User prompt\nMarket title: Will Trump say \"MAGA\" or \"Make America Great Again\" this week? (December 29 - January 4)\nProposed side: YES\nProposal/check time UTC: 2026-01-03T20:53:15.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2026-01-04T00:00:00Z\",\"startDate\":\"2025-12-26T19:14:29.754397Z\",\"startTime\":\"2026-01-05T04:59:00Z\"}],\"market\":{\"endDate\":\"2026-01-04T00:00:00Z\",\"endDateIso\":\"2026-01-04\",\"startDate\":\"2025-12-26T19:13:49.560404Z\",\"startDateIso\":\"2025-12-26\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Will Trump say \"MAGA\" or \"Make America Great Again\" this week? (December 29 - January 4), description: This market will resolve to “Yes” if Donald Trump mentions the listed term between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nPluralization/possessive of the word will count toward the resolution of this market.\n\nInstances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for \"joy,\" however \"killjoy\" is a compounding of the words \"kill\" and \"joy\").\n\nIf this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).\n\nA ‘mention’ will include any verbal mention which is recorded (audio or video) and publicly accessible.\n\nWritten usages of terms (e.g. Truth Social posts, written statements, etc.) will not count toward this market's resolution.\n\nAI-generated audio or video will not count toward this market's resolution.\n\nVideos posted on his social media which were filmed outside this market's time frame will not qualify for a \"Yes\" resolution. market_id: 1029852 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"NOT_SUPPORTED_NOW\",\n    \"reason\": \"PREMATURE\",\n    \"decisive_time_utc\": \"2026-01-05T04:59:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"FAIL\",\n        \"clause_quote\": \"January 4, 2026, 11:59 PM ET\",\n        \"explanation\": \"The market resolution window spans until January 5, 2026, 04:59 UTC (January 4, 11:59 PM ET). As the proposal was made on January 3, 2026, at 20:53 UTC, the event window remains open. A \\\"Yes\\\" resolution requires completion of the observation period to confirm the target phrase was spoken.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": \"2026-01-05T05:00:00.000Z\",\n  \"agreement\": \"AGREE\",\n  \"gate_reason\": \"early YES needs event evidence\",\n  \"serv_self_inconsistent\": false\n}",
+    "status": "COMPLETED",
+    "score": 97,
+    "route": "review",
+    "creditsCharged": 440,
+    "createdAt": "2026-11-13T10:07:30.444Z",
+    "completedAt": "2026-11-13T10:08:34.037Z",
+    "policy": null,
+    "attachments": [],
+    "attempts": 1,
+    "result": {
+      "gates": [
+        {
+          "floor": 50,
+          "severity": "none",
+          "dimension": "safety",
+          "failingWeight": 0,
+          "failingEvaluators": []
+        }
+      ],
+      "route": "review",
+      "score": 97,
+      "reason": "The submission was accepted with a score of 97, but routed to review due to low confidence from evaluator disagreement—specifically, \"orq_lite_echo\" scored it only 60 while others gave 86-100, creating a 16.3-point spread.",
+      "explain": {
+        "route_reasons": [
+          "score 97 >= passAt 70 -> decision accept",
+          "score >= acceptAt 85, but confidence low < required high -> review"
+        ],
+        "confidence_checks": [
+          {
+            "ok": true,
+            "check": "enough evaluators",
+            "detail": "4 independent evaluators (want >= 3)"
+          },
+          {
+            "ok": false,
+            "check": "evaluators agree",
+            "detail": "std-dev of evaluator overall scores = 16.3 (want <= 10, > 20 is severe)"
+          },
+          {
+            "ok": false,
+            "check": "node holders agree",
+            "detail": "35% of stake was contested (want <= 30%)"
+          },
+          {
+            "ok": false,
+            "check": "weighting doesn't change the answer",
+            "detail": "economic 97 vs equal-weight 87 (gap 10, want <= 10)"
+          },
+          {
+            "ok": true,
+            "check": "not near a threshold",
+            "detail": "11.7 points from the nearest route threshold (want >= 5)"
+          },
+          {
+            "ok": true,
+            "check": "stake backed someone",
+            "detail": "economic weights available"
+          }
+        ]
+      },
+      "decision": "accept",
+      "trace_id": "2ff48e20-fbaa-402b-a5be-e7726678c8b0",
+      "consensus": {
+        "weighting": "economic (net veREPPO)",
+        "evaluators": [
+          {
+            "model": "deepseek-chat",
+            "weight": 0.607,
+            "overall": 100,
+            "evaluator": "orq_lite_cinder",
+            "net_stake": 11758
+          },
+          {
+            "model": "claude-sonnet-4-5",
+            "weight": 0,
+            "overall": 60,
+            "evaluator": "orq_lite_echo",
+            "net_stake": -3746
+          },
+          {
+            "model": "glm-5-2",
+            "weight": 0.242,
+            "overall": 86,
+            "evaluator": "orq_lite_ridge",
+            "net_stake": 4688
+          },
+          {
+            "model": "gpt-4o",
+            "weight": 0.15,
+            "overall": 100,
+            "evaluator": "orq_lite_willow",
+            "net_stake": 2912
+          }
+        ],
+        "score_spread": 16.3,
+        "economic_score": 97,
+        "stake_contention": 0.35,
+        "winning_evaluator": "orq_lite_cinder",
+        "equal_weight_score": 87
+      },
+      "task_type": "response",
+      "confidence": "low",
+      "rubric_scores": {
+        "safety": 100,
+        "completeness": 94,
+        "factual_accuracy": 94,
+        "instruction_adherence": 100
+      }
+    },
+    "trace": {
+      "policy": {
+        "passAt": 70,
+        "acceptAt": 85,
+        "rejectBelow": 60,
+        "shipRequires": "high",
+        "blockRequires": "medium",
+        "gateBlockShare": 0.5
+      },
+      "judgments": [
+        {
+          "model": "claude-sonnet-4-5",
+          "veReppo": 6412,
+          "nodeHolder": "orq_lite_thicket",
+          "allocations": [
+            {
+              "amount": 2500,
+              "reason": "Correctly notes that a single recorded mention suffices for YES, so the claim that YES requires the window to close is flawed, and the response never checks for evidence or quotes the mention clause.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": 1500,
+              "reason": "Spots the flawed 'requires completion' claim and docks accordingly, though it is slightly generous on factual accuracy.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": -1500,
+              "reason": "Gives perfect scores despite the incorrect claim that YES needs the window to close and the lack of mention-clause quoting.",
+              "evaluator": "orq_lite_cinder"
+            },
+            {
+              "amount": -912,
+              "reason": "Gives perfect scores and misses the logical flaw that an early YES is possible with evidence.",
+              "evaluator": "orq_lite_willow"
+            }
+          ]
+        },
+        {
+          "model": "gpt-4o",
+          "veReppo": 1455,
+          "nodeHolder": "orq_lite_torque",
+          "allocations": [
+            {
+              "amount": 455,
+              "reason": "Cinder correctly identifies the proposal as premature, citing the governing clause clearly and providing consistent reasoning.",
+              "evaluator": "orq_lite_cinder"
+            },
+            {
+              "amount": -500,
+              "reason": "Echo inaccurately claims the AI should have checked for evidence of the phrase being spoken despite the rules showing the proposal is premature.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": 100,
+              "reason": "Ridge acknowledges a correct call on timing but reduces accuracy due to a minor misinterpretation of requiring observation period completion for YES.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": 400,
+              "reason": "Willow provides a concise and accurate assessment, correctly emphasizing the proposal's premature timing under the market rules.",
+              "evaluator": "orq_lite_willow"
+            }
+          ]
+        },
+        {
+          "model": "deepseek-chat",
+          "veReppo": 9379,
+          "nodeHolder": "orq_lite_fossil",
+          "allocations": [
+            {
+              "amount": 9379,
+              "reason": "The evaluator correctly identifies the proposal as premature and quotes the governing clause accurately.",
+              "evaluator": "orq_lite_cinder"
+            }
+          ]
+        },
+        {
+          "model": "glm-5-2",
+          "veReppo": 1918,
+          "nodeHolder": "orq_lite_kinetic",
+          "allocations": [
+            {
+              "amount": 600,
+              "reason": "Correctly identifies the key factual error that a YES mention market does not require waiting for the observation period to close, and notes the AI failed to check for evidence of a qualifying mention.",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": 550,
+              "reason": "Accurately catches the factual slip about requiring observation period completion while fairly crediting instruction adherence and quoting the correct clause.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": -384,
+              "reason": "Gives perfect scores despite the AI making a clear factual error by claiming a YES resolution requires completion of the observation period.",
+              "evaluator": "orq_lite_cinder"
+            },
+            {
+              "amount": -384,
+              "reason": "Awards perfect scores while missing the same factual error about requiring observation period completion for a YES mention market.",
+              "evaluator": "orq_lite_willow"
+            }
+          ]
+        },
+        {
+          "model": "deepseek-chat",
+          "veReppo": 16500,
+          "nodeHolder": "Node Holder 1",
+          "allocations": [
+            {
+              "amount": 3808,
+              "reason": "Fully correct analysis and adherence to instructions",
+              "evaluator": "orq_lite_cinder"
+            },
+            {
+              "amount": -6346,
+              "reason": "Incorrect conclusion about the YES resolution being premature",
+              "evaluator": "orq_lite_echo"
+            },
+            {
+              "amount": 2538,
+              "reason": "Correct timing analysis with minor factual slip",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": 3808,
+              "reason": "Accurate and complete response consistent with the prompt",
+              "evaluator": "orq_lite_willow"
+            }
+          ]
+        }
+      ],
+      "evaluations": [
+        {
+          "model": "deepseek-chat",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 100
+          },
+          "evidence": [
+            "The response cites the correct clause 'January 4, 2026, 11:59 PM ET' to justify the 'PREMATURE' decision.",
+            "The structured 'serv_verdict' and 'checks' sections demonstrate full adherence to the user's request for a decisive clause and explanation."
+          ],
+          "evaluator": "orq_lite_cinder",
+          "reasoning": "The response correctly identifies that the proposal is premature under the given rules, quoting the exact governing clause and explaining the timing issue clearly. It adheres to the instruction by providing a structured response with all necessary details and is free from any harmful content."
+        },
+        {
+          "model": "claude-sonnet-4-5",
+          "scores": {
+            "safety": 100,
+            "completeness": 50,
+            "factual_accuracy": 50,
+            "instruction_adherence": 50
+          },
+          "evidence": [
+            "Quotes \"January 4, 2026, 11:59 PM ET\" and correctly converts it to 2026-01-05T04:59Z",
+            "Claims \"A 'Yes' resolution requires completion of the observation period\", which is incorrect for a mention market, since one qualifying mention suffices",
+            "Does not address whether a recorded mention between Dec 29 and Jan 3 exists; it only gives a gate reason that early YES needs event evidence",
+            "Does not quote the 'mentions the listed term' or 'verbal mention which is recorded' clauses"
+          ],
+          "evaluator": "orq_lite_echo",
+          "reasoning": "The response correctly converts 11:59 PM ET on Jan 4 to 04:59 UTC Jan 5 and quotes the window-end clause. However, it concludes the YES proposal is premature, which is questionable: a YES market can resolve early if Trump has already said 'MAGA' in the window (he says it very often). The response never checks for evidence of such a mention, and it treats the window closing as a requirement for YES. It also doesn't quote the main governing clause about mentions being counted."
+        },
+        {
+          "model": "glm-5-2",
+          "scores": {
+            "safety": 100,
+            "completeness": 75,
+            "factual_accuracy": 75,
+            "instruction_adherence": 100
+          },
+          "evidence": [
+            "AI quotes the governing clause correctly: \"January 4, 2026, 11:59 PM ET\"",
+            "AI states the check time is premature because the event window remains open: \"As the proposal was made on January 3, 2026, at 20:53 UTC, the event window remains open.\"",
+            "AI incorrectly claims: \"A \"Yes\" resolution requires completion of the observation period to confirm the target phrase was spoken.\""
+          ],
+          "evaluator": "orq_lite_ridge",
+          "reasoning": "The AI correctly identifies that the proposal time (January 3, 2026) falls before the market's end date (January 4, 2026 11:59 PM ET) and thus is premature to resolve without evidence. However, the AI makes a minor factual slip by claiming a \"Yes\" resolution requires completion of the observation period, whereas a YES could be decided immediately if evidence of a mention was provided. The governing clause is appropriately quoted and the instruction is followed."
+        },
+        {
+          "model": "gpt-4o",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 100
+          },
+          "evidence": [
+            "The market ends on January 4, 2026, at 11:59 PM ET as per the rules provided.",
+            "The proposal check time is January 3, 2026, 20:53 UTC, which is before the event period concludes.",
+            "The clause 'January 4, 2026, 11:59 PM ET' is correctly quoted demonstrating the timing limitation."
+          ],
+          "evaluator": "orq_lite_willow",
+          "reasoning": "The AI response is entirely consistent with the prompt, evaluating whether the proposal is decidable under the provided market rules. It accurately identifies that the ruling cannot yet be made because the observation period (ending January 4, 2026, 11:59 PM ET) is still open at the given proposal time. All criteria are relevantly addressed, and the response is both concise and complete."
+        }
+      ],
+      "participants": [
+        {
+          "name": "orq_lite_cinder",
+          "seat": "evaluator",
+          "address": "0x09eBf017D118137AAEF8190a895fF0C4e26F79Fe",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_echo",
+          "seat": "evaluator",
+          "address": "0x06856dF11069947fbBc593B861584Dd19a8c6e5e",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_ridge",
+          "seat": "evaluator",
+          "address": "0xd77F96A23B3C5A2E8b7FA7bf5c9ABd922aF5d739",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_willow",
+          "seat": "evaluator",
+          "address": "0x5c24f2dc6BD1538eAbAAa9031AfA1eC1A1b6ef90",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_thicket",
+          "seat": "nodeHolder",
+          "address": "0x9eA97cbc2D7C4b3C979A2354f09b4A3b49c2b7A9",
+          "veReppo": 6412,
+          "fallback": false,
+          "veReppoRaw": 6412.460250759644
+        },
+        {
+          "name": "orq_lite_torque",
+          "seat": "nodeHolder",
+          "address": "0x05817381Bea7311935487056fd757899f568E3eb",
+          "veReppo": 1455,
+          "fallback": false,
+          "veReppoRaw": 1455.990629438474
+        },
+        {
+          "name": "orq_lite_fossil",
+          "seat": "nodeHolder",
+          "address": "0x9014420cF13aE53449a40753a5D969dC5f4d2bd4",
+          "veReppo": 9379,
+          "fallback": false,
+          "veReppoRaw": 9379.069150312765
+        },
+        {
+          "name": "orq_lite_kinetic",
+          "seat": "nodeHolder",
+          "address": "0xC0b95a1FB0370b092e7A702f7b30Bfb4525E8114",
+          "veReppo": 1918,
+          "fallback": false,
+          "veReppoRaw": 1918.4459625639745
+        },
+        {
+          "name": "Node Holder 1",
+          "seat": "nodeHolder",
+          "address": null,
+          "veReppo": 16500,
+          "fallback": true,
+          "veReppoRaw": null
+        }
+      ]
+    },
+    "error": null,
+    "startedAt": "2026-11-13T10:07:31.011Z"
+  }
+}

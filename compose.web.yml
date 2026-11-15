@@ -1,0 +1,276 @@
+# Standalone demo workflow. Existing compose/offline services stay untouched.
+# Application sources are read-only. Only generated artifacts and cache write.
+x-demo: &demo
+  image: challengelens-web:local
+  build:
+    context: .
+    dockerfile: Dockerfile.web
+  user: "1000:1000"
+  working_dir: /app
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  tmpfs:
+    - /tmp:rw,noexec,nosuid,size=128m,uid=1000,gid=1000
+
+services:
+  # Copy the dependency lockfiles resolved inside Docker back to the workspace.
+  # Run once after adding dependencies so the original offline npm-ci path
+  # keeps working. This maintenance service never receives keys or networking.
+  lockfiles:
+    <<: *demo
+    network_mode: none
+    volumes:
+      - .:/output:rw
+    command: ["node", "-e", "const fs = require('node:fs'); fs.copyFileSync('/app/package-lock.json', '/output/package-lock.json'); fs.copyFileSync('/app/web/package-lock.json', '/output/web/package-lock.json');"]
+
+  infer:
+    <<: *demo
+    environment:
+      POLYMARKET_PROXY: ${POLYMARKET_PROXY:-}
+      SERV_API_KEY: ${SERV_API_KEY:-}
+      SERV_MODEL: ${SERV_MODEL:-gemini-3.1-flash-lite}
+      RAW_MODEL: ${RAW_MODEL:-google/gemini-3.6-flash}
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./data/pilot:/app/data/pilot:ro
+      - ./data/manifests:/app/data/manifests:ro
+      - ./eval/runs:/app/eval/runs:ro
+      - ./web/public/data:/app/web/public/data:rw
+      - demo-cache:/app/.cache
+    command: ["npm", "run", "showcase"]
+
+  web-build:
+    <<: *demo
+    network_mode: none
+    environment:
+      VITE_REPO_URL: ${CHALLENGELENS_REPO_URL:-}
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./web/src:/app/web/src:ro
+      - ./web/index.html:/app/web/index.html:ro
+      - ./web/tsconfig.json:/app/web/tsconfig.json:ro
+      - ./web/public:/app/web/public:ro
+      - ./web/dist:/app/web/dist:rw
+    command: ["npm", "run", "web:build"]
+
+  # Includes the demo unit tests and the existing test suite.
+  # The established offline service can still be used after lockfiles sync.
+  offline:
+    <<: *demo
+    network_mode: none
+    environment:
+      VITE_REPO_URL: ${CHALLENGELENS_REPO_URL:-}
+    volumes:
+      - .:/app:ro
+      # Anonymous dependency volumes are populated from the freshly built
+      # image, so the project bind mount cannot hide installed dependencies.
+      - type: volume
+        target: /app/node_modules
+        read_only: true
+      - type: volume
+        target: /app/web/node_modules
+        read_only: true
+      - ./web/public/data:/app/web/public/data:rw
+      - ./web/dist:/app/web/dist:rw
+      # Tests that persist receipts need a writable, throwaway receipts directory.
+      - type: tmpfs
+        target: /app/.cache/receipts
+        tmpfs:
+          size: 16777216
+          mode: 0o1777
+    command: ["sh", "-c", "npm run app:typecheck && npm test && ./node_modules/.bin/tsx --test tests/gate.test.ts tests/live.test.ts tests/reppo.test.ts tests/p1.test.ts tests/p2.test.ts tests/evidence.test.ts tests/proxy.test.ts tests/serv-time.test.ts tests/desk.test.ts tests/needs.test.ts && npm run web:test && npm run web:build"]
+
+  # Recompute old-run gate metrics without keys or network.
+  regate:
+    <<: *demo
+    network_mode: none
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./eval/runs:/app/eval/runs:rw
+      - ./data/dev:/app/data/dev:ro
+    entrypoint: ["./node_modules/.bin/tsx", "scripts/regate.ts"]
+    command: []
+
+  # Public evidence only; no inference keys. Select split with EVIDENCE_SPLIT=dev|sealed|sealed2.
+  evidence:
+    <<: *demo
+    environment:
+      POLYMARKET_PROXY: ${POLYMARKET_PROXY:-}
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ./config:/app/config:ro
+      - ./data/${EVIDENCE_SPLIT:-sealed}:/app/data/${EVIDENCE_SPLIT:-sealed}:rw
+      - ./.cache/evidence:/app/.cache/evidence:rw
+    entrypoint: ["./node_modules/.bin/tsx", "scripts/collect-evidence.ts"]
+    command: ["${EVIDENCE_SPLIT:-sealed}"]
+
+  # Optional fresh dev pilot: 15 cases x 3 per selected arm, no sealed mount.
+  pilot-eval:
+    <<: *demo
+    environment:
+      SERV_API_KEY: ${SERV_API_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      SERV_MODEL: ${SERV_MODEL:-gemini-3.1-flash-lite}
+      RAW_MODEL: ${RAW_MODEL:-google/gemini-3.6-flash}
+      PILOT_ARMS: ${PILOT_ARMS:-serv}
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ./config:/app/config:ro
+      - ./data/dev:/app/data/dev:ro
+      - ./data/manifests:/app/data/manifests:ro
+      - ./eval/runs:/app/eval/runs:rw
+      - ./eval/reports:/app/eval/reports:rw
+    command: ["npm", "run", "pilot:eval"]
+
+  # Blind holdout construction; no credentials, network, or model calls.
+  holdout2-build:
+    <<: *demo
+    network_mode: none
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ./config:/app/config:ro
+      - ./data/pilot:/app/data/pilot:ro
+      - ./data/dev:/app/data/dev:ro
+      - ./data/sealed:/app/data/sealed:ro
+      - ./data/manifests:/app/data/manifests:rw
+      - ./data/sealed2:/app/data/sealed2:rw
+      - ./web/public/data:/app/web/public/data:ro
+    command: ["./node_modules/.bin/tsx", "scripts/build-holdout2.ts"]
+
+  # One irreversible reservation per procedure fingerprint; explicit confirmation required.
+  sealed-eval:
+    <<: *demo
+    environment:
+      SERV_API_KEY: ${SERV_API_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      SERV_MODEL: ${SERV_MODEL:-gemini-3.1-flash-lite}
+      RAW_MODEL: ${RAW_MODEL:-google/gemini-3.6-flash}
+      SEALED_ARMS: ${SEALED_ARMS:-raw,serv}
+      SEALED_SPLIT: ${SEALED_SPLIT:-sealed}
+      SEALED_CONFIRM: ${SEALED_CONFIRM:-}
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ./config:/app/config:ro
+      - ./data/${SEALED_SPLIT:-sealed}:/app/data/${SEALED_SPLIT:-sealed}:ro
+      - ./eval/${SEALED_SPLIT:-sealed}:/app/eval/${SEALED_SPLIT:-sealed}:rw
+    command: ["./node_modules/.bin/tsx", "scripts/sealed-eval.ts", "${SEALED_SPLIT:-sealed}"]
+
+  # Publish aggregate counts only from saved results. No original sealed mount.
+  sealed-publish:
+    <<: *demo
+    network_mode: none
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ./config:/app/config:ro
+      - ./eval/sealed:/app/eval/sealed:ro
+      - ./eval/sealed2:/app/eval/sealed2:ro
+      - ./web/public/data:/app/web/public/data:rw
+    command: ["./node_modules/.bin/tsx", "scripts/build-sealed.ts", "${SEALED_SPLIT:-sealed}"]
+
+  benchmark:
+    <<: *demo
+    network_mode: none
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./eval/runs:/app/eval/runs:ro
+      - ./web/public/data:/app/web/public/data:rw
+    entrypoint: ["./node_modules/.bin/tsx", "scripts/build-benchmark.ts"]
+    command: []
+
+  # Explicit dev-only evaluator batch; no SERV key, no sealed dataset mount.
+  reppo-dev:
+    <<: *demo
+    environment:
+      REPPO_API_KEY: ${REPPO_API_KEY:-}
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./data/dev:/app/data/dev:ro
+      - ./eval/runs:/app/eval/runs:ro
+      - ./eval/reppo:/app/eval/reppo:rw
+    entrypoint: ["./node_modules/.bin/tsx", "scripts/reppo-dev.ts"]
+    command: []
+
+  log-change:
+    <<: *demo
+    network_mode: none
+    stdin_open: true
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./procedures:/app/procedures:rw
+    entrypoint: ["./node_modules/.bin/tsx", "scripts/log-change.ts"]
+    command: []
+
+  reppo-loop:
+    <<: *demo
+    network_mode: none
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./procedures:/app/procedures:ro
+      - ./web/public/data:/app/web/public/data:rw
+    command: ["./node_modules/.bin/tsx", "scripts/build-reppo-loop.ts"]
+
+  # One cycle; stdout contains only totals JSON. Run while the app service is stopped.
+  live-once:
+    <<: *demo
+    environment:
+      POLYMARKET_PROXY: ${POLYMARKET_PROXY:-}
+      SERV_API_KEY: ${SERV_API_KEY:-}
+      SERV_MODEL: ${SERV_MODEL:-gemini-3.1-flash-lite}
+      LIVE_SERV_SAMPLE: ${LIVE_SERV_SAMPLE:-10}
+      LIVE_SERV_MAX_PER_CYCLE: ${LIVE_SERV_MAX_PER_CYCLE:-25}
+      LIVE_GAMMA_MAX_PER_CYCLE: ${LIVE_GAMMA_MAX_PER_CYCLE:-100}
+      LIVE_PRICE_MAX_PER_CYCLE: ${LIVE_PRICE_MAX_PER_CYCLE:-5}
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - demo-cache:/app/.cache
+      - ./.cache/live:/app/.cache/live:rw
+    command: ["./node_modules/.bin/tsx", "src/live/once.ts"]
+
+  app:
+    <<: *demo
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      LIVE_DESK: ${LIVE_DESK:-1}
+      LIVE_INTERVAL_MS: ${LIVE_INTERVAL_MS:-180000}
+      LIVE_SERV_SAMPLE: ${LIVE_SERV_SAMPLE:-10}
+      LIVE_SERV_MAX_PER_CYCLE: ${LIVE_SERV_MAX_PER_CYCLE:-25}
+      LIVE_GAMMA_MAX_PER_CYCLE: ${LIVE_GAMMA_MAX_PER_CYCLE:-100}
+      LIVE_PRICE_MAX_PER_CYCLE: ${LIVE_PRICE_MAX_PER_CYCLE:-5}
+      POLYMARKET_PROXY: ${POLYMARKET_PROXY:-}
+      REPPO_API_KEY: ${REPPO_API_KEY:-}
+      REPPO_DAILY_CAP: ${REPPO_DAILY_CAP:-30}
+      SERV_API_KEY: ${SERV_API_KEY:-}
+      SERV_MODEL: ${SERV_MODEL:-gemini-3.1-flash-lite}
+      RAW_MODEL: ${RAW_MODEL:-google/gemini-3.6-flash}
+    volumes:
+      - ./src:/app/src:ro
+      - ./config:/app/config:ro
+      - ./web/dist:/app/web/dist:ro
+      - demo-cache:/app/.cache
+      - ./.cache/live:/app/.cache/live:rw
+    command: ["npm", "run", "app"]
+
+volumes:
+  demo-cache:

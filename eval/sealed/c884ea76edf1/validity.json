@@ -1,0 +1,11 @@
+{
+  "note": "Counts of model-call outcomes per arm (valid / invalid / error), from the run's results.json; no case content.",
+  "arms": {
+    "raw": {
+      "valid": 90
+    },
+    "serv": {
+      "valid": 90
+    }
+  }
+}

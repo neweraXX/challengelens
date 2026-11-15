@@ -1,0 +1,7 @@
+**
+!package.json
+!package-lock.json
+!web/
+web/**
+!web/package.json
+!Dockerfile.web

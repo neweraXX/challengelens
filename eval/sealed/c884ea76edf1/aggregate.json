@@ -1,0 +1,248 @@
+{
+  "blind": false,
+  "note": "Second look: evidence keys were designed after seeing aggregate failure categories of the blind timing-v5 run; no case text was read.",
+  "procedure_version": "timing-v7",
+  "procedure_sha256": "c884ea76edf1fdfc9f285dc4fc75f9c8eaf7028bab9d895913896d95cbce75b0",
+  "gate_version": "gate-v4",
+  "models": {
+    "raw": "google/gemini-3.1-flash-lite",
+    "serv": "gemini-3.1-flash-lite"
+  },
+  "date": "2026-11-14T01:00:47.677Z",
+  "status": "finished",
+  "unit": "CASE-majority; Wilson 95%; repetitions are not independent",
+  "arms": [
+    {
+      "action_metrics": {
+        "Proceed precision": {
+          "count": 19,
+          "total": 37,
+          "case_interval": {
+            "count": 6,
+            "total": 12,
+            "low": 0.2537815976337061,
+            "high": 0.7462184023662939
+          }
+        },
+        "Proceed coverage": {
+          "count": 6,
+          "total": 15,
+          "low": 0.1982449614134158,
+          "high": 0.6425316987937539
+        },
+        "Safe on too-early": {
+          "count": 9,
+          "total": 15,
+          "low": 0.357468301206246,
+          "high": 0.8017550385865841
+        }
+      },
+      "arm": "raw",
+      "correct": {
+        "count": 13,
+        "total": 30,
+        "low": 0.2737748557646652,
+        "high": 0.6080269299918639
+      },
+      "false_approvals": {
+        "count": 6,
+        "total": 15,
+        "low": 0.1982449614134158,
+        "high": 0.6425316987937539
+      },
+      "abstentions": {
+        "count": 3,
+        "total": 30,
+        "low": 0.03459988874733419,
+        "high": 0.25621082579184085
+      },
+      "consistency": {
+        "count": 25,
+        "total": 30,
+        "low": 0.6643564949358398,
+        "high": 0.9266345762815145
+      },
+      "completed_cases": 30,
+      "cases": 30,
+      "tokens": 330306,
+      "recorded_cost_usd": 0.10675275000000005,
+      "cost_complete": true,
+      "cost_attempts": 90,
+      "attempts": 90
+    },
+    {
+      "action_metrics": {
+        "Proceed precision": {
+          "count": 7,
+          "total": 7,
+          "case_interval": {
+            "count": 3,
+            "total": 3,
+            "low": 0.4385029682449546,
+            "high": 1
+          }
+        },
+        "Proceed coverage": {
+          "count": 3,
+          "total": 15,
+          "low": 0.07047549346981563,
+          "high": 0.45185448715169363
+        },
+        "Safe on too-early": {
+          "count": 15,
+          "total": 15,
+          "low": 0.7961166989641515,
+          "high": 1
+        }
+      },
+      "arm": "raw+gate",
+      "correct": {
+        "count": 15,
+        "total": 30,
+        "low": 0.33154125640533766,
+        "high": 0.6684587435946623
+      },
+      "false_approvals": {
+        "count": 0,
+        "total": 15,
+        "low": 0,
+        "high": 0.20388330103584862
+      },
+      "abstentions": {
+        "count": 13,
+        "total": 30,
+        "low": 0.2737748557646652,
+        "high": 0.6080269299918639
+      },
+      "consistency": {
+        "count": 28,
+        "total": 30,
+        "low": 0.7867654163738308,
+        "high": 0.9815229762087295
+      },
+      "completed_cases": 30,
+      "cases": 30,
+      "tokens": 330306,
+      "recorded_cost_usd": 0.10675275000000005,
+      "cost_complete": true,
+      "cost_attempts": 90,
+      "attempts": 90
+    },
+    {
+      "action_metrics": {
+        "Proceed precision": {
+          "count": 24,
+          "total": 42,
+          "case_interval": {
+            "count": 8,
+            "total": 14,
+            "low": 0.3259064457965074,
+            "high": 0.7861920109552588
+          }
+        },
+        "Proceed coverage": {
+          "count": 8,
+          "total": 15,
+          "low": 0.30116980025498397,
+          "high": 0.7519046463426261
+        },
+        "Safe on too-early": {
+          "count": 9,
+          "total": 15,
+          "low": 0.357468301206246,
+          "high": 0.8017550385865841
+        }
+      },
+      "arm": "serv",
+      "correct": {
+        "count": 15,
+        "total": 30,
+        "low": 0.33154125640533766,
+        "high": 0.6684587435946623
+      },
+      "false_approvals": {
+        "count": 6,
+        "total": 15,
+        "low": 0.1982449614134158,
+        "high": 0.6425316987937539
+      },
+      "abstentions": {
+        "count": 5,
+        "total": 30,
+        "low": 0.0733654237184855,
+        "high": 0.3356435050641603
+      },
+      "consistency": {
+        "count": 29,
+        "total": 30,
+        "low": 0.8332960900859082,
+        "high": 0.9940914096183874
+      },
+      "completed_cases": 30,
+      "cases": 30,
+      "tokens": 145080,
+      "recorded_cost_usd": 0,
+      "cost_complete": false,
+      "cost_attempts": 0,
+      "attempts": 90
+    },
+    {
+      "action_metrics": {
+        "Proceed precision": {
+          "count": 9,
+          "total": 9,
+          "case_interval": {
+            "count": 3,
+            "total": 3,
+            "low": 0.4385029682449546,
+            "high": 1
+          }
+        },
+        "Proceed coverage": {
+          "count": 3,
+          "total": 15,
+          "low": 0.07047549346981563,
+          "high": 0.45185448715169363
+        },
+        "Safe on too-early": {
+          "count": 15,
+          "total": 15,
+          "low": 0.7961166989641515,
+          "high": 1
+        }
+      },
+      "arm": "serv+gate",
+      "correct": {
+        "count": 15,
+        "total": 30,
+        "low": 0.33154125640533766,
+        "high": 0.6684587435946623
+      },
+      "false_approvals": {
+        "count": 0,
+        "total": 15,
+        "low": 0,
+        "high": 0.20388330103584862
+      },
+      "abstentions": {
+        "count": 13,
+        "total": 30,
+        "low": 0.2737748557646652,
+        "high": 0.6080269299918639
+      },
+      "consistency": {
+        "count": 30,
+        "total": 30,
+        "low": 0.8864866068260312,
+        "high": 0.9999999999999999
+      },
+      "completed_cases": 30,
+      "cases": 30,
+      "tokens": 145080,
+      "recorded_cost_usd": 0,
+      "cost_complete": false,
+      "cost_attempts": 0,
+      "attempts": 90
+    }
+  ]
+}

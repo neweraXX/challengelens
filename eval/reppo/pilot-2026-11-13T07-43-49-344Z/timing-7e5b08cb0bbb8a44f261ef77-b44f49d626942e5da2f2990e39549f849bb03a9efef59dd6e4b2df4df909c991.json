@@ -1,0 +1,415 @@
+{
+  "case_id": "timing-7e5b08cb0bbb8a44f261ef77",
+  "run": "pilot-2026-11-13T07-43-49-344Z",
+  "arm": "serv",
+  "repetition": 1,
+  "packet_hash": "1a6d70181d3e16a0da7c767cd6eb73080367662584a8698ad201a038c1fc53bd",
+  "gate_version": "gate-v2",
+  "input": "User prompt\nMarket title: Will Pakistan strike Iran by Saturday?\nProposed side: YES\nProposal/check time UTC: 2024-01-18T03:26:29.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2024-01-20T00:00:00Z\",\"startDate\":\"2024-01-17T21:05:28.256Z\"}],\"market\":{\"endDate\":\"2024-01-20T00:00:00Z\",\"endDateIso\":\"2024-01-20\",\"startDate\":\"2024-01-17T21:05:28.256Z\",\"startDateIso\":\"2024-01-17\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Will Pakistan strike Iran by Saturday?, description: This market will resolve to \"Yes\" if Pakistan initiates a military attack on Iranian soil, airspace, or maritime territory between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"military attack\" is any use of force executed by Pakistan on Iranian soil, airspace, or maritime territory (e.g. if an Islamic Revolutionary Guard weapons depot on Iranian soil is subject to a Pakistani missile strike, this market will resolve to \"Yes\") that is officially acknowledged by the Pakistani federal government or a consensus of credible reporting. This includes, but is not limited to, airstrikes, naval attacks, or ground invasions. Cyber attacks, sanctions, or diplomatic actions will not count.\n\nPakistan striking an unmanned aerial vehicle or projectile over Iranian territory in a defensive capacity will NOT count toward a \"Yes\" resolution. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"NOT_SUPPORTED_NOW\",\n    \"reason\": \"PREMATURE\",\n    \"decisive_time_utc\": \"2024-01-21T04:59:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"FAIL\",\n        \"clause_quote\": \"January 20, 2024, 11:59 PM ET\",\n        \"explanation\": \"The market rules define the observation window end as January 20, 2024, at 11:59 PM ET, which converts to 2024-01-21T04:59:00Z. As the current proposal time is 2024-01-18T03:26:29Z, the window has not yet concluded, making the proposal premature.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": \"2024-01-21T05:00:00.000Z\",\n  \"agreement\": \"AGREE\",\n  \"gate_reason\": \"early YES needs event evidence\",\n  \"serv_self_inconsistent\": false\n}",
+  "input_sha256": "b44f49d626942e5da2f2990e39549f849bb03a9efef59dd6e4b2df4df909c991",
+  "submission_state": "QUEUED",
+  "eval_id": "cmwetc7sc000308jjmsm5jofa",
+  "evaluation": {
+    "id": "cmwetc7sc000308jjmsm5jofa",
+    "taskType": "response",
+    "source": "API",
+    "input": "User prompt\nMarket title: Will Pakistan strike Iran by Saturday?\nProposed side: YES\nProposal/check time UTC: 2024-01-18T03:26:29.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2024-01-20T00:00:00Z\",\"startDate\":\"2024-01-17T21:05:28.256Z\"}],\"market\":{\"endDate\":\"2024-01-20T00:00:00Z\",\"endDateIso\":\"2024-01-20\",\"startDate\":\"2024-01-17T21:05:28.256Z\",\"startDateIso\":\"2024-01-17\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Will Pakistan strike Iran by Saturday?, description: This market will resolve to \"Yes\" if Pakistan initiates a military attack on Iranian soil, airspace, or maritime territory between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"military attack\" is any use of force executed by Pakistan on Iranian soil, airspace, or maritime territory (e.g. if an Islamic Revolutionary Guard weapons depot on Iranian soil is subject to a Pakistani missile strike, this market will resolve to \"Yes\") that is officially acknowledged by the Pakistani federal government or a consensus of credible reporting. This includes, but is not limited to, airstrikes, naval attacks, or ground invasions. Cyber attacks, sanctions, or diplomatic actions will not count.\n\nPakistan striking an unmanned aerial vehicle or projectile over Iranian territory in a defensive capacity will NOT count toward a \"Yes\" resolution. res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to No, p2 to Yes, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"NOT_SUPPORTED_NOW\",\n    \"reason\": \"PREMATURE\",\n    \"decisive_time_utc\": \"2024-01-21T04:59:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"FAIL\",\n        \"clause_quote\": \"January 20, 2024, 11:59 PM ET\",\n        \"explanation\": \"The market rules define the observation window end as January 20, 2024, at 11:59 PM ET, which converts to 2024-01-21T04:59:00Z. As the current proposal time is 2024-01-18T03:26:29Z, the window has not yet concluded, making the proposal premature.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": \"2024-01-21T05:00:00.000Z\",\n  \"agreement\": \"AGREE\",\n  \"gate_reason\": \"early YES needs event evidence\",\n  \"serv_self_inconsistent\": false\n}",
+    "status": "COMPLETED",
+    "score": 97,
+    "route": "review",
+    "creditsCharged": 440,
+    "createdAt": "2026-11-13T10:07:30.156Z",
+    "completedAt": "2026-11-13T10:08:17.934Z",
+    "policy": null,
+    "attachments": [],
+    "attempts": 1,
+    "result": {
+      "gates": [
+        {
+          "floor": 50,
+          "severity": "none",
+          "dimension": "safety",
+          "failingWeight": 0,
+          "failingEvaluators": []
+        }
+      ],
+      "route": "review",
+      "score": 97,
+      "reason": "The submission was accepted with a score of 97 but routed to review because confidence is medium rather than high.",
+      "explain": {
+        "route_reasons": [
+          "score 97 >= passAt 70 -> decision accept",
+          "score >= acceptAt 85, but confidence medium < required high -> review"
+        ],
+        "confidence_checks": [
+          {
+            "ok": true,
+            "check": "enough evaluators",
+            "detail": "4 independent evaluators (want >= 3)"
+          },
+          {
+            "ok": true,
+            "check": "evaluators agree",
+            "detail": "std-dev of evaluator overall scores = 2.7 (want <= 10, > 20 is severe)"
+          },
+          {
+            "ok": false,
+            "check": "node holders agree",
+            "detail": "45% of stake was contested (want <= 30%)"
+          },
+          {
+            "ok": true,
+            "check": "weighting doesn't change the answer",
+            "detail": "economic 97 vs equal-weight 98 (gap 1, want <= 10)"
+          },
+          {
+            "ok": true,
+            "check": "not near a threshold",
+            "detail": "12.3 points from the nearest route threshold (want >= 5)"
+          },
+          {
+            "ok": true,
+            "check": "stake backed someone",
+            "detail": "economic weights available"
+          }
+        ]
+      },
+      "decision": "accept",
+      "trace_id": "03d265f4-6b48-438a-b305-ea6eea44326d",
+      "consensus": {
+        "weighting": "economic (net veREPPO)",
+        "evaluators": [
+          {
+            "model": "kimi-k2-5",
+            "weight": 0.426,
+            "overall": 94,
+            "evaluator": "orq_lite_ridge",
+            "net_stake": 3325
+          },
+          {
+            "model": "gemini-2.5-flash",
+            "weight": 0,
+            "overall": 100,
+            "evaluator": "orq_lite_cobalt",
+            "net_stake": -642
+          },
+          {
+            "model": "deepseek-chat",
+            "weight": 0,
+            "overall": 100,
+            "evaluator": "orq_lite_yarrow",
+            "net_stake": -419
+          },
+          {
+            "model": "gpt-4o",
+            "weight": 0.574,
+            "overall": 100,
+            "evaluator": "orq_lite_juggernaut",
+            "net_stake": 4481
+          }
+        ],
+        "score_spread": 2.7,
+        "economic_score": 97,
+        "stake_contention": 0.45,
+        "winning_evaluator": "orq_lite_juggernaut",
+        "equal_weight_score": 98
+      },
+      "task_type": "response",
+      "confidence": "medium",
+      "rubric_scores": {
+        "safety": 100,
+        "completeness": 100,
+        "factual_accuracy": 100,
+        "instruction_adherence": 89
+      }
+    },
+    "trace": {
+      "policy": {
+        "passAt": 70,
+        "acceptAt": 85,
+        "rejectBelow": 60,
+        "shipRequires": "high",
+        "blockRequires": "medium",
+        "gateBlockShare": 0.5
+      },
+      "judgments": [
+        {
+          "model": "kimi-k2-5",
+          "veReppo": 1455,
+          "nodeHolder": "orq_lite_torque",
+          "allocations": [
+            {
+              "amount": 364,
+              "reason": "Correctly identifies all factual elements but slightly undervalues instruction_adherence at 75 due to null final_reason, which is actually acceptable per the JSON schema.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": 364,
+              "reason": "Accurate assessment - the response is factually correct, complete, and follows instructions properly despite null final_reason being schema-valid.",
+              "evaluator": "orq_lite_cobalt"
+            },
+            {
+              "amount": 364,
+              "reason": "Correct evaluation of all dimensions; the time conversion and premature conclusion analysis are accurate.",
+              "evaluator": "orq_lite_yarrow"
+            },
+            {
+              "amount": 363,
+              "reason": "Accurate scoring; correctly recognizes the governing clause and timing analysis, with proper assessment of completeness and safety.",
+              "evaluator": "orq_lite_juggernaut"
+            }
+          ]
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "veReppo": 1918,
+          "nodeHolder": "orq_lite_kinetic",
+          "allocations": [
+            {
+              "amount": 250,
+              "reason": "The evaluation is accurate, correctly identifying both the strengths and the minor weakness of the AI's response regarding the null 'final_reason'. It also correctly quotes the relevant clause and performs the UTC conversion accurately.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": 450,
+              "reason": "The evaluation accurately highlights the AI's correct UTC conversion and its precise determination that the proposal is premature. It correctly notes the adherence to all instructions, although it misses the minor `final_reason` omission.",
+              "evaluator": "orq_lite_cobalt"
+            },
+            {
+              "amount": 600,
+              "reason": "The evaluation accurately summarizes the AI's performance, noting its correct identification of the premature proposal and adherence to instructions, while missing the minor `final_reason` omission in the AI's output.",
+              "evaluator": "orq_lite_yarrow"
+            },
+            {
+              "amount": 618,
+              "reason": "The evaluation is accurate, correctly explaining why the AI's decision is sound based on the market rules and timing. It also confirms the AI's adherence to instructions, overlooking the minor `final_reason` omission.",
+              "evaluator": "orq_lite_juggernaut"
+            }
+          ]
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "veReppo": 2630,
+          "nodeHolder": "orq_lite_relic",
+          "allocations": [
+            {
+              "amount": 430,
+              "reason": "The 'final_reason' field being null is a deviation from expected output, even if it doesn't impact the core analysis, justifying a slightly lower instruction adherence score.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": 600,
+              "reason": "The AI response is highly accurate and adheres to all instructions perfectly, including the conversion of the end date.",
+              "evaluator": "orq_lite_cobalt"
+            },
+            {
+              "amount": 700,
+              "reason": "The AI response is highly accurate and adheres to all instructions perfectly, including the conversion of the end date.",
+              "evaluator": "orq_lite_yarrow"
+            },
+            {
+              "amount": 900,
+              "reason": "The AI response is highly accurate and adheres to all instructions perfectly, including the conversion of the end date.",
+              "evaluator": "orq_lite_juggernaut"
+            }
+          ]
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "veReppo": 9379,
+          "nodeHolder": "orq_lite_fossil",
+          "allocations": [
+            {
+              "amount": 2345,
+              "reason": "The evaluator correctly points out the only minor deviation from instructions: the null final_reason field, which should have contained some text, even if minimal, as per the expected output format for final_reason, when a `final_decision` is provided. This is a minor point, but it's an instruction adherence issue nonetheless. I agree with the remaining points made by this evaluator.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": -2345,
+              "reason": "The evaluator misses the point about the `final_reason` field being null, while a `final_decision` is provided. This is a minor instruction adherence error and thus the evaluator's perfect score for instruction adherence is not accurate.",
+              "evaluator": "orq_lite_cobalt"
+            },
+            {
+              "amount": -2344,
+              "reason": "The evaluator misses the point about the `final_reason` field being null, while a `final_decision` is provided. This is a minor instruction adherence error and thus the evaluator's perfect score for instruction adherence is not accurate.",
+              "evaluator": "orq_lite_yarrow"
+            },
+            {
+              "amount": 2345,
+              "reason": "The evaluator correctly identifies the core accuracy of the response. The minor instruction adherence flaw noted by the first evaluator (and missed by the others) is negligible, making the 100/100 score still justifiable, as the key instructions were followed and the null value is minor. I stand by the perfect score.",
+              "evaluator": "orq_lite_juggernaut"
+            }
+          ]
+        },
+        {
+          "model": "gpt-4o",
+          "veReppo": 869,
+          "nodeHolder": "orq_lite_umbral",
+          "allocations": [
+            {
+              "amount": -64,
+              "reason": "The null value for 'final_reason' is a trivial formatting issue and does not substantively affect the response quality, so deducting accuracy and adherence is excessive.",
+              "evaluator": "orq_lite_ridge"
+            },
+            {
+              "amount": 289,
+              "reason": "Provided a thorough, accurate, and well-reasoned evaluation with no inconsistencies, reflecting strong alignment with the rubric.",
+              "evaluator": "orq_lite_cobalt"
+            },
+            {
+              "amount": 261,
+              "reason": "Accurately assessed the response, highlighting its proper interpretation of the rules and timing with no oversights.",
+              "evaluator": "orq_lite_yarrow"
+            },
+            {
+              "amount": 255,
+              "reason": "Correctly evaluated the AI's adherence to the rules and reasoning, with clear alignment to rubric criteria.",
+              "evaluator": "orq_lite_juggernaut"
+            }
+          ]
+        }
+      ],
+      "evaluations": [
+        {
+          "model": "kimi-k2-5",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 75
+          },
+          "evidence": [
+            "Clause quote: 'January 20, 2024, 11:59 PM ET'",
+            "Correct conversion to UTC: '2024-01-21T04:59:00Z' (ET is UTC-5, so 11:59 PM ET = 4:59 AM UTC next day)",
+            "Current proposal time correctly noted as 2024-01-18T03:26:29Z",
+            "Conclusion: 'The window has not yet concluded, making the proposal premature'"
+          ],
+          "evaluator": "orq_lite_ridge",
+          "reasoning": "The response correctly identifies that the proposal is premature because the observation window hasn't ended yet. It accurately quotes the governing clause about the January 20, 2024, 11:59 PM ET deadline and correctly converts this to UTC (2024-01-21T04:59:00Z). The time conversion appears correct: January 20, 11:59 PM ET = January 21, 4:59 AM UTC (ET is UTC-5). The only minor issue is that 'final_reason' is null rather than containing explanatory text, though this doesn't affect the substantive analysis."
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 100
+          },
+          "evidence": [
+            "The market rules define the observation window end as January 20, 2024, at 11:59 PM ET, which converts to 2024-01-21T04:59:00Z.",
+            "As the current proposal time is 2024-01-18T03:26:29Z, the window has not yet concluded, making the proposal premature.",
+            "The AI quotes the correct governing clause: 'January 20, 2024, 11:59 PM ET'."
+          ],
+          "evaluator": "orq_lite_cobalt",
+          "reasoning": "The AI correctly converts the market's end date from ET to UTC and accurately determines that the proposed resolution is premature because the observation window has not yet concluded. It provides the governing clause and a clear explanation for its decision, adhering to all instructions."
+        },
+        {
+          "model": "deepseek-chat",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 100
+          },
+          "evidence": [
+            "The response correctly identifies the observation window end as January 20, 2024, at 11:59 PM ET, which converts to 2024-01-21T04:59:00Z, making the proposal premature."
+          ],
+          "evaluator": "orq_lite_yarrow",
+          "reasoning": "The AI response accurately quotes the governing clause, correctly interprets the timing, and concludes that the proposal is premature. It fully adheres to the instructions, addresses completeness, and is safe."
+        },
+        {
+          "model": "gpt-4o",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 100
+          },
+          "evidence": [
+            "Clause governing resolution timing: 'January 20, 2024, 11:59 PM ET' (2024-01-21 04:59:00 UTC).",
+            "Proposal time: '2024-01-18T03:26:29.000Z', which is before the end of the resolution window.",
+            "AI's explanation that the proposal is premature aligns with the rules restricting decisions until the observation window concludes."
+          ],
+          "evaluator": "orq_lite_juggernaut",
+          "reasoning": "The AI response properly identifies that the proposal cannot yet be decided under the specified rules since the relevant time window for the market's resolution has not concluded. It explains the premature nature of the decision by referencing the governing clause and providing a clear timeline comparison."
+        }
+      ],
+      "participants": [
+        {
+          "name": "orq_lite_ridge",
+          "seat": "evaluator",
+          "address": "0xd77F96A23B3C5A2E8b7FA7bf5c9ABd922aF5d739",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_cobalt",
+          "seat": "evaluator",
+          "address": "0xbEE34E722694E678e4FB95D0ACFa940553544d92",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_yarrow",
+          "seat": "evaluator",
+          "address": "0x4834bE0f017DA8cFB37AF44c33dce96Fa5790bb0",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_juggernaut",
+          "seat": "evaluator",
+          "address": "0xF0c6c27AA6a561AFFf141e303630b85c4094be48",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_torque",
+          "seat": "nodeHolder",
+          "address": "0x05817381Bea7311935487056fd757899f568E3eb",
+          "veReppo": 1455,
+          "fallback": false,
+          "veReppoRaw": 1455.990629438474
+        },
+        {
+          "name": "orq_lite_kinetic",
+          "seat": "nodeHolder",
+          "address": "0xC0b95a1FB0370b092e7A702f7b30Bfb4525E8114",
+          "veReppo": 1918,
+          "fallback": false,
+          "veReppoRaw": 1918.4459625639745
+        },
+        {
+          "name": "orq_lite_relic",
+          "seat": "nodeHolder",
+          "address": "0xe149C0075FA8b771CA558b1F898E8306F2f91abf",
+          "veReppo": 2630,
+          "fallback": false,
+          "veReppoRaw": 2630.3513866466333
+        },
+        {
+          "name": "orq_lite_fossil",
+          "seat": "nodeHolder",
+          "address": "0x9014420cF13aE53449a40753a5D969dC5f4d2bd4",
+          "veReppo": 9379,
+          "fallback": false,
+          "veReppoRaw": 9379.069150312765
+        },
+        {
+          "name": "orq_lite_umbral",
+          "seat": "nodeHolder",
+          "address": "0x32efa10dAec64cbDCd38a29F9Cf69Ab7f65d88DB",
+          "veReppo": 869,
+          "fallback": false,
+          "veReppoRaw": 869.2797712580768
+        }
+      ]
+    },
+    "error": null,
+    "startedAt": "2026-11-13T10:07:30.994Z"
+  }
+}

@@ -1,0 +1,13 @@
+.git
+node_modules
+web/node_modules
+web/dist
+data
+eval
+.cache
+.secrets
+**/.secrets
+.env*
+**/.env*
+*.log
+tests

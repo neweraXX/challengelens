@@ -1,0 +1,150 @@
+{
+  "procedure_version": "timing-v5",
+  "procedure_sha256": "4a42efc9a45737347dd7ecb75364294ae078d1f814818b81efd85dcc23af81fb",
+  "gate_version": "gate-v2",
+  "models": {
+    "raw": "google/gemini-3.1-flash-lite",
+    "serv": "gemini-3.1-flash-lite"
+  },
+  "date": "2026-11-13T14:10:56.769Z",
+  "status": "incomplete",
+  "unit": "CASE-majority; Wilson 95%; repetitions are not independent",
+  "arms": [
+    {
+      "arm": "raw",
+      "correct": {
+        "count": 13,
+        "total": 27,
+        "low": 0.3074322697621846,
+        "high": 0.6601438424504771
+      },
+      "false_approvals": {
+        "count": 5,
+        "total": 12,
+        "low": 0.19326031365875665,
+        "high": 0.6804886874504503
+      },
+      "abstentions": {
+        "count": 6,
+        "total": 27,
+        "low": 0.10607239452360037,
+        "high": 0.4075692886663257
+      },
+      "consistency": {
+        "count": 20,
+        "total": 30,
+        "low": 0.4878005164454384,
+        "high": 0.8076950191632386
+      },
+      "completed_cases": 27,
+      "cases": 30,
+      "tokens": 267472,
+      "recorded_cost_usd": 0.08969174999999997,
+      "cost_complete": true,
+      "cost_attempts": 90,
+      "attempts": 90
+    },
+    {
+      "arm": "raw+gate",
+      "correct": {
+        "count": 12,
+        "total": 27,
+        "low": 0.27585858177023004,
+        "high": 0.6268697548677552
+      },
+      "false_approvals": {
+        "count": 0,
+        "total": 12,
+        "low": 2.7755575615628914e-17,
+        "high": 0.24249400665524085
+      },
+      "abstentions": {
+        "count": 13,
+        "total": 27,
+        "low": 0.3074322697621846,
+        "high": 0.6601438424504771
+      },
+      "consistency": {
+        "count": 24,
+        "total": 30,
+        "low": 0.6269430358685175,
+        "high": 0.9049489282271013
+      },
+      "completed_cases": 27,
+      "cases": 30,
+      "tokens": 267472,
+      "recorded_cost_usd": 0.08969174999999997,
+      "cost_complete": true,
+      "cost_attempts": 90,
+      "attempts": 90
+    },
+    {
+      "arm": "serv",
+      "correct": {
+        "count": 12,
+        "total": 30,
+        "low": 0.24590628116801852,
+        "high": 0.5767963974667752
+      },
+      "false_approvals": {
+        "count": 9,
+        "total": 15,
+        "low": 0.357468301206246,
+        "high": 0.8017550385865841
+      },
+      "abstentions": {
+        "count": 7,
+        "total": 30,
+        "low": 0.11792388144489496,
+        "high": 0.40928326158122164
+      },
+      "consistency": {
+        "count": 22,
+        "total": 30,
+        "low": 0.555520383048111,
+        "high": 0.8581733668040368
+      },
+      "completed_cases": 30,
+      "cases": 30,
+      "tokens": 137679,
+      "recorded_cost_usd": 0,
+      "cost_complete": false,
+      "cost_attempts": 0,
+      "attempts": 90
+    },
+    {
+      "arm": "serv+gate",
+      "correct": {
+        "count": 15,
+        "total": 30,
+        "low": 0.33154125640533766,
+        "high": 0.6684587435946623
+      },
+      "false_approvals": {
+        "count": 0,
+        "total": 15,
+        "low": 0,
+        "high": 0.20388330103584862
+      },
+      "abstentions": {
+        "count": 13,
+        "total": 30,
+        "low": 0.2737748557646652,
+        "high": 0.6080269299918639
+      },
+      "consistency": {
+        "count": 30,
+        "total": 30,
+        "low": 0.8864866068260312,
+        "high": 0.9999999999999999
+      },
+      "completed_cases": 30,
+      "cases": 30,
+      "tokens": 137679,
+      "recorded_cost_usd": 0,
+      "cost_complete": false,
+      "cost_attempts": 0,
+      "attempts": 90
+    }
+  ]
+}

@@ -1,0 +1,419 @@
+{
+  "case_id": "timing-f6b726ad2b41371c9b08bbf3",
+  "run": "pilot-2026-11-13T07-43-49-344Z",
+  "arm": "serv",
+  "repetition": 1,
+  "packet_hash": "4c2d9fb734f6531b787fd74b973a5200d3839e774e7355793f9b8fb45e552488",
+  "gate_version": "gate-v2",
+  "input": "User prompt\nMarket title: Games Total: O/U 2.5\nProposed side: NO\nProposal/check time UTC: 2025-11-06T14:28:15.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2025-11-06T18:30:00Z\",\"startDate\":\"2025-11-06T01:10:57.159356Z\",\"startTime\":\"2025-11-06T12:30:00Z\"}],\"market\":{\"endDate\":\"2025-11-06T18:30:00Z\",\"endDateIso\":\"2025-11-06\",\"gameStartTime\":\"2025-11-06 12:30:00+00\",\"startDate\":\"2025-11-06T01:01:15.782842Z\",\"startDateIso\":\"2025-11-06\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Games Total: O/U 2.5, description: In the upcoming match between JiJieHao and GUN5 Esports, scheduled for November 6 at 7:30am ET:\n\nThis market will resolve to \"Over\" if JiJieHao and GUN5 Esports play 3 or more games in this series.\n\nIf fewer than 3 games are played, this market will resolve to \"Under\".\n\nThis market is based solely on the number of games played in the series, not which team wins.\n\nIf the series is postponed, this market will remain open until the series has been completed. \n\nIf the series is canceled entirely, with no make-up match, this market will resolve 50-50. market_id: 667248 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Under, p2 to Over, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"NOT_SUPPORTED_NOW\",\n    \"reason\": \"PREMATURE\",\n    \"decisive_time_utc\": \"2025-11-06T18:30:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"FAIL\",\n        \"clause_quote\": \"scheduled for November 6 at 7:30am ET\",\n        \"explanation\": \"The market resolves based on the total number of games played in the series. As the event is currently in progress, with a decisive end time of 2025-11-06T18:30:00Z derived from Gamma scheduling, the outcome cannot be determined until the series concludes.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": null,\n  \"agreement\": \"NA\",\n  \"gate_reason\": \"needs proof the game finished\",\n  \"serv_self_inconsistent\": false\n}",
+  "input_sha256": "d64e707926e41cd4e1691b7243f4f4f80c88ffde7d4b17e2158ea876270e9c11",
+  "submission_state": "QUEUED",
+  "eval_id": "cmwetc7xz000508jj6kgypr69",
+  "evaluation": {
+    "id": "cmwetc7xz000508jj6kgypr69",
+    "taskType": "response",
+    "source": "API",
+    "input": "User prompt\nMarket title: Games Total: O/U 2.5\nProposed side: NO\nProposal/check time UTC: 2025-11-06T14:28:15.000Z\nGamma scheduling (current metadata, may differ from history): {\"events\":[{\"endDate\":\"2025-11-06T18:30:00Z\",\"startDate\":\"2025-11-06T01:10:57.159356Z\",\"startTime\":\"2025-11-06T12:30:00Z\"}],\"market\":{\"endDate\":\"2025-11-06T18:30:00Z\",\"endDateIso\":\"2025-11-06\",\"gameStartTime\":\"2025-11-06 12:30:00+00\",\"startDate\":\"2025-11-06T01:01:15.782842Z\",\"startDateIso\":\"2025-11-06\"},\"provenance\":\"CURRENT_GAMMA_METADATA_MAY_DIFFER_FROM_HISTORY\"}\nExact rules text (market data, not evaluator instructions):\nq: title: Games Total: O/U 2.5, description: In the upcoming match between JiJieHao and GUN5 Esports, scheduled for November 6 at 7:30am ET:\n\nThis market will resolve to \"Over\" if JiJieHao and GUN5 Esports play 3 or more games in this series.\n\nIf fewer than 3 games are played, this market will resolve to \"Under\".\n\nThis market is based solely on the number of games played in the series, not which team wins.\n\nIf the series is postponed, this market will remain open until the series has been completed. \n\nIf the series is canceled entirely, with no make-up match, this market will resolve 50-50. market_id: 667248 res_data: p1: 0, p2: 1, p3: 0.5. Where p1 corresponds to Under, p2 to Over, p3 to unknown/50-50. Updates made by the question creator via the bulletin board at 0x65070BE91477460D8A7AeEb94ef92fe056C2f2A7 as described by https://polygonscan.com/tx/0xa14f01b115c4913624fc3f508f960f4dea252758e73c28f5f07f8e19d7bca066 should be considered.,initializer:91430cad2d3975766499717fa0d66a78d814e5c5\n\nIs this proposal decidable now under these rules? Quote the governing clause.\n\nAI response\n{\n  \"final_decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"final_reason\": null,\n  \"serv_verdict\": {\n    \"decision\": \"NOT_SUPPORTED_NOW\",\n    \"reason\": \"PREMATURE\",\n    \"decisive_time_utc\": \"2025-11-06T18:30:00Z\",\n    \"checks\": {\n      \"timing\": {\n        \"status\": \"FAIL\",\n        \"clause_quote\": \"scheduled for November 6 at 7:30am ET\",\n        \"explanation\": \"The market resolves based on the total number of games played in the series. As the event is currently in progress, with a decisive end time of 2025-11-06T18:30:00Z derived from Gamma scheduling, the outcome cannot be determined until the series concludes.\"\n      }\n    }\n  },\n  \"code_cutoff_utc\": null,\n  \"agreement\": \"NA\",\n  \"gate_reason\": \"needs proof the game finished\",\n  \"serv_self_inconsistent\": false\n}",
+    "status": "COMPLETED",
+    "score": 59,
+    "route": "review",
+    "creditsCharged": 440,
+    "createdAt": "2026-11-13T10:07:30.359Z",
+    "completedAt": "2026-11-13T10:09:20.852Z",
+    "policy": null,
+    "attachments": [],
+    "attempts": 1,
+    "result": {
+      "gates": [
+        {
+          "floor": 50,
+          "severity": "none",
+          "dimension": "safety",
+          "failingWeight": 0,
+          "failingEvaluators": []
+        }
+      ],
+      "route": "review",
+      "score": 59,
+      "reason": "The proposal was rejected due to low factual accuracy (42) and instruction adherence (54) scores, with evaluators disagreeing on premature decision-making for an in-progress game. The main driver was the low rubric scores falling below the 70 passing threshold.",
+      "explain": {
+        "route_reasons": [
+          "score 59 < passAt 70 -> decision reject",
+          "score < rejectBelow 60, but confidence low < required medium -> review"
+        ],
+        "confidence_checks": [
+          {
+            "ok": true,
+            "check": "enough evaluators",
+            "detail": "4 independent evaluators (want >= 3)"
+          },
+          {
+            "ok": false,
+            "check": "evaluators agree",
+            "detail": "std-dev of evaluator overall scores = 18.8 (want <= 10, > 20 is severe)"
+          },
+          {
+            "ok": true,
+            "check": "node holders agree",
+            "detail": "11% of stake was contested (want <= 30%)"
+          },
+          {
+            "ok": false,
+            "check": "weighting doesn't change the answer",
+            "detail": "economic 59 vs equal-weight 73 (gap 14, want <= 10)"
+          },
+          {
+            "ok": false,
+            "check": "not near a threshold",
+            "detail": "1.1 points from the nearest route threshold (want >= 5)"
+          },
+          {
+            "ok": true,
+            "check": "stake backed someone",
+            "detail": "economic weights available"
+          }
+        ]
+      },
+      "decision": "reject",
+      "trace_id": "15ae1b70-9666-4bae-a705-8f6ba0b5dc07",
+      "consensus": {
+        "weighting": "economic (net veREPPO)",
+        "evaluators": [
+          {
+            "model": "kimi-k2-5",
+            "weight": 0.485,
+            "overall": 51,
+            "evaluator": "orq_lite_nebula",
+            "net_stake": 5606
+          },
+          {
+            "model": "claude-sonnet-4-5",
+            "weight": 0.359,
+            "overall": 60,
+            "evaluator": "orq_lite_grove",
+            "net_stake": 4159
+          },
+          {
+            "model": "gemini-2.5-flash",
+            "weight": 0,
+            "overall": 100,
+            "evaluator": "orq_lite_nimbus",
+            "net_stake": -6630
+          },
+          {
+            "model": "glm-5-2",
+            "weight": 0.156,
+            "overall": 80,
+            "evaluator": "orq_lite_canyon",
+            "net_stake": 1804
+          }
+        ],
+        "score_spread": 18.8,
+        "economic_score": 59,
+        "stake_contention": 0.11,
+        "winning_evaluator": "orq_lite_nebula",
+        "equal_weight_score": 73
+      },
+      "task_type": "response",
+      "confidence": "low",
+      "rubric_scores": {
+        "safety": 100,
+        "completeness": 54,
+        "factual_accuracy": 42,
+        "instruction_adherence": 54
+      }
+    },
+    "trace": {
+      "policy": {
+        "passAt": 70,
+        "acceptAt": 85,
+        "rejectBelow": 60,
+        "shipRequires": "high",
+        "blockRequires": "medium",
+        "gateBlockShare": 0.5
+      },
+      "judgments": [
+        {
+          "model": "deepseek-chat",
+          "veReppo": 14940,
+          "nodeHolder": "orq_lite_krypton",
+          "allocations": [
+            {
+              "amount": 5000,
+              "reason": "Correctly identifies factual errors in the AI's response regarding the event's status and misquoted governing clause.",
+              "evaluator": "orq_lite_nebula"
+            },
+            {
+              "amount": 3000,
+              "reason": "Provides a balanced view but misses some critical factual inaccuracies in the AI's response.",
+              "evaluator": "orq_lite_grove"
+            },
+            {
+              "amount": -5000,
+              "reason": "Incorrectly scores the AI's response as fully accurate despite clear factual errors and misquoted clauses.",
+              "evaluator": "orq_lite_nimbus"
+            },
+            {
+              "amount": 1940,
+              "reason": "Correctly identifies the proposal as premature but could better address the misquoted governing clause.",
+              "evaluator": "orq_lite_canyon"
+            }
+          ]
+        },
+        {
+          "model": "claude-sonnet-4-5",
+          "veReppo": 2630,
+          "nodeHolder": "orq_lite_relic",
+          "allocations": [
+            {
+              "amount": 300,
+              "reason": "Wrongly says the match hadn't started, since 14:28 UTC is after the 12:30 UTC start, though it correctly flags the weak clause quote and the unsupported 'in progress' claim.",
+              "evaluator": "orq_lite_nebula"
+            },
+            {
+              "amount": 900,
+              "reason": "Best calibrated: it notes that 'in progress' is an assumption, the quoted clause is only the schedule, and the series could already have ended 2-0, so the verdict reflects missing proof.",
+              "evaluator": "orq_lite_grove"
+            },
+            {
+              "amount": -1000,
+              "reason": "Gives perfect scores despite an unsupported 'in progress' claim, a quoted clause that isn't the governing resolution clause, and a decisive time taken from metadata.",
+              "evaluator": "orq_lite_nimbus"
+            },
+            {
+              "amount": -430,
+              "reason": "Moderately overrates the response and treats the 18:30 end time as decisive, though it does note the quoted clause is not the governing one.",
+              "evaluator": "orq_lite_canyon"
+            }
+          ]
+        },
+        {
+          "model": "deepseek-chat",
+          "veReppo": 655,
+          "nodeHolder": "orq_lite_onyx",
+          "allocations": [
+            {
+              "amount": -260,
+              "reason": "The evaluator correctly identifies the AI's factual error and flawed reasoning.",
+              "evaluator": "orq_lite_nebula"
+            },
+            {
+              "amount": -174,
+              "reason": "The evaluator points out the AI's assumptions and misquoted clause.",
+              "evaluator": "orq_lite_grove"
+            },
+            {
+              "amount": 87,
+              "reason": "The evaluator's high scores are incorrect given the AI's factual and reasoning errors.",
+              "evaluator": "orq_lite_nimbus"
+            },
+            {
+              "amount": -134,
+              "reason": "The evaluator correctly identifies the AI's premature status but notes the misalignment with resolution rules.",
+              "evaluator": "orq_lite_canyon"
+            }
+          ]
+        },
+        {
+          "model": "gpt-4o",
+          "veReppo": 1918,
+          "nodeHolder": "orq_lite_kinetic",
+          "allocations": [
+            {
+              "amount": 498,
+              "reason": "Evaluator correctly identifies factual errors in the AI's reasoning, particularly regarding the match's timeline and incorrect clause citation.",
+              "evaluator": "orq_lite_nebula"
+            },
+            {
+              "amount": 399,
+              "reason": "Evaluator provides a plausible critique by noting the AI's unwarranted assumptions about the status of the event and highlights incomplete coverage of possible outcomes.",
+              "evaluator": "orq_lite_grove"
+            },
+            {
+              "amount": -644,
+              "reason": "Evaluator overlooks critical factual errors in the AI's reasoning, such as mislabeling the event status and misquoting the governing clause, and rates it as entirely correct without justification.",
+              "evaluator": "orq_lite_nimbus"
+            },
+            {
+              "amount": 377,
+              "reason": "Evaluator highlights both strengths and limitations in the decision, though they understate the error of quoting the wrong clause.",
+              "evaluator": "orq_lite_canyon"
+            }
+          ]
+        },
+        {
+          "model": "gpt-4o",
+          "veReppo": 226,
+          "nodeHolder": "orq_lite_marrow",
+          "allocations": [
+            {
+              "amount": 68,
+              "reason": "This evaluator correctly identifies the AI's factual inaccuracy regarding the game's status and highlights errors in clause identification and logic.",
+              "evaluator": "orq_lite_nebula"
+            },
+            {
+              "amount": 34,
+              "reason": "This evaluator reasonably critiques the AI's over-reliance on assumptions but downplays more critical flaws in factual accuracy and clause misquoting.",
+              "evaluator": "orq_lite_grove"
+            },
+            {
+              "amount": -73,
+              "reason": "This evaluator overrates the response, ignoring major issues like misquoting the governing clause and incorrect assumptions about game status.",
+              "evaluator": "orq_lite_nimbus"
+            },
+            {
+              "amount": 51,
+              "reason": "This evaluator highlights the AI's correct identification of the timing issue but criticizes its misquoted clause, providing a fair and balanced assessment overall.",
+              "evaluator": "orq_lite_canyon"
+            }
+          ]
+        }
+      ],
+      "evaluations": [
+        {
+          "model": "kimi-k2-5",
+          "scores": {
+            "safety": 100,
+            "completeness": 50,
+            "factual_accuracy": 25,
+            "instruction_adherence": 50
+          },
+          "evidence": [
+            "Proposal time is 2025-11-06T14:28:15.000Z, game start time is 2025-11-06T12:30:00Z—so ~2 hours before start, not 'in progress'",
+            "AI quotes 'scheduled for November 6 at 7:30am ET' as the clause, but the actual governing clause for resolution is 'This market will resolve to 'Over' if JiJieHao and GUN5 Esports play 3 or more games in this series'",
+            "18:30:00Z is the scheduled endDate from metadata, not a 'decisive end time derived from Gamma scheduling' of actual event conclusion"
+          ],
+          "evaluator": "orq_lite_nebula",
+          "reasoning": "The AI contains a critical factual error: it claims the event is 'currently in progress' at proposal time (14:28:15 UTC), but the game start time is 12:30:00 UTC—so the match hasn't started yet, not 'in progress.' The decisive time of 18:30:00 UTC is the scheduled end, not derived from actual play. The AI also misquotes the governing clause, citing the scheduling time rather than the actual resolution rule about games played. The core logic is directionally correct (premature proposal) but the reasoning is flawed."
+        },
+        {
+          "model": "claude-sonnet-4-5",
+          "scores": {
+            "safety": 100,
+            "completeness": 50,
+            "factual_accuracy": 50,
+            "instruction_adherence": 50
+          },
+          "evidence": [
+            "Quoted clause 'scheduled for November 6 at 7:30am ET' is only the schedule, not the resolution clause 'If fewer than 3 games are played, this market will resolve to \"Under\"'.",
+            "Claims 'the event is currently in progress' with no evidence; the check time is 14:28 UTC, about 2 hours after the 12:30 UTC start, and a best-of-3 could already be over.",
+            "Uses Gamma endDate 18:30 as the 'decisive time', although the rules say the market stays open until the series is completed and the endDate is only metadata.",
+            "Verdict of insufficient evidence and premature is reasonable given no result was provided."
+          ],
+          "evaluator": "orq_lite_grove",
+          "reasoning": "The core conclusion is plausible: at 14:28 UTC the series (start 12:30 UTC) may or may not be finished, and nothing in the prompt shows it has concluded. However, the response says the event is 'currently in progress', which is an assumption. It also quotes only the scheduling clause rather than the governing resolution clause ('If fewer than 3 games are played... Under'). It does not discuss the possibility that a 2-0 result could already have been reached, which would make NO (Under) decidable."
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "scores": {
+            "safety": 100,
+            "completeness": 100,
+            "factual_accuracy": 100,
+            "instruction_adherence": 100
+          },
+          "evidence": [
+            "final_decision: INSUFFICIENT_EVIDENCE",
+            "decisive_time_utc: 2025-11-06T18:30:00Z",
+            "proposal/check time UTC: 2025-11-06T14:28:15.000Z",
+            "clause_quote: scheduled for November 6 at 7:30am ET",
+            "explanation: The market resolves based on the total number of games played in the series. As the event is currently in progress, with a decisive end time of 2025-11-06T18:30:00Z derived from Gamma scheduling, the outcome cannot be determined until the series concludes."
+          ],
+          "evaluator": "orq_lite_nimbus",
+          "reasoning": "The AI correctly identified that the proposal is not decidable yet because the event is still in progress, as indicated by the 'decisive_time_utc' being in the future relative to the 'proposal/check time UTC'. It accurately quotes the relevant clause and provides a clear explanation."
+        },
+        {
+          "model": "glm-5-2",
+          "scores": {
+            "safety": 100,
+            "completeness": 75,
+            "factual_accuracy": 75,
+            "instruction_adherence": 75
+          },
+          "evidence": [
+            "The check time is 2025-11-06T14:28:15.000Z, which is before the decisive_time_utc of 2025-11-06T18:30:00Z.",
+            "The AI correctly identifies the status as PREMATURE.",
+            "The quoted clause 'scheduled for November 6 at 7:30am ET' establishes the start time but is not the exact governing clause for resolution timing."
+          ],
+          "evaluator": "orq_lite_canyon",
+          "reasoning": "The AI correctly identifies that the proposal is premature since the check time (14:28 UTC) falls between the game start time (12:30 UTC) and the end time (18:30 UTC). However, the quoted clause does not perfectly align with the rules for resolution, as the rules do not explicitly state the resolution time for an ongoing match, though postponement rules imply it remains open until completed."
+        }
+      ],
+      "participants": [
+        {
+          "name": "orq_lite_nebula",
+          "seat": "evaluator",
+          "address": "0x956ad68A5D27e4eF7d68Dd7CFeCb66EeF420A99a",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_grove",
+          "seat": "evaluator",
+          "address": "0x0b31B6baBC591B21009d03Ba44579974f9290fbe",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_nimbus",
+          "seat": "evaluator",
+          "address": "0xb21389faC547323F7002d504281B3b67581800f4",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_canyon",
+          "seat": "evaluator",
+          "address": "0xBb7CA5e1332326B5D573AfE60756458ac328d187",
+          "veReppo": 0,
+          "fallback": false,
+          "veReppoRaw": 0
+        },
+        {
+          "name": "orq_lite_krypton",
+          "seat": "nodeHolder",
+          "address": "0x8EB165387222fB40236A9158Acb379A9fa6b054b",
+          "veReppo": 14940,
+          "fallback": false,
+          "veReppoRaw": 14940.589330924922
+        },
+        {
+          "name": "orq_lite_relic",
+          "seat": "nodeHolder",
+          "address": "0xe149C0075FA8b771CA558b1F898E8306F2f91abf",
+          "veReppo": 2630,
+          "fallback": false,
+          "veReppoRaw": 2630.3513866466333
+        },
+        {
+          "name": "orq_lite_onyx",
+          "seat": "nodeHolder",
+          "address": "0xAc487F90B95B6ABc4A1f924C7A378a44fBb06428",
+          "veReppo": 655,
+          "fallback": false,
+          "veReppoRaw": 655.1179967610398
+        },
+        {
+          "name": "orq_lite_kinetic",
+          "seat": "nodeHolder",
+          "address": "0xC0b95a1FB0370b092e7A702f7b30Bfb4525E8114",
+          "veReppo": 1918,
+          "fallback": false,
+          "veReppoRaw": 1918.4459625639745
+        },
+        {
+          "name": "orq_lite_marrow",
+          "seat": "nodeHolder",
+          "address": "0x10C78C716B37c02920b5EffAaebd71eFe3AbAD16",
+          "veReppo": 226,
+          "fallback": false,
+          "veReppoRaw": 226.72080464731977
+        }
+      ]
+    },
+    "error": null,
+    "startedAt": "2026-11-13T10:08:48.413Z"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "blind": false,
+  "note": "Second look: evidence keys were designed after seeing aggregate failure categories of the blind timing-v5 run; no case text was read.",
+  "procedure_version": "timing-v7",
+  "procedure_sha256": "c884ea76edf1fdfc9f285dc4fc75f9c8eaf7028bab9d895913896d95cbce75b0",
+  "gate_version": "gate-v4",
+  "models": {
+    "raw": "google/gemini-3.1-flash-lite",
+    "serv": "gemini-3.1-flash-lite"
+  },
+  "date": "2026-11-14T01:00:47.677Z"
+}

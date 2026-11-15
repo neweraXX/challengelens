@@ -1,0 +1,1680 @@
+{
+  "state": {
+    "run": "pilot-2026-11-12T11-46-44-050Z",
+    "status": "finished",
+    "arms": [
+      "serv"
+    ],
+    "stops": {
+      "raw": "Not selected (PILOT_ARMS)",
+      "serv": null
+    }
+  },
+  "trials": [
+    {
+      "arm": "serv",
+      "case_id": "timing-096b0fbae9b3a7989bd596a3",
+      "packet_hash": "6c52f91a0501addc6bb9a271e73b319f8ee729a587039a27c8d2e2b165c6a94d",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET",
+            "explanation": "The observation window ended on December 31, 2023, at 11:59 PM ET (2024-01-01T04:59:00Z). The proposal was submitted after the window closed, so timing is supported."
+          }
+        },
+        "decisive_time_utc": "2024-01-01T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:46:44.054Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 16366.241007999999,
+          "network_error": null,
+          "usage": {
+            "prompt": 1398,
+            "completion": 153,
+            "total": 2473,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0c1cbf3f0a15dae5928a91e1",
+      "packet_hash": "3ffeb3c8832325e4106e71e1f713e19f6b9bda58051554cd7d2e101feda26b8f",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "If the Golden State Warriors win, the market will resolve to “Warriors”.",
+            "explanation": "The proposal was submitted on February 25, 2023, prior to the game's start and estimated completion time on February 27, 2023 at 03:30:00 UTC."
+          }
+        },
+        "decisive_time_utc": "2023-02-27T03:30:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:47:00.428Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8069.735669999998,
+          "network_error": null,
+          "usage": {
+            "prompt": 1221,
+            "completion": 127,
+            "total": 2434,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0c88438129ac80cba43c38fd",
+      "packet_hash": "e46c10d3fd0690531633ca6544325045cdc4bc9695af6c4e9a32e96020233af2",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for January 9 at 9:00PM ET",
+            "explanation": "The proposal time of 2026-01-10T03:45:32Z occurs before the estimated game end time of 2026-01-10T05:00:00Z for the NHL game starting at 2026-01-10T02:00:00Z (January 9 at 9:00 PM ET). Resolution requires game completion."
+          }
+        },
+        "decisive_time_utc": "2026-01-10T05:00:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:47:08.510Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8487.965795,
+          "network_error": null,
+          "usage": {
+            "prompt": 1380,
+            "completion": 173,
+            "total": 2592,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0d7374fc22efb92be7f6a743",
+      "packet_hash": "becd1a04c2f1402dc8f6422700833ed371f7de81d511d68b96f6ccc300a24796",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "December 8, 2025, 12:00 AM ET and December 14, 2025, 11:59 PM ET",
+            "explanation": "The proposal was submitted after the observation window ended on December 14, 2025, at 11:59 PM ET (December 15, 2025, at 04:59:00 UTC)."
+          }
+        },
+        "decisive_time_utc": "2025-12-15T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:47:17.010Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6858.305502999996,
+          "network_error": null,
+          "usage": {
+            "prompt": 1523,
+            "completion": 149,
+            "total": 2433,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0fabc28953d7a6f6a48ab7c3",
+      "packet_hash": "287b0f5d3ad029f1af6d5b32b8412c6a2fb7d9871a9d8e995d301f4905657280",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET.",
+            "explanation": "The proposal occurred prior to the window end of January 5, 2026, 04:59 UTC. Resolving to Yes before window completion requires evidence of occurrence, which is not provided."
+          }
+        },
+        "decisive_time_utc": "2026-01-05T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:47:23.874Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8833.458713,
+          "network_error": null,
+          "usage": {
+            "prompt": 1572,
+            "completion": 144,
+            "total": 3227,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-1cb1c22e47ea5596f03eb22a",
+      "packet_hash": "4ab3d504b077af6b74320efda61300a0f9dd3197cf839f33c224663e6ed2b68d",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "In the upcoming MLB game, scheduled for September 16 at 1:05PM ET:",
+            "explanation": "The proposal was submitted on September 16, 2025 at 21:20:22 UTC, which is prior to the game's decisive estimated end time of 01:45:00 UTC on September 17, 2025. Because the game observation window has not completed, the proposal cannot be supported at this time."
+          }
+        },
+        "decisive_time_utc": "2025-09-17T01:45:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:47:32.718Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8614.107670000005,
+          "network_error": null,
+          "usage": {
+            "prompt": 1402,
+            "completion": 162,
+            "total": 2785,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-4cfe8694807a8ed7a250f376",
+      "packet_hash": "45b884f400db4eb76318f46fd9ddd4042fec203eac9f4b61270d588648f1310d",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "ETH/USDT 1 hour candle that begins on the time and date specified in the title.",
+            "explanation": "The 1-hour candle starting at 3:00 PM ET on December 18, 2025, concluded at 4:00 PM ET (21:00:00 UTC). The proposal at 21:00:03 UTC occurred after the decisive observation window closed."
+          }
+        },
+        "decisive_time_utc": "2025-12-18T21:00:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:47:41.342Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7192.302585999998,
+          "network_error": null,
+          "usage": {
+            "prompt": 1410,
+            "completion": 145,
+            "total": 2388,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-5739e5b0742d895b75fe579e",
+      "packet_hash": "339d3e6efbc3d642b1f9e57d5616aa59e52e59964f9283cea13f98e049412324",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "from 12:00 AM ET on the first date to 11:59 PM ET on the last",
+            "explanation": "The proposal is for YES before the window end of September 22, 2025, at 03:59:00 UTC. While YES can resolve immediately upon reaching $250, verifying whether the event has already occurred requires external evidence outside the scope of timing evaluation."
+          }
+        },
+        "decisive_time_utc": "2025-09-22T03:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:47:48.545Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 12065.690588999998,
+          "network_error": null,
+          "usage": {
+            "prompt": 1422,
+            "completion": 147,
+            "total": 3217,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-7367529981e30893b74f7d4c",
+      "packet_hash": "743ebdb7e8f8b31acc6f73193c6e82354fb4834e46f3a913f0a1c670c6306bd3",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "If no interview between Musk and Trump is publicly released by August 23, 2024, 11:59 PM ET this market will resolve to \"No\".",
+            "explanation": "The proposal to resolve to No occurred on August 13, 2024, before the market's decisive cutoff date of August 23, 2024, at 11:59 PM ET (2024-08-24T03:59:00Z). Resolving to No prematurely before the observation window completes is not supported."
+          }
+        },
+        "decisive_time_utc": "2024-08-24T03:59:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:48:00.621Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 13119.079006,
+          "network_error": null,
+          "usage": {
+            "prompt": 1400,
+            "completion": 183,
+            "total": 3608,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-7e5b08cb0bbb8a44f261ef77",
+      "packet_hash": "1a6d70181d3e16a0da7c767cd6eb73080367662584a8698ad201a038c1fc53bd",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET",
+            "explanation": "The observation window ends on January 20, 2024, at 11:59 PM ET (2024-01-21T04:59:00Z). The YES proposal occurred prior to the window completion, requiring proof of event occurrence which cannot be verified."
+          }
+        },
+        "decisive_time_utc": "2024-01-21T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:48:13.750Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 11080.803088,
+          "network_error": null,
+          "usage": {
+            "prompt": 1400,
+            "completion": 162,
+            "total": 3133,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-9c9be4825222f0e577b2b6eb",
+      "packet_hash": "4e54c9c321f6381aaa56e9aa70f52422951a3916ced50f3e4cda5ccdb405f3a6",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET",
+            "explanation": "The proposal was submitted before the end of the observation window on January 5, 2026, at 04:59:00 UTC. While a YES outcome does not require window completion, evidence of the event occurrence is unavailable."
+          }
+        },
+        "decisive_time_utc": "2026-01-05T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:48:24.840Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 9742.577963000003,
+          "network_error": null,
+          "usage": {
+            "prompt": 1584,
+            "completion": 188,
+            "total": 3272,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-b011f1a97b470fa7094135e1",
+      "packet_hash": "f95d22820d40876a94f5f5bf504a5c4570f538254fb1bb631f4ff263a3dbb6cf",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title.",
+            "explanation": "The 1-minute candle for 12:00 ET on November 7, 2025 closes at 12:01 ET (17:01 UTC). The proposal was submitted at 17:11:43 UTC, after the decisive observation window closed."
+          }
+        },
+        "decisive_time_utc": "2025-11-07T17:01:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:48:34.594Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7397.764085999996,
+          "network_error": null,
+          "usage": {
+            "prompt": 1411,
+            "completion": 205,
+            "total": 2746,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-d0703d8ea538e2707c5a3427",
+      "packet_hash": "56ccb7ad6a25307504c48117fdc625427c97a68b5c32e881a03171a67abeac7f",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET.",
+            "explanation": "The observation window ended on December 31, 2023 at 11:59 PM ET (2024-01-01T04:59:00Z). The proposal time of 2024-01-02T05:52:37.000Z occurs after the cutoff, making it supported."
+          }
+        },
+        "decisive_time_utc": "2024-01-01T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:48:41.999Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7291.6837950000045,
+          "network_error": null,
+          "usage": {
+            "prompt": 1416,
+            "completion": 177,
+            "total": 2631,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-f3947712a223d177e14d82b7",
+      "packet_hash": "0875e097b56964344368844ac66d0e1a028966592b61d6607790cf8830f50b90",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for April 28 at 12:00 AM ET",
+            "explanation": "The proposal was submitted on April 27, 2023, prior to the game's scheduled start time of April 28, 2023 at 12:00 AM ET (04:00 UTC) and its estimated completion time."
+          }
+        },
+        "decisive_time_utc": "2023-04-28T06:30:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:48:49.301Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7178.406628000012,
+          "network_error": null,
+          "usage": {
+            "prompt": 1222,
+            "completion": 135,
+            "total": 2298,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-f6b726ad2b41371c9b08bbf3",
+      "packet_hash": "4c2d9fb734f6531b787fd74b973a5200d3839e774e7355793f9b8fb45e552488",
+      "repetition": 1,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for November 6 at 7:30am ET",
+            "explanation": "The proposal was submitted at 2025-11-06T14:28:15.000Z, which is before the estimated match completion time of 2025-11-06T18:30:00Z. Resolving the market prior to the decisive cutoff is premature."
+          }
+        },
+        "decisive_time_utc": "2025-11-06T18:30:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:48:56.495Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7842.268878000003,
+          "network_error": null,
+          "usage": {
+            "prompt": 1408,
+            "completion": 148,
+            "total": 2459,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-096b0fbae9b3a7989bd596a3",
+      "packet_hash": "6c52f91a0501addc6bb9a271e73b319f8ee729a587039a27c8d2e2b165c6a94d",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "December 31, 2023, 11:59 PM ET",
+            "explanation": "The observation window ended on December 31, 2023, at 11:59 PM ET (2024-01-01T04:59:00Z). The proposal was submitted on January 4, 2024, which is after the decisive end cutoff."
+          }
+        },
+        "decisive_time_utc": "2024-01-01T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:04.352Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6534.559628999996,
+          "network_error": null,
+          "usage": {
+            "prompt": 1398,
+            "completion": 146,
+            "total": 2365,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0c1cbf3f0a15dae5928a91e1",
+      "packet_hash": "3ffeb3c8832325e4106e71e1f713e19f6b9bda58051554cd7d2e101feda26b8f",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for February 26 at 7:30 PM",
+            "explanation": "The proposal was submitted on February 25, 2023, prior to the scheduled game start and estimated completion time on February 27, 2023 at 03:30 UTC."
+          }
+        },
+        "decisive_time_utc": "2023-02-27T03:30:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:10.900Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7973.941711000021,
+          "network_error": null,
+          "usage": {
+            "prompt": 1221,
+            "completion": 120,
+            "total": 2618,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0c88438129ac80cba43c38fd",
+      "packet_hash": "e46c10d3fd0690531633ca6544325045cdc4bc9695af6c4e9a32e96020233af2",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for January 9 at 9:00PM ET",
+            "explanation": "The proposal at 03:45 UTC occurs before the estimated completion of the NHL game at 05:00 UTC (3 hours after the 02:00 UTC start time). Because resolution depends on full game completion, the proposal is premature."
+          }
+        },
+        "decisive_time_utc": "2026-01-10T05:00:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:18.889Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8150.9842959999805,
+          "network_error": null,
+          "usage": {
+            "prompt": 1380,
+            "completion": 129,
+            "total": 2482,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0d7374fc22efb92be7f6a743",
+      "packet_hash": "becd1a04c2f1402dc8f6422700833ed371f7de81d511d68b96f6ccc300a24796",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "This market will resolve to “Yes” if Donald Trump mentions the listed term between December 8, 2025, 12:00 AM ET and December 14, 2025, 11:59 PM ET.",
+            "explanation": "The observation window ended on December 14, 2025, at 11:59 PM ET (2025-12-15T04:59:00Z). The proposal time of 2025-12-15T05:00:03.000Z is after the cutoff, so the proposal is temporally supported."
+          }
+        },
+        "decisive_time_utc": "2025-12-15T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:27.054Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6644.870170000009,
+          "network_error": null,
+          "usage": {
+            "prompt": 1523,
+            "completion": 200,
+            "total": 2646,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0fabc28953d7a6f6a48ab7c3",
+      "packet_hash": "287b0f5d3ad029f1af6d5b32b8412c6a2fb7d9871a9d8e995d301f4905657280",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET",
+            "explanation": "The observation window ends on January 5, 2026, at 04:59:00 UTC (January 4, 2026, 11:59 PM ET). The proposal was submitted before the end of the window, and evidence confirming the occurrence of the event is not available in the packet."
+          }
+        },
+        "decisive_time_utc": "2026-01-05T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:33.713Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8799.478046000004,
+          "network_error": null,
+          "usage": {
+            "prompt": 1572,
+            "completion": 171,
+            "total": 2886,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-1cb1c22e47ea5596f03eb22a",
+      "packet_hash": "4ab3d504b077af6b74320efda61300a0f9dd3197cf839f33c224663e6ed2b68d",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "In the upcoming MLB game, scheduled for September 16 at 1:05PM ET:",
+            "explanation": "The proposal at 2025-09-16T21:20:22.000Z occurred prior to the updated game start of 2025-09-16T22:45:00Z and estimated completion at 2025-09-17T01:45:00Z. Resolving the game winner requires completion, so the proposal is premature."
+          }
+        },
+        "decisive_time_utc": "2025-09-17T01:45:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:42.523Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8098.482379000023,
+          "network_error": null,
+          "usage": {
+            "prompt": 1402,
+            "completion": 216,
+            "total": 2533,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-4cfe8694807a8ed7a250f376",
+      "packet_hash": "45b884f400db4eb76318f46fd9ddd4042fec203eac9f4b61270d588648f1310d",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the ETH/USDT 1 hour candle that begins on the time and date specified in the title.",
+            "explanation": "The 1-hour candle starting December 18 at 3PM ET (20:00 UTC) closed at 21:00:00 UTC. The proposal was submitted at 21:00:03 UTC, which is after the observation window completed."
+          }
+        },
+        "decisive_time_utc": "2025-12-18T21:00:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:50.634Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6596.148960999999,
+          "network_error": null,
+          "usage": {
+            "prompt": 1410,
+            "completion": 197,
+            "total": 2489,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-5739e5b0742d895b75fe579e",
+      "packet_hash": "339d3e6efbc3d642b1f9e57d5616aa59e52e59964f9283cea13f98e049412324",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "from 12:00 AM ET on the first date to 11:59 PM ET on the last",
+            "explanation": "The proposal is for YES prior to the end of the observation window on September 21, 2025 at 11:59 PM ET (2025-09-22T03:59:00Z). Early resolution requires proof of event occurrence, which is not available in the packet."
+          }
+        },
+        "decisive_time_utc": "2025-09-22T03:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:49:57.244Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8871.144170999993,
+          "network_error": null,
+          "usage": {
+            "prompt": 1422,
+            "completion": 156,
+            "total": 2979,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-7367529981e30893b74f7d4c",
+      "packet_hash": "743ebdb7e8f8b31acc6f73193c6e82354fb4834e46f3a913f0a1c670c6306bd3",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "If no interview between Musk and Trump is publicly released by August 23, 2024, 11:59 PM ET this market will resolve to \"No\".",
+            "explanation": "The proposal was submitted on August 13, 2024, before the market fallback cutoff on August 23, 2024, at 11:59 PM ET (August 24, 2024, 03:59 UTC). Resolving to 'No' requires completion of the observation period."
+          }
+        },
+        "decisive_time_utc": "2024-08-24T03:59:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:50:06.129Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 13140.176462999982,
+          "network_error": null,
+          "usage": {
+            "prompt": 1400,
+            "completion": 213,
+            "total": 3464,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-7e5b08cb0bbb8a44f261ef77",
+      "packet_hash": "1a6d70181d3e16a0da7c767cd6eb73080367662584a8698ad201a038c1fc53bd",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET",
+            "explanation": "The proposal is for YES before the observation window ends on January 21, 2024, at 04:59:00Z. Because YES depends on an event occurrence before the cutoff and proof of occurrence is unavailable, timing cannot be validated."
+          }
+        },
+        "decisive_time_utc": "2024-01-21T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:50:19.281Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8033.197253999999,
+          "network_error": null,
+          "usage": {
+            "prompt": 1400,
+            "completion": 151,
+            "total": 2679,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-9c9be4825222f0e577b2b6eb",
+      "packet_hash": "4e54c9c321f6381aaa56e9aa70f52422951a3916ced50f3e4cda5ccdb405f3a6",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET.",
+            "explanation": "The observation window ends on January 4, 2026, at 11:59 PM ET (2026-01-05T04:59:00Z). The proposal occurred prior to window completion. While a YES outcome can occur early upon mention, evidence of event occurrence cannot be established from timing data alone."
+          }
+        },
+        "decisive_time_utc": "2026-01-05T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:50:27.328Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 11043.056004999991,
+          "network_error": null,
+          "usage": {
+            "prompt": 1584,
+            "completion": 176,
+            "total": 3386,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-b011f1a97b470fa7094135e1",
+      "packet_hash": "f95d22820d40876a94f5f5bf504a5c4570f538254fb1bb631f4ff263a3dbb6cf",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title.",
+            "explanation": "The 1-minute Binance BTC/USDT candle at 12:00 ET (17:00 UTC) on November 7, 2025 closes at 17:01 UTC. The proposal submitted at 17:11:43 UTC occurred after this candle closed."
+          }
+        },
+        "decisive_time_utc": "2025-11-07T17:01:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:50:38.380Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7502.784252999991,
+          "network_error": null,
+          "usage": {
+            "prompt": 1411,
+            "completion": 171,
+            "total": 2558,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-d0703d8ea538e2707c5a3427",
+      "packet_hash": "56ccb7ad6a25307504c48117fdc625427c97a68b5c32e881a03171a67abeac7f",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET.",
+            "explanation": "The observation window ended on December 31, 2023, at 11:59 PM ET (January 1, 2024, at 04:59:00 UTC). The proposal was submitted after this decisive cutoff time."
+          }
+        },
+        "decisive_time_utc": "2024-01-01T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:50:45.893Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6460.327920000011,
+          "network_error": null,
+          "usage": {
+            "prompt": 1416,
+            "completion": 151,
+            "total": 2281,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-f3947712a223d177e14d82b7",
+      "packet_hash": "0875e097b56964344368844ac66d0e1a028966592b61d6607790cf8830f50b90",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for April 28 at 12:00 AM ET",
+            "explanation": "The proposal was submitted on April 27, 2023, prior to the scheduled game start time of April 28, 2023 at 04:00 UTC."
+          }
+        },
+        "decisive_time_utc": "2023-04-28T07:00:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:50:52.366Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7709.760211999994,
+          "network_error": null,
+          "usage": {
+            "prompt": 1222,
+            "completion": 119,
+            "total": 2691,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-f6b726ad2b41371c9b08bbf3",
+      "packet_hash": "4c2d9fb734f6531b787fd74b973a5200d3839e774e7355793f9b8fb45e552488",
+      "repetition": 2,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "If fewer than 3 games are played, this market will resolve to \"Under\".",
+            "explanation": "The proposal was submitted at 2025-11-06T14:28:15Z, prior to the estimated series end time of 2025-11-06T18:30:00Z. Proposing Under requires the series to be completed, making the proposal premature."
+          }
+        },
+        "decisive_time_utc": "2025-11-06T18:30:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:00.086Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6863.871669999993,
+          "network_error": null,
+          "usage": {
+            "prompt": 1408,
+            "completion": 150,
+            "total": 2488,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-096b0fbae9b3a7989bd596a3",
+      "packet_hash": "6c52f91a0501addc6bb9a271e73b319f8ee729a587039a27c8d2e2b165c6a94d",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET.",
+            "explanation": "The observation window ended on December 31, 2023, at 11:59 PM ET (2024-01-01T04:59:00Z). The proposal occurred on January 4, 2024, which is after the decisive cutoff time."
+          }
+        },
+        "decisive_time_utc": "2024-01-01T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:06.962Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6350.392002999957,
+          "network_error": null,
+          "usage": {
+            "prompt": 1398,
+            "completion": 162,
+            "total": 2433,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0c1cbf3f0a15dae5928a91e1",
+      "packet_hash": "3ffeb3c8832325e4106e71e1f713e19f6b9bda58051554cd7d2e101feda26b8f",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "If the game is not completed by April 16, 2023 (11:59:59 PM EST), the market will resolve 50-50.",
+            "explanation": "The proposal time of February 25, 2023 occurs prior to the game start on February 27, 2023 at 00:30 UTC and its estimated completion time at 03:30 UTC. Evaluating the market outcome prior to game completion is premature."
+          }
+        },
+        "decisive_time_utc": "2023-02-27T03:30:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:13.323Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8306.150045000017,
+          "network_error": null,
+          "usage": {
+            "prompt": 1221,
+            "completion": 165,
+            "total": 2547,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0c88438129ac80cba43c38fd",
+      "packet_hash": "e46c10d3fd0690531633ca6544325045cdc4bc9695af6c4e9a32e96020233af2",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for January 9 at 9:00PM ET",
+            "explanation": "The game started at 02:00 UTC on January 10, 2026, with an estimated completion time of 05:00 UTC. The proposal at 03:45:32 UTC occurred before the game concluded, making the resolution premature."
+          }
+        },
+        "decisive_time_utc": "2026-01-10T05:00:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:21.644Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7813.018336999987,
+          "network_error": null,
+          "usage": {
+            "prompt": 1380,
+            "completion": 135,
+            "total": 2775,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0d7374fc22efb92be7f6a743",
+      "packet_hash": "becd1a04c2f1402dc8f6422700833ed371f7de81d511d68b96f6ccc300a24796",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "December 8, 2025, 12:00 AM ET and December 14, 2025, 11:59 PM ET",
+            "explanation": "The proposal time of 2025-12-15T05:00:03.000Z occurred after the observation cutoff window ended at 2025-12-15T04:59:00Z."
+          }
+        },
+        "decisive_time_utc": "2025-12-15T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:29.469Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8110.374836999981,
+          "network_error": null,
+          "usage": {
+            "prompt": 1523,
+            "completion": 154,
+            "total": 3081,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-0fabc28953d7a6f6a48ab7c3",
+      "packet_hash": "287b0f5d3ad029f1af6d5b32b8412c6a2fb7d9871a9d8e995d301f4905657280",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "This market will resolve to “Yes” if Donald Trump mentions the listed term between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET.",
+            "explanation": "The observation window ends on January 4, 2026, at 11:59 PM ET (2026-01-05T04:59:00Z). The proposal occurred prior to this cutoff for a YES outcome, which depends on event occurrence that cannot be verified without external evidence."
+          }
+        },
+        "decisive_time_utc": "2026-01-05T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:37.600Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6363.258710000024,
+          "network_error": null,
+          "usage": {
+            "prompt": 1572,
+            "completion": 186,
+            "total": 2951,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-1cb1c22e47ea5596f03eb22a",
+      "packet_hash": "4ab3d504b077af6b74320efda61300a0f9dd3197cf839f33c224663e6ed2b68d",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "In the upcoming MLB game, scheduled for September 16 at 1:05PM ET",
+            "explanation": "The proposal was submitted at 2025-09-16T21:20:22.000Z, which is before the game's estimated completion time of 2025-09-17T01:45:00Z based on the updated start time."
+          }
+        },
+        "decisive_time_utc": "2025-09-17T01:45:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:43.977Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7575.919669999974,
+          "network_error": null,
+          "usage": {
+            "prompt": 1402,
+            "completion": 151,
+            "total": 2977,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-4cfe8694807a8ed7a250f376",
+      "packet_hash": "45b884f400db4eb76318f46fd9ddd4042fec203eac9f4b61270d588648f1310d",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "ETH/USDT 1 hour candle that begins on the time and date specified in the title",
+            "explanation": "The 1-hour candle starting December 18 at 3PM ET (20:00 UTC) ended at 21:00 UTC. The proposal was submitted at 21:00:03 UTC, which is after the candle closed."
+          }
+        },
+        "decisive_time_utc": "2025-12-18T21:00:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:51.567Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 4627.553668999986,
+          "network_error": null,
+          "usage": {
+            "prompt": 1410,
+            "completion": 133,
+            "total": 2412,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-5739e5b0742d895b75fe579e",
+      "packet_hash": "339d3e6efbc3d642b1f9e57d5616aa59e52e59964f9283cea13f98e049412324",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "from 12:00 AM ET on the first date to 11:59 PM ET on the last",
+            "explanation": "The observation window ends on September 22, 2025, at 04:00 UTC. The proposal was submitted on September 18, 2025, prior to the end of the window. Since a YES outcome resolves immediately upon occurrence, timing cannot be validated without proof of occurrence."
+          }
+        },
+        "decisive_time_utc": "2025-09-22T04:00:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:51:56.209Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6924.594252999988,
+          "network_error": null,
+          "usage": {
+            "prompt": 1422,
+            "completion": 152,
+            "total": 2669,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-7367529981e30893b74f7d4c",
+      "packet_hash": "743ebdb7e8f8b31acc6f73193c6e82354fb4834e46f3a913f0a1c670c6306bd3",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "If no interview between Musk and Trump is publicly released by August 23, 2024, 11:59 PM ET this market will resolve to \"No\".",
+            "explanation": "The proposal at 2024-08-13T02:36:34.000Z occurs before the decisive market cutoff of 2024-08-24T03:59:00Z (August 23, 2024, 11:59 PM ET). Proposing No prior to the completion of the interview observation window or fallback expiry is premature."
+          }
+        },
+        "decisive_time_utc": "2024-08-24T03:59:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:52:03.144Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 12739.637923000031,
+          "network_error": null,
+          "usage": {
+            "prompt": 1400,
+            "completion": 195,
+            "total": 3554,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-7e5b08cb0bbb8a44f261ef77",
+      "packet_hash": "1a6d70181d3e16a0da7c767cd6eb73080367662584a8698ad201a038c1fc53bd",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between January 16, 12:00 PM ET, and January 20, 2024, 11:59 PM ET.",
+            "explanation": "The observation window ends on January 20, 2024, at 11:59 PM ET (2024-01-21T04:59:00Z). The proposal was submitted before the window closed for a YES outcome, which does not require window completion, but proof of the event occurrence is unavailable."
+          }
+        },
+        "decisive_time_utc": "2024-01-21T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:52:15.890Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 9941.572754999972,
+          "network_error": null,
+          "usage": {
+            "prompt": 1400,
+            "completion": 172,
+            "total": 3545,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-9c9be4825222f0e577b2b6eb",
+      "packet_hash": "4e54c9c321f6381aaa56e9aa70f52422951a3916ced50f3e4cda5ccdb405f3a6",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "UNKNOWN",
+            "clause_quote": "between December 29, 2025, 12:00 AM ET and January 4, 2026, 11:59 PM ET",
+            "explanation": "The observation window ends on January 4, 2026, at 11:59 PM ET (2026-01-05T04:59:00Z). The proposal was submitted before the end of the window. Proposing YES prior to window completion requires evidence of an occurrence, which is not available."
+          }
+        },
+        "decisive_time_utc": "2026-01-05T04:59:00Z"
+      },
+      "claimed_decision": "INSUFFICIENT_EVIDENCE",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:52:25.846Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6770.347962,
+          "network_error": null,
+          "usage": {
+            "prompt": 1584,
+            "completion": 174,
+            "total": 2804,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-b011f1a97b470fa7094135e1",
+      "packet_hash": "f95d22820d40876a94f5f5bf504a5c4570f538254fb1bb631f4ff263a3dbb6cf",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title.",
+            "explanation": "The 12:00 ET 1-minute candle on November 7, 2025 closed at 12:01 ET (17:01 UTC). The proposal was submitted at 17:11:43 UTC, which is after the decisive cutoff time."
+          }
+        },
+        "decisive_time_utc": "2025-11-07T17:01:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:52:32.627Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 8256.527379000036,
+          "network_error": null,
+          "usage": {
+            "prompt": 1411,
+            "completion": 177,
+            "total": 2960,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-d0703d8ea538e2707c5a3427",
+      "packet_hash": "56ccb7ad6a25307504c48117fdc625427c97a68b5c32e881a03171a67abeac7f",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "SUPPORTED_NOW",
+        "reason": null,
+        "checks": {
+          "timing": {
+            "status": "PASS",
+            "clause_quote": "between December 14, 12:00 PM ET, and December 31, 2023, 11:59 PM ET.",
+            "explanation": "The observation window ended on December 31, 2023, at 11:59 PM ET (January 1, 2024, at 04:59 UTC). The proposal timestamp of January 2, 2024, at 05:52:37 UTC occurs after the window closed, so the proposal timing is supported."
+          }
+        },
+        "decisive_time_utc": "2024-01-01T04:59:00Z"
+      },
+      "claimed_decision": "SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:52:40.896Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 6742.781044000003,
+          "network_error": null,
+          "usage": {
+            "prompt": 1416,
+            "completion": 176,
+            "total": 2784,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-f3947712a223d177e14d82b7",
+      "packet_hash": "0875e097b56964344368844ac66d0e1a028966592b61d6607790cf8830f50b90",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "In the upcoming NBA game, scheduled for April 28 at 12:00 AM ET:",
+            "explanation": "The proposal was submitted on April 27, 2023, prior to the scheduled game start on April 28, 2023 at 04:00 UTC. Proposing a game outcome before completion is premature."
+          }
+        },
+        "decisive_time_utc": "2023-04-28T07:00:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:52:47.654Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 7816.817127999966,
+          "network_error": null,
+          "usage": {
+            "prompt": 1222,
+            "completion": 135,
+            "total": 2719,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    },
+    {
+      "arm": "serv",
+      "case_id": "timing-f6b726ad2b41371c9b08bbf3",
+      "packet_hash": "4c2d9fb734f6531b787fd74b973a5200d3839e774e7355793f9b8fb45e552488",
+      "repetition": 3,
+      "status": "valid",
+      "verdict": {
+        "decision": "NOT_SUPPORTED_NOW",
+        "reason": "PREMATURE",
+        "checks": {
+          "timing": {
+            "status": "FAIL",
+            "clause_quote": "scheduled for November 6 at 7:30am ET",
+            "explanation": "The proposal was submitted at 14:28:15 UTC on November 6, 2025, which is prior to the estimated match window cutoff of 18:30:00 UTC."
+          }
+        },
+        "decisive_time_utc": "2025-11-06T18:30:00Z"
+      },
+      "claimed_decision": "NOT_SUPPORTED_NOW",
+      "errors": [],
+      "attempts": [
+        {
+          "started_at": "2026-11-12T11:52:55.487Z",
+          "request_format": "json_schema",
+          "http_status": 200,
+          "latency_ms": 9616.960253999976,
+          "network_error": null,
+          "usage": {
+            "prompt": 1408,
+            "completion": 160,
+            "total": 2845,
+            "reasoning": null,
+            "cost_usd": null
+          }
+        }
+      ]
+    }
+  ]
+}

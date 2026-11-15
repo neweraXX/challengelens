@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-11-15T01:48:05.343Z",
+  "changes": [
+    {
+      "date": "2026-11-13",
+      "from_version": "timing-v4",
+      "to_version": "timing-v5",
+      "reppo_eval_ids": [
+        "cmwetc7wq000408jjjqgz9et4",
+        "cmwetc7xz000508jj6kgypr69"
+      ],
+      "critique_summary": "Reppo scored 51: SUPPORTED_NOW contradicted the model own cutoff (proposal before window close). Reppo scored 59: PREMATURE for a game claimed in progress, cutoff taken from Gamma endDate.",
+      "change": "Added step 7 self-consistency check (no SUPPORTED_NOW when proposal precedes own decisive_time) and a step 3 ban on using Gamma endDate as game end.",
+      "dev_before": {
+        "run": "pilot-2026-11-13T13-52-05-623Z",
+        "serv_correct": "28/45",
+        "serv_false_supported": "12/24",
+        "serv_consistent": "13/15",
+        "gated_correct": "27/45",
+        "gated_false_supported": "0/24",
+        "gated_consistent": "15/15"
+      },
+      "dev_after": {
+        "run": "pilot-2026-11-13T13-33-04-215Z",
+        "serv_correct": "29/45",
+        "serv_false_supported": "7/24",
+        "serv_consistent": "14/15",
+        "gated_correct": "27/45",
+        "gated_false_supported": "0/24",
+        "gated_consistent": "15/15"
+      },
+      "accepted": true
+    },
+    {
+      "date": "2026-11-15",
+      "from_version": "reppo-format-1",
+      "to_version": "reppo-format-2",
+      "reppo_eval_ids": [
+        "cmwh5ywki000008jyzlqdkgiu"
+      ],
+      "critique_summary": "Panel (score 52, route review): the response never quotes the rules' finalization clause (the candle result is used once the data is finalized) and gives no margin (proposal 3 s after the candle close); the YES/Up outcome was not verified against candle data.",
+      "change": "Review input now also carries the rules' finalization wording, the margin between the proposal and the code-computed cutoff, and an explicit scope line (timing only, outcome not part of this check). The product verdict logic is unchanged.",
+      "dev_before": {
+        "eval_id": "cmwh5ywki000008jyzlqdkgiu",
+        "score": "52",
+        "route": "review",
+        "completeness": "30",
+        "factual_accuracy": "50",
+        "instruction_adherence": "34",
+        "action": "HOLD_FOR_REVIEW"
+      },
+      "dev_after": {
+        "eval_id": "cmwh687yg000108jy838pezyb",
+        "score": "69",
+        "route": "review",
+        "completeness": "69",
+        "factual_accuracy": "69",
+        "instruction_adherence": "44",
+        "action": "HOLD_FOR_REVIEW"
+      },
+      "accepted": true
+    }
+  ]
+}

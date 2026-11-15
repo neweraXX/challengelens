@@ -1,0 +1,20 @@
+{
+  "name": "challengelens-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "build": "tsc -p tsconfig.json && vite build" },
+  "dependencies": {
+    "@fontsource/inter": "5.0.0",
+    "@fontsource/jetbrains-mono": "5.0.0",
+    "@fontsource/space-grotesk": "5.0.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}

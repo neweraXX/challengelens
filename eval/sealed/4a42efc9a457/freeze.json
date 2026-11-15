@@ -1,0 +1,10 @@
+{
+  "procedure_version": "timing-v5",
+  "procedure_sha256": "4a42efc9a45737347dd7ecb75364294ae078d1f814818b81efd85dcc23af81fb",
+  "gate_version": "gate-v2",
+  "models": {
+    "raw": "google/gemini-3.1-flash-lite",
+    "serv": "gemini-3.1-flash-lite"
+  },
+  "date": "2026-11-13T14:10:56.769Z"
+}

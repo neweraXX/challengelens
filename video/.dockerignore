@@ -1,0 +1,4 @@
+*
+!Dockerfile
+!download-models.py
+!.dockerignore

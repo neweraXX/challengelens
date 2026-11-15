@@ -1,0 +1,47 @@
+[
+  {
+    "id": "intro",
+    "scene": "intro",
+    "text": "ChallengeLens. Check proposal timing before the bond."
+  },
+  {
+    "id": "home",
+    "scene": "home",
+    "text": "ChallengeLens checks proposal timing before an operator posts a bond. Of five hundred ninety-eight sampled disputed UMA requests, two hundred sixty-six settled too early. This is a selected sample, not the rate across all proposals. SERV reads the governing clause, code checks the cutoff, and event evidence checks what happened before the proposal."
+  },
+  {
+    "id": "live",
+    "scene": "live",
+    "text": "The desk screens proposals in their challenge windows about every three minutes. This snapshot has {{in_liveness}} proposals and {{bond_usdc}} USDC in bonds; some already confirmed on time by the sports feed, some read by SERV, and {{flagged}}. Many have no deterministic key yet. Missing keys remain unresolved. A feed screen and a SERV reading are separate; zero flags does not prove there are no premature proposals."
+  },
+  {
+    "id": "check",
+    "scene": "check",
+    "text": "Paste a market, choose a side and check now. Here we choose the first Bitcoin example, a market, and Yes. Check timing. SERV quotes the rule and copies its local clock; code converts it to UTC. Code checks the cutoff, and required event evidence must agree. The action says Proceed, Wait, or what evidence is still needed."
+  },
+  {
+    "id": "braves",
+    "scene": "braves",
+    "text": "This Braves proposal came before the feed's final mark. Moving past it changes only the local preview. Now I request a fresh SERV reading at this proposal time. With SERV and the completion evidence agreeing, the action becomes Proceed. The receipt records the inputs and hashes."
+  },
+  {
+    "id": "benchmark",
+    "scene": "benchmark",
+    "text": "On sixty new cases, SERV alone approved nineteen of twenty-eight too-early proposals. With checks: zero of twenty-eight, with a Wilson ninety-five percent upper bound of twelve point one percent. Checks alone also had zero. Deterministic checks produced this result; SERV did not improve accuracy. Proceed coverage was forty-four percent: fourteen of thirty-two timing-OK cases. Repeats are not independent samples."
+  },
+  {
+    "id": "limits",
+    "scene": "limits",
+    "text": "Proceed checks timing, not whether the proposed outcome is correct. UMA settlements are proxy labels. Sports feeds lag, and missing evidence holds a check. The desk never recommends disputing. This is not financial advice."
+  },
+  {
+    "id": "reppo",
+    "scene": "reppo",
+    "text": "Reppo reviews saved verdicts. A block, rejection, or routed review scoring below seventy can hold Proceed; it never upgrades an action. A real Proceed scored fifty-two and was held. We added missing context; the same case scored sixty-nine, still held. One review each, so this shows the loop works, not that accuracy improved."
+  },
+  {
+    "id": "outro",
+    "scene": "outro",
+    "text": "Try the Live desk, check a market, or move a replay. The app, source, measurements and receipts are linked here."
+  }
+]

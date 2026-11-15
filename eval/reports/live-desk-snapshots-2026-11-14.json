@@ -1,0 +1,18 @@
+{
+  "note": "Dated observations of the Live desk on 2026-11-14, not current counts and not a claim of no timing errors. The 05:18 UTC entry is transcribed from the cycle log printed by `live-once` at that time; the 11:03 UTC entry is the `totals` object returned by GET /api/live. Counts move through the day with the games schedule.",
+  "snapshots": [
+    {
+      "at_utc": "2026-11-14T05:18:04Z",
+      "totals": { "in_liveness": 380, "bond_in_liveness_usdc": 163000, "games": 7, "on_time_by_feed": 10, "within_feed_lag": 1, "too_early_by_code": 0, "passes_code": 0, "no_key": 369, "serv_read": 8, "serv_calls": 8, "flagged": 0 }
+    },
+    {
+      "at_utc": "2026-11-14T05:21:00Z",
+      "totals": { "in_liveness": 380, "bond_in_liveness_usdc": 162750, "games": 2, "on_time_by_feed": 49, "median_seconds_after_final": 3.571, "too_early_by_code": 0, "no_key": 331, "serv_read": 20, "serv_calls": 10, "flagged": 0 },
+      "note": "Transcribed from the first background cycle printed by the app container after restart."
+    },
+    {
+      "at_utc": "2026-11-14T11:03:45Z",
+      "totals": { "in_liveness": 244, "bond_in_liveness_usdc": 63000, "games": 68, "on_time_by_feed": 0, "too_early_by_code": 0, "passes_code": 6, "no_key": 238, "serv_read": 6, "flagged": 0, "truncated": false }
+    }
+  ]
+}

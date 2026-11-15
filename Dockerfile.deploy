@@ -1,0 +1,27 @@
+# Production image: builds the web bundle, then serves API + static files on :8080.
+# No keys are baked in; SERV_API_KEY / REPPO_API_KEY arrive as runtime env.
+FROM node:22.11.0-bookworm-slim AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-scripts --no-audit --no-fund
+COPY web/package.json web/package-lock.json ./web/
+RUN npm --prefix web ci --ignore-scripts --no-audit --no-fund
+COPY tsconfig.json tsconfig.api.json ./
+COPY config ./config
+COPY src ./src
+COPY scripts ./scripts
+COPY web ./web
+RUN npm run web:build
+
+FROM node:22.11.0-bookworm-slim
+WORKDIR /app
+ENV NODE_ENV=production TSX_DISABLE_CACHE=1 APP_CACHE_DIR=/tmp/challengelens-cache LIVE_DESK=1 LIVE_INTERVAL_MS=180000 LIVE_SERV_SAMPLE=10 LIVE_SERV_MAX_PER_CYCLE=25 LIVE_GAMMA_MAX_PER_CYCLE=100 LIVE_PRICE_MAX_PER_CYCLE=5
+COPY --from=build --chown=node:node /app/package.json /app/tsconfig.json ./
+COPY --from=build --chown=node:node /app/node_modules ./node_modules
+COPY --from=build --chown=node:node /app/config ./config
+COPY --from=build --chown=node:node /app/src ./src
+COPY --from=build --chown=node:node /app/web/dist ./web/dist
+RUN mkdir -p /app/.cache/receipts /app/.cache/app /app/.cache/live /app/.cache/evidence /app/.cache/live /app/.cache/evidence && chown -R node:node /app/.cache
+USER node
+EXPOSE 8080
+CMD ["./node_modules/.bin/tsx", "src/api/server.ts"]

@@ -1,0 +1,48 @@
+{
+  "total": 598,
+  "outcomes": {
+    "TOO_EARLY": 266,
+    "upheld": 232,
+    "flipped": 86,
+    "50-50": 14,
+    "other": 0
+  },
+  "by_year": {
+    "2022": {
+      "TOO_EARLY": 0,
+      "upheld": 1,
+      "flipped": 0,
+      "50-50": 0,
+      "other": 0
+    },
+    "2023": {
+      "TOO_EARLY": 30,
+      "upheld": 38,
+      "flipped": 7,
+      "50-50": 0,
+      "other": 0
+    },
+    "2024": {
+      "TOO_EARLY": 111,
+      "upheld": 85,
+      "flipped": 21,
+      "50-50": 3,
+      "other": 0
+    },
+    "2025": {
+      "TOO_EARLY": 108,
+      "upheld": 84,
+      "flipped": 53,
+      "50-50": 8,
+      "other": 0
+    },
+    "2026": {
+      "TOO_EARLY": 17,
+      "upheld": 24,
+      "flipped": 5,
+      "50-50": 3,
+      "other": 0
+    }
+  },
+  "scope": "Disputed Polymarket adapter proposals; settlement outcomes are timing proxies."
+}

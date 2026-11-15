@@ -1,0 +1,30 @@
+# Free instances sleep when idle; desk polling pauses while the instance sleeps.
+# Enter keys in the Render dashboard only. Never commit key values here.
+services:
+  - type: web
+    name: challengelens
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.deploy
+    healthCheckPath: /api/stats
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: SERV_API_KEY
+        sync: false
+      - key: REPPO_API_KEY
+        sync: false
+      - key: SERV_MODEL
+        value: gemini-3.1-flash-lite
+      - key: REPPO_DAILY_CAP
+        value: "30"
+      - key: LIVE_DESK
+        value: "1"
+      - key: LIVE_INTERVAL_MS
+        value: "180000"
+      - key: LIVE_SERV_MAX_PER_CYCLE
+        value: "25"
+      - key: LIVE_SERV_SAMPLE
+        value: "10"
+      - key: NODE_ENV
+        value: production
