@@ -50,7 +50,13 @@ try:
     if not 0.25 <= offset <= 4:
         raise ValueError(f'Unexpected synchronization offset {offset}s')
     print(f'[compose] video synchronization: trim {offset:.3f}s leader', flush=True)
-    (cache / 'sync.json').write_text(json.dumps({'raw_leader_seconds': offset, 'content_seconds': total}, indent=2) + '\n')
+    # Chromium's recorder can run slower than the wall clock while heavy pages render (observed: a 168.3 s session
+    # produced a 174.1 s WebM), which makes the picture lag the narration more and more. Stretch it back linearly.
+    probe_raw = json.loads(run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'json', raw], capture=True).stdout)
+    span = float(probe_raw['format']['duration']) - offset
+    factor = total / span if span > 0 and 0.9 <= total / span <= 1.1 else 1.0
+    print(f'[compose] recorder drift: WebM content {span:.2f}s vs wall clock {total:.2f}s; video time factor {factor:.4f}', flush=True)
+    (cache / 'sync.json').write_text(json.dumps({'raw_leader_seconds': offset, 'content_seconds': total, 'webm_content_seconds': span, 'drift_factor': factor}, indent=2) + '\n')
 
     by_id = {beat['id']: beat for beat in audio['beats']}
     arguments = ['ffmpeg', '-hide_banner', '-y', '-f', 'lavfi', '-i', f'anullsrc=r=48000:cl=stereo:d={total:.6f}']
@@ -84,7 +90,7 @@ try:
     style = ('PlayResX=1440,PlayResY=900,Fontname=Inter,Fontsize=26,PrimaryColour=&H00FFFFFF,'
              'OutlineColour=&H803C2F17,BackColour=&H803C2F17,BorderStyle=3,Outline=1,Shadow=0,'
              'MarginV=36,Alignment=2')
-    vf = (f'trim=start={offset:.6f}:duration={total:.6f},setpts=PTS-STARTPTS,fps=30,'
+    vf = (f'trim=start={offset:.6f}:duration={span:.6f},setpts=(PTS-STARTPTS)*{factor:.6f},fps=30,'
           f"subtitles=filename=/video/out/captions.srt:force_style='{style}'")
     name = f'challengelens-demo-{only}' if only else 'challengelens-demo'
     partial = out / f'{name}.partial.mp4'

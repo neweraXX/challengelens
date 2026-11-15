@@ -157,10 +157,10 @@ async function live() {
   await sleep(1800);
   await focus(page.getByRole('heading', { name: 'What the evidence can say' }));
   await sleep(1500);
-  await focus(page.getByRole('heading', { name: /No deterministic key · what is missing/ }));
+  await focus(page.getByRole('heading', { name: "Why timing isn’t confirmed", exact: true }));
   const confirmed = page.getByRole('button', { name: /^Confirmed on time ·/ });
   await click(confirmed);
-  const row = page.getByRole('row').filter({ has: page.locator('td .desk-chip').filter({ hasText: /^Confirmed on time$/ }) }).first();
+  const row = page.getByRole('row').filter({ has: page.locator('td .desk-chip').filter({ hasText: /Confirmed on time/ }) }).first();
   if (await row.count()) {
     await point(row.getByRole('button').first());
     await sleep(800);
@@ -279,9 +279,9 @@ async function reppo() {
   await goto(`/cases/${ETHEREUM}`);
   const panel = page.getByRole('region', { name: 'Second opinion from Reppo', exact: true });
   await panel.waitFor();
-  await panel.locator('.reppo-consequence').filter({ hasText: /52\/100/ }).waitFor({ timeout: 20_000 });
+  await panel.locator('.reppo-consequence').filter({ hasText: /52\s*\/\s*100/ }).waitFor({ timeout: 20_000 });
   const savedText = await panel.innerText();
-  if (!/Held for independent review/i.test(savedText)) throw new Error('Saved Reppo review does not show the real 52-point hold.');
+  if (!/on hold after independent review|Held for independent review/i.test(savedText)) throw new Error('Saved Reppo review does not show the real 52-point hold.');
   await focus(panel.getByRole('heading', { name: 'Second opinion (Reppo)', exact: true }));
   await cue('A real Proceed');
   await focus(panel.locator('.reppo-consequence strong'));

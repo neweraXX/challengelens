@@ -3,6 +3,7 @@ import type { DeskItem, Screen } from "../../src/live/desk";
 import type { historySummary } from "../../src/live/history";
 import { humanAction, humanizeDecisions } from "../../src/demo/evidence";
 import { readableExplanation } from "./timeline-utils";
+import { friendlyTime, timingAnswer, TimingPill } from "./TimingStatus";
 import { breakdown, countdown, finalTiming, freshness, humanGateReason, humanNeed, humanScope, humanScreen, numberText, screenOrder, teaserText } from "./live-utils";
 import type { LiveResponse } from "./live-utils";
 
@@ -54,7 +55,15 @@ function useLiveDesk(withHistory = false) {
 
 export function LiveTeaser() {
   const { snapshot, error, busy } = useLiveDesk();
-  return <a className="live-teaser" href="/live"><span><span className="eyebrow">Live desk</span><br />{error ? "Live desk temporarily unavailable" : busy && !snapshot ? "Loading live proposals…" : teaserText(snapshot)}</span><span aria-hidden="true">↗</span></a>;
+  const t = snapshot?.totals;
+  return <section className="live-now" aria-labelledby="live-now-title"><div className="section-title"><div><p className="eyebrow">{snapshot?.stale ? "Last saved snapshot" : "The live desk"}</p><h2 id="live-now-title">Live right now</h2></div><a href="/live">Open Live desk →</a></div>
+    <div className="live-stat-grid">{[
+      ["Proposals in challenge windows", t ? numberText(t.in_liveness) : "—", "Open for a timing challenge"],
+      ["USDC in bonds", t ? `$${numberText(t.bond_in_liveness_usdc)}` : "—", "Known USDC bonds posted"],
+      ["Flagged as likely too early", t ? numberText(t.flagged) : "—", "◷ Check the evidence before acting"],
+    ].map(([label, value, detail]) => <a key={label} href="/live" className="panel live-stat" title={teaserText(snapshot)}><span>{label}</span><strong>{value}</strong><small>{detail}</small></a>)}</div>
+    {(error || !t) && <p className="small muted" role="status">{busy && !snapshot ? "Loading live proposals…" : "Live desk temporarily unavailable"}</p>}
+  </section>;
 }
 function Instant({ value }: { value: string | null | undefined }) {
   if (!value || !Number.isFinite(Date.parse(value))) return <span>Not established</span>;
@@ -71,7 +80,7 @@ function Needs({ item }: { item: DeskItem }) {
   return details.length ? <ul className="desk-needs">{details.map((text, index) => <li key={index}>{readableExplanation(humanizeDecisions(text))}</li>)}</ul> : <p>No further evidence needs recorded.</p>;
 }
 function FlaggedCard({ item, now }: { item: DeskItem; now: number }) {
-  return <article className="panel desk-flag"><span className="desk-chip desk-early">Likely too early</span><h3>{item.title}</h3><p>Proposed outcome: <strong>{humanizeDecisions(item.proposed_outcome)}</strong></p>
+  return <article className="panel desk-flag"><span className="desk-chip desk-early"><span aria-hidden="true">◷</span>Likely too early</span><h3>{item.title}</h3><p>Proposed outcome: <strong>{humanizeDecisions(item.proposed_outcome)}</strong></p>
     <dl><dt>Code + evidence</dt><dd>{readableExplanation(humanizeDecisions(humanGateReason(item.reason)))}</dd><dt>SERV rule reading</dt><dd>Also found the proposal premature; the gate returned Wait.</dd><dt>Game snapshot</dt><dd><Game item={item} /></dd><dt>Challenge window</dt><dd className="mono">{countdown(item.liveness_ends_utc, now)} left</dd><dt>Bond</dt><dd>{item.bond_usdc === null ? "USDC amount unavailable" : `${numberText(item.bond_usdc)} USDC`}</dd></dl>
     <ProposalLinks item={item} /><p className="desk-caution">Looks too early under the rules. Verify before acting; this is not a recommendation to dispute.</p>
   </article>;
@@ -85,14 +94,49 @@ function ScreenSummary({ items }: { items: DeskItem[] }) {
     { label: "Inside feed lag", count: items.filter((i) => i.screen === "WITHIN_FEED_LAG").length, tone: "lag", detail: "Feed marked final within 30 minutes after the proposal; timing is inconclusive." },
     { label: "Confirmed on time", count: items.filter((i) => i.screen === "ON_TIME_BY_FEED").length, tone: "on-time", detail: "Evidence places the game finish or event before the proposal; SERV may still be unread." },
     { label: "Passed code cutoff", count: items.filter((i) => i.screen === "PASSES_CODE").length, tone: "code", detail: "The rules’ deterministic cutoff passed; this alone is not a Proceed action." },
-    { label: "No deterministic key", count: items.filter((i) => i.screen === "NO_DETERMINISTIC_KEY").length, tone: "no-key", detail: "The available rules and evidence cannot establish a decisive time." },
+    { label: "Timing not confirmed", count: items.filter((i) => i.screen === "NO_DETERMINISTIC_KEY").length, tone: "no-key", detail: "The available rules and evidence cannot confirm the timing yet." },
     ...(codeOnly ? [{ label: "Code concern, unconfirmed", count: codeOnly, tone: "unconfirmed", detail: "A deterministic concern is present; SERV has not confirmed a likely-too-early flag." }] : []),
   ];
   return <section className="desk-screening panel" aria-labelledby="screening-title"><div className="section-title"><div><p className="eyebrow">Timing screen</p><h2 id="screening-title">What the evidence can say</h2></div><span className="small muted">Current challenge windows</span></div>
     <div className="desk-segments" role="img" aria-label={segments.map((s) => `${s.label}: ${s.count}`).join("; ")}>{segments.filter((s) => s.count > 0).map((s) => <span key={s.tone} className={`desk-${s.tone}`} style={{ flexGrow: s.count }} title={`${s.label}: ${s.count}`} />)}</div>
-    <div className="desk-legend">{segments.map((s) => <div key={s.tone}><i className={`desk-${s.tone}`} aria-hidden="true" /><div><strong>{s.label} <span className="mono">{numberText(s.count)}</span></strong><p>{s.detail}</p></div></div>)}</div>
-    <div className="desk-breakdown"><h3>No deterministic key · what is missing</h3><dl>{breakdown(items).map((group) => <div key={group.key}><dt>{group.label}</dt><dd className="mono">{numberText(group.count)}</dd></div>)}</dl></div>
+    <div className="desk-legend">{segments.map((s) => <div key={s.tone}><i className={`desk-${s.tone}`} aria-hidden="true">{s.tone === "on-time" ? "✓" : s.tone === "early" || s.tone === "lag" || s.tone === "unconfirmed" ? "◷" : s.tone === "code" ? "ⓘ" : "−"}</i><div><strong>{s.label} <span className="mono">{numberText(s.count)}</span></strong><p>{s.detail}</p></div></div>)}</div>
+    <div className="desk-breakdown"><h3 title="No deterministic key · what is missing">Why timing isn’t confirmed</h3><dl>{breakdown(items).map((group) => <div key={group.key}><dt>{group.label}</dt><dd className="mono">{numberText(group.count)}</dd></div>)}</dl></div>
   </section>;
+}
+
+function screenLabel(screen: Screen) {
+  return screen === "NO_DETERMINISTIC_KEY" ? "Timing not confirmed" : screen === "TOO_EARLY_BY_CODE" ? "Before the cutoff" : screen === "PASSES_CODE" ? "Cutoff passed" : humanScreen(screen);
+}
+function screenTone(item: DeskItem) {
+  return item.flag === "LIKELY_TOO_EARLY" || item.screen === "TOO_EARLY_BY_CODE" ? "early" : item.screen === "ON_TIME_BY_FEED" ? "on-time" : item.screen === "WITHIN_FEED_LAG" ? "lag" : item.screen === "PASSES_CODE" ? "code" : "no-key";
+}
+function ScreenPill({ item }: { item: DeskItem }) {
+  const tone = screenTone(item);
+  const label = item.flag === "LIKELY_TOO_EARLY" ? "Likely too early" : screenLabel(item.screen);
+  return <span className={`desk-chip desk-${tone}`} title={item.screen}><span aria-hidden="true">{tone === "on-time" ? "✓" : tone === "early" || tone === "lag" ? "◷" : tone === "code" ? "ⓘ" : "−"}</span><span>{label}</span></span>;
+}
+function ExpandedProposal({ item }: { item: DeskItem }) {
+  const codeTime = item.instants.code_cutoff_utc;
+  const codePassed = codeTime && Date.parse(codeTime) <= Date.parse(item.proposal_time_utc);
+  const evidenceSupported = item.screen === "ON_TIME_BY_FEED";
+  return <>
+    <div className="desk-verdict" data-action={item.action ?? "NEED_EVIDENCE"}>
+      {item.action && <TimingPill action={item.action} />}
+      <h3>{item.action ? timingAnswer(item.action, item.action === "WAIT" ? codeTime : undefined) : "Can't confirm yet. The rule still needs a reading"}</h3>
+      <p>{readableExplanation(humanizeDecisions(humanGateReason(item.reason)))}</p>
+      {item.action === "WAIT" && <p><strong>Earliest: </strong>{codeTime ? friendlyTime(codeTime) : "Not established; confirm the governing event has finished."}</p>}
+      {item.action !== "PROCEED" && <><h4>To proceed, confirm:</h4><Needs item={item} /></>}
+      <p className="timing-scope">Timing only, not outcome. An evidence screen alone is not a Proceed action.</p>
+    </div>
+    <h4>Three checks</h4><p className="small muted">Each check below says what it found.</p>
+    <ol className="three-checks">
+      <li><details><summary><span className="check-icon check-unavailable" aria-hidden="true">{item.action ? "ⓘ" : "−"}</span><span><strong>Rule reading (SERV AI)</strong><span className="check-sentence">{item.action ? "A saved SERV-backed timing check is available." : "SERV has not read this proposal yet."}</span></span></summary><p className="small">{item.action ? `Saved action: ${humanAction(item.action)}.` : "No SERV receipt recorded."}</p><p className="small">{humanScope(item.sports_scope)}</p>{item.rules_text && <blockquote className="governing-excerpt">{item.rules_text}</blockquote>}</details></li>
+      <li><details><summary><span className={`check-icon ${!codeTime ? "check-unavailable" : codePassed ? "check-pass" : "check-fail"}`} aria-hidden="true">{!codeTime ? "−" : codePassed ? "✓" : "◷"}</span><span><strong>Clock (computed in code)</strong><span className="check-sentence">{codeTime ? codePassed ? "The rule's cutoff had passed." : "The rule's cutoff had not passed." : "No supported clock is available for this proposal."}</span><small className="check-technical-label">Code cutoff</small></span></summary><p className="check-value"><Instant value={codeTime} /></p></details></li>
+      <li><details><summary><span className={`check-icon ${evidenceSupported ? "check-pass" : "check-unavailable"}`} aria-hidden="true">{evidenceSupported ? "✓" : "ⓘ"}</span><span><strong>Real-world facts</strong><span className="check-sentence">{evidenceSupported ? "The recorded event happened before the proposal." : item.screen === "WITHIN_FEED_LAG" ? "The feed's delay makes the timing inconclusive." : "The facts do not yet confirm this proposal time."}</span></span></summary><p className="small"><Game item={item} /></p><p className="small">{finalTiming(item.seconds_after_final, item.screen)}</p><p className="check-value">Evidence instant: <Instant value={item.instants.evidence_time_utc} /></p><p className="check-value">Scanned through: <Instant value={item.instants.scanned_until_utc} /></p></details></li>
+    </ol>
+    <details className="desk-raw-details"><summary>Show details · timestamps and proposal</summary><dl><dt>Proposed</dt><dd><Instant value={item.proposal_time_utc} /></dd><dt>Scope</dt><dd>{humanScope(item.sports_scope)}</dd><dt>Feed final mark</dt><dd><Instant value={item.game?.finished_utc} /></dd><dt>Challenge window ends</dt><dd><Instant value={item.liveness_ends_utc} /></dd><dt>Bond</dt><dd>{item.bond_usdc === null ? "USDC amount unavailable" : `${numberText(item.bond_usdc)} USDC`}</dd></dl></details>
+    <ProposalLinks item={item} />
+  </>;
 }
 
 function ProposalTable({ items, now }: { items: DeskItem[]; now: number }) {
@@ -101,15 +145,15 @@ function ProposalTable({ items, now }: { items: DeskItem[]; now: number }) {
   const filtered = useMemo(() => items.filter((i) => (filter === "all" || i.screen === filter) && i.title.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())), [items, filter, query]);
   const pages = Math.max(1, Math.ceil(filtered.length / 50)); const currentPage = Math.min(page, pages - 1);
   return <section className="desk-proposals" aria-labelledby="proposals-title"><div className="section-title"><div><p className="eyebrow">All proposals</p><h2 id="proposals-title">In the challenge window</h2></div><label className="desk-search">Search by title<input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Team, market or question…" /></label></div>
-    <div className="desk-filters" aria-label="Filter by timing screen"><button className="button" aria-pressed={filter === "all"} onClick={() => { setFilter("all"); setPage(0); }}>All · {items.length}</button>{screenOrder.map((screen) => <button key={screen} className="button" aria-pressed={filter === screen} onClick={() => { setFilter(screen); setPage(0); }}>{humanScreen(screen)} · {items.filter((i) => i.screen === screen).length}</button>)}</div>
-    <div className="table-scroll desk-table-scroll" role="region" aria-label="Live proposals; scroll horizontally for all columns" tabIndex={0}><table className="desk-table"><caption>{numberText(filtered.length)} matching proposals · up to 50 per page · select a title for needs and timestamps</caption><thead><tr><th scope="col">Market / proposed outcome</th><th scope="col">Scope</th><th scope="col">Game snapshot</th><th scope="col">Timing against final</th><th scope="col">Screen</th><th scope="col">SERV action</th><th scope="col">Time left</th></tr></thead><tbody>
+    <div className="desk-filters" aria-label="Filter by timing screen"><button className="button" aria-pressed={filter === "all"} onClick={() => { setFilter("all"); setPage(0); }}>All · {items.length}</button>{screenOrder.map((screen) => <button key={screen} className="button" title={humanScreen(screen)} aria-pressed={filter === screen} onClick={() => { setFilter(screen); setPage(0); }}>{screenLabel(screen)} · {items.filter((i) => i.screen === screen).length}</button>)}</div>
+    <div className="table-scroll desk-table-scroll" role="region" aria-label="Live proposals; scroll horizontally for all columns" tabIndex={0}><table className="desk-table"><caption>{numberText(filtered.length)} matching proposals · up to 50 per page · select a title for needs and timestamps</caption><thead><tr><th scope="col">Market / proposed outcome</th><th scope="col">Timing status</th><th scope="col">Time left</th></tr></thead><tbody>
       {filtered.slice(currentPage * 50, currentPage * 50 + 50).map((item, index) => {
         const id = item.proposal_id.full; const open = expanded === id; const detailId = `proposal-detail-${currentPage}-${index}`;
-        return <Fragment key={id}><tr><th scope="row"><button className="text-button desk-title" onClick={() => setExpanded(open ? null : id)} aria-expanded={open} aria-controls={detailId}>{item.title} <span aria-hidden="true">{open ? "−" : "+"}</span></button><small>Proposed: {humanizeDecisions(item.proposed_outcome)}</small></th><td><span className="desk-scope">{humanScope(item.sports_scope)}</span></td><td><Game item={item} /></td><td>{finalTiming(item.seconds_after_final, item.screen)}</td><td><span className={`desk-chip desk-${item.flag === "LIKELY_TOO_EARLY" ? "early" : item.screen === "ON_TIME_BY_FEED" ? "on-time" : item.screen === "TOO_EARLY_BY_CODE" ? "unconfirmed" : "no-key"}`}>{item.flag === "LIKELY_TOO_EARLY" ? "Likely too early" : humanScreen(item.screen)}</span></td><td>{item.action ? humanAction(item.action) : "Not read"}</td><td className="mono desk-countdown">{countdown(item.liveness_ends_utc, now)}</td></tr>
-          <tr id={detailId} hidden={!open} className="desk-detail"><td colSpan={7}>{open && <><h3>{item.action === "PROCEED" ? "Timing check complete" : "To proceed, confirm:"}</h3><Needs item={item} /><p>{readableExplanation(humanizeDecisions(humanGateReason(item.reason)))}</p><dl><dt>Proposed</dt><dd><Instant value={item.proposal_time_utc} /></dd><dt>Code cutoff</dt><dd><Instant value={item.instants.code_cutoff_utc} /></dd><dt>Evidence instant</dt><dd><Instant value={item.instants.evidence_time_utc} /></dd><dt>Scanned through</dt><dd><Instant value={item.instants.scanned_until_utc} /></dd><dt>Feed final mark</dt><dd><Instant value={item.game?.finished_utc} /></dd><dt>Challenge window ends</dt><dd><Instant value={item.liveness_ends_utc} /></dd><dt>Bond</dt><dd>{item.bond_usdc === null ? "USDC amount unavailable" : `${numberText(item.bond_usdc)} USDC`}</dd></dl><ProposalLinks item={item} />{!item.receipt_id && <p className="small muted">No SERV receipt recorded.</p>}</>}</td></tr>
+        return <Fragment key={id}><tr><th scope="row"><button className="text-button desk-title" onClick={() => setExpanded(open ? null : id)} aria-expanded={open} aria-controls={detailId}>{item.title} <span aria-hidden="true">{open ? "−" : "+"}</span></button><small>Proposed: {humanizeDecisions(item.proposed_outcome)} · {humanScope(item.sports_scope)}{item.bond_usdc !== null ? ` · ${numberText(item.bond_usdc)} USDC bond` : ""}</small></th><td><ScreenPill item={item} /><small>{item.action ? humanAction(item.action) : "SERV not read"}</small></td><td className="desk-countdown">{countdown(item.liveness_ends_utc, now)}<span>in challenge window</span></td></tr>
+          <tr id={detailId} hidden={!open} className="desk-detail"><td colSpan={3}>{open && <ExpandedProposal item={item} />}</td></tr>
         </Fragment>;
       })}
-      {!filtered.length && <tr><td colSpan={7} className="desk-empty">{items.length ? "No proposals match these filters." : "No proposals are currently in a challenge window in this snapshot."}</td></tr>}
+      {!filtered.length && <tr><td colSpan={3} className="desk-empty">{items.length ? "No proposals match these filters." : "No proposals are currently in a challenge window in this snapshot."}</td></tr>}
     </tbody></table></div>
     <div className="desk-pagination"><span className="small">Page {currentPage + 1} of {pages} · {filtered.length ? `${currentPage * 50 + 1}–${Math.min((currentPage + 1) * 50, filtered.length)} of ${filtered.length}` : "0 results"}</span><div><button className="button" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>Previous</button><button className="button" disabled={currentPage + 1 >= pages} onClick={() => setPage(currentPage + 1)}>Next</button></div></div>
   </section>;
@@ -131,9 +175,10 @@ export function LiveDesk() {
     {error && <p className="intake-error" role="status">Could not refresh the live desk.{snapshot?.totals ? " Showing the last successful snapshot; counts may have changed." : " Try refreshing shortly."}</p>}
     {snapshot?.stale && <p className="intake-error" role="status">The API marks this snapshot as stale. Counts and evidence may be out of date.</p>}
     {snapshot?.enabled === false && <p className="intake-status">Live collection is paused. A saved snapshot may still be available.</p>}
-    {t ? <><div className="desk-stats">{[
-      ["Proposals in the challenge window", numberText(t.in_liveness)], ["Bonds posted · USDC", numberText(t.bond_in_liveness_usdc)], ["Confirmed on time by evidence", numberText(t.on_time_by_feed)], ["Flagged as likely too early", t.flagged ? numberText(t.flagged) : "None right now"], ["Read by SERV", numberText(t.serv_read)],
-    ].map(([label, value]) => <div className="panel" key={label}><p>{label}</p><strong>{value}</strong></div>)}</div><p className="small muted desk-count-note">Counts at the last update · {numberText(t.games)} games. Elapsed challenge windows are removed from the screen and table below.</p>
+    {t ? <><div className="desk-overview"><div><span>Proposals in the challenge window</span><strong>{numberText(t.in_liveness)}</strong></div><div><span>Bonds posted · USDC</span><strong>${numberText(t.bond_in_liveness_usdc)}</strong></div><div><span className="serv-count"><span aria-hidden="true">ⓘ</span> Read by SERV</span><strong>{numberText(t.serv_read)}</strong></div></div>
+    <div className="desk-stats">{[
+      ["Confirmed on time by evidence", numberText(t.on_time_by_feed), "green", "✓"], ["Inside feed lag", numberText(t.within_feed_lag), "amber", "◷"], ["Timing not confirmed", numberText(t.no_key), "grey", "−"], ["Flagged as likely too early", numberText(t.flagged), "amber", "◷"],
+    ].map(([label, value, tone, icon]) => <div className="panel" data-tone={tone} key={label} title={label === "Timing not confirmed" ? "No deterministic key" : label}><p><span aria-hidden="true">{icon}</span>{label}</p><strong>{value}</strong></div>)}</div><p className="small muted desk-count-note">Counts at the last update · {numberText(t.games)} games. Elapsed challenge windows are removed from the screen and table below.</p>
       {!!flagged.length && <section className="desk-flagged" aria-labelledby="flagged-title"><div className="section-title"><div><p className="eyebrow">Code + SERV</p><h2 id="flagged-title">Flagged · {flagged.length}</h2></div></div><div className="desk-flag-grid">{flagged.map((item) => <FlaggedCard item={item} now={now} key={item.proposal_id.full} />)}</div></section>}
       <ScreenSummary items={items} /><ProposalTable items={items} now={now} />
     </> : <div className="panel desk-empty" role="status">{busy ? "Loading proposals and timing screens…" : "The live desk has no successful snapshot available yet. Refresh to try again."}</div>}

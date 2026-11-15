@@ -1,5 +1,5 @@
-import { loadExamples } from "./example-utils";
-import type { ExampleLink } from "../../src/demo/example-links";
+import { MarketLinkInput } from "./MarketLinkInput";
+import { TimingPill, timingAnswer } from "./TimingStatus";
 import { HeldOutEvidence } from "./SealedResults";
 import { ActionCard } from "./ActionCard";
 import { LiveDesk, LiveTeaser } from "./LiveDesk";
@@ -8,7 +8,7 @@ import { humanGateReason } from "./live-utils";
 import { describeNeeds } from "../../src/gate/needs";
 import { reviewPolicy } from "../../src/reppo/policy";
 import type { ReppoLoop } from "../../src/reppo/changes";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import type { ReactNode, MouseEvent } from "react";
 import type { Benchmark, MultiBenchmark, Outcome, ShowcaseCase, Stats } from "../../src/demo/types";
 import type { Verdict } from "../../src/judge/schema";
@@ -41,7 +41,7 @@ function Link({ href, children, className }: { href: string; children: ReactNode
     window.dispatchEvent(new PopStateEvent("popstate"));
     window.scrollTo(0, 0);
   }
-  return <a href={href} onClick={go} className={className}>{children}</a>;
+  return <a href={href} onClick={go} className={className} aria-current={className === "active" ? "page" : undefined}>{children}</a>;
 }
 function Time({ value }: { value: string | number }) {
   return <time dateTime={new Date(value).toISOString()} className="time-pair"><span>{formatTime(value, "UTC", true)} UTC</span><small>{formatTime(value, "America/New_York", true)} ET</small></time>;
@@ -68,7 +68,7 @@ export function App() {
       <Link href="/" className="wordmark"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M4 6h22v18H4zM10 3v6M20 3v6M9 16h5l3-4 4 8" /></svg>Challenge<span>Lens</span></Link>
       <nav aria-label="Main navigation">{[["/", "Home"], ["/check", "Check a market"], ["/live", "Live desk"], [selectedCasePath, "Historical replay"], ["/benchmark", "Benchmark"], ["/api", "API"]].map(([href, label]) =>
         <Link href={href!} key={href} className={page === label ? "active" : ""}>{label}</Link>)}</nav>
-      <span className="header-stamp">Three checks</span>
+      <Link href="/check" className="button primary nav-cta">Check a market <span aria-hidden="true">→</span></Link>
     </div></header>
     <main id="main" tabIndex={-1}>
       {page === "Live desk" ? <LiveDesk /> : page === "Check a market" ? <CheckPage /> : page === "Home" ? <Home /> : page === "Historical replay" ? <CasePage key={path} id={decodeURIComponent(selectedCasePath.slice(7))} /> : page === "Benchmark" ? <BenchmarkPage /> : page === "API" ? <ApiPage /> :
@@ -87,29 +87,42 @@ function Home() {
       .then(([cases, stats]) => setData({ cases, stats })).catch((reason: Error) => { if (reason.name !== "AbortError") setError(true); });
     return () => controller.abort();
   }, []);
+  const [url, setUrl] = useState("");
+  function startCheck(value: string) {
+    window.history.pushState({}, "", `/check?url=${encodeURIComponent(value)}&resolve=1`);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+    window.scrollTo(0, 0);
+  }
   const flagship = data ? selectFlagship(data.cases) : undefined;
   const feed = data ? [...data.cases].sort((a, b) => Number(finalDecision(b) === "NOT_SUPPORTED_NOW") - Number(finalDecision(a) === "NOT_SUPPORTED_NOW")) : [];
   return <div className="page">
     <section className="hero">
-      <div><p className="eyebrow">Polymarket / Proposal timing</p><h1><span className="hero-number">44%</span> of sampled disputed requests settled as too early.<span className="hero-second">Check yours before you post the bond.</span></h1>
-        <div className="hero-actions"><Link href="/check" className="button primary">Check a market ↗</Link>{flagship && <Link href={casePath(flagship.case_id)} className="button">Try the featured replay ↗</Link>}</div>
+      <div className="hero-copy"><p className="eyebrow">Before the bond.</p><h1>Check a proposal before you put money on it.</h1>
+        <p className="hero-subtitle">See whether a Polymarket proposal is too early, supported by timing, or needs more evidence.</p>
+        <MarketLinkInput home url={url} onChange={setUrl} onResolve={startCheck} />
+        <p className="timing-scope">Timing only, not outcome. Independent of Polymarket.</p>
       </div>
       {flagship ? <HeroPreview item={flagship} /> : <div className="hero-preview loading-surface" aria-busy={!error}>{error ? "The case feed is unavailable. Please reload once showcase data is ready." : data ? "No replay with a deterministic timing check is available yet." : "Loading the real proposal record…"}</div>}
     </section>
+    <section className="how-it-works" aria-labelledby="how-it-works-title"><h2 id="how-it-works-title">How it works</h2><ol>
+      <li><span className="step-number">1</span><div><strong>Paste a market link</strong><p>Choose the market and proposed side.</p></div></li>
+      <li><span className="step-number">2</span><div><strong>Check the timing</strong><p>The rule, clock and facts get a check.</p></div></li>
+      <li><span className="step-number">3</span><div><strong>See the answer</strong><p>Read what is known and what is missing.</p></div></li>
+    </ol></section>
     <HowItDecides item={flagship} />
     <LiveTeaser />
     {data && <>
-      <section className="dispute-summary" aria-labelledby="disputes-title"><div className="section-title"><div><p className="eyebrow">The cost of getting ahead of the clock</p><h2 id="disputes-title">{data.stats.total.toLocaleString()} disputed proposals</h2></div><span className="mono muted">UMA settlement outcomes</span></div><OutcomeChart stats={data.stats} /></section>
+      <section className="dispute-summary" aria-labelledby="disputes-title"><div className="section-title"><div><p className="eyebrow">Why timing matters</p><h2 id="disputes-title"><span className="sample-stat">44%</span> of sampled disputed requests settled as too early.</h2></div><span className="muted">{data.stats.total.toLocaleString()} disputed requests in this sample</span></div><OutcomeChart stats={data.stats} /></section>
       <section className="gate-catches panel" aria-labelledby="gate-catches-title"><p className="eyebrow">Historical replay / Evidence</p><h2 id="gate-catches-title">The deterministic checks caught it</h2>
         <div className="table-scroll"><table><thead><tr><th>Market</th><th>SERV said</th><th>Gate said</th><th>UMA settled</th></tr></thead><tbody>
           {data.cases.filter((item) => item.verdict.decision === "SUPPORTED_NOW" && finalDecision(item) !== "SUPPORTED_NOW").map((item) => <tr key={item.case_id}><th><Link href={casePath(item.case_id)}>{item.title}</Link><SourceTag value="Historical replay" /></th><td><DecisionChip decision={item.verdict.decision} /></td><td><DecisionChip decision={finalDecision(item)} /></td><td><span className="verdict-chip" data-decision={item.settlement_label === "TOO_EARLY" ? "NOT_SUPPORTED_NOW" : "INSUFFICIENT_EVIDENCE"}>{item.settlement_label ? outcomeNames[item.settlement_label] : "Unavailable"}</span></td></tr>)}
         </tbody></table></div><p className="small muted">Oracle settlements are timing proxies; binary settlements do not prove timing.</p>
       </section>
-      <section className="feed" aria-labelledby="feed-title"><div className="section-title"><div><p className="eyebrow">The dispute desk</p><h2 id="feed-title">Historical replay</h2></div><span className="mono muted">{feed.length} proposal records</span></div>
+      <section className="feed" aria-labelledby="feed-title"><div className="section-title"><div><p className="eyebrow">The dispute desk</p><h2 id="feed-title">Historical replay</h2></div><span className="muted">{feed.length} proposal records</span></div>
         <div className="case-grid">{feed.map((item, index) => <Link className="case-tile" href={casePath(item.case_id)} key={item.case_id}>
           <div className="tile-top"><span className="eyebrow">{String(index + 1).padStart(2, "0")} / {categoryName(item.category)}</span><span aria-hidden="true">↗</span></div>
-          <h3>{item.title}</h3><SourceTag value="Historical replay" /><div className="tile-verdict"><span className="verdict-chip" data-decision={finalDecision(item)}>{humanAction(caseAction(item), item.earliest_utc)}</span><span className="eyebrow">Final timing</span></div><MiniTimeline item={item} /><div className="mini-legend"><span>│ Proposal</span><span>{eventMarker(item)?.label ?? (item.verdict.decisive_time_utc ? "┆ Decisive" : "Cutoff unavailable")}</span></div><p>{humanGateReason(item.receipt?.gate.gate_reason ?? item.gate?.gate_reason ?? relativeProposal(item))}</p>
-          <div className="tile-bottom"><span className="mono">{amount(item.bond, item.currency) ? `Bond ${amount(item.bond, item.currency)}` : "Bond not recorded"}</span><span className="muted">Open record →</span></div>
+          <h3>{item.title}</h3><SourceTag value="Historical replay" /><div className="tile-verdict"><TimingPill action={caseAction(item)} /><span className="eyebrow">Final timing</span></div><MiniTimeline item={item} /><div className="mini-legend"><span>│ Proposal</span><span>{eventMarker(item)?.label ?? (item.verdict.decisive_time_utc ? "┆ Timing boundary" : "Cutoff unavailable")}</span></div><p>{humanGateReason(item.receipt?.gate.gate_reason ?? item.gate?.gate_reason ?? relativeProposal(item))}</p>
+          <div className="tile-bottom"><span className="numeric">{amount(item.bond, item.currency) ? `Bond ${amount(item.bond, item.currency)}` : "Bond not recorded"}</span><span className="muted">Open record →</span></div>
         </Link>)}</div>
       </section>
     </>}
@@ -133,11 +146,12 @@ function HeroPreview({ item }: { item: ShowcaseCase }) {
   const procedure = useContext(ProcedureContext);
   const marker = eventMarker(item);
   return <Link className="hero-preview" href={casePath(item.case_id)}>
+    <div className="preview-state" data-action={caseAction(item)}><TimingPill action={caseAction(item)} /><span>{timingAnswer(caseAction(item), item.earliest_utc)}</span></div>
     <div className="preview-top"><span className="eyebrow featured-label">Featured replay</span>{procedure && <span className="stamp">{procedure}</span>}</div>
     <h2>{item.title}</h2><p className="preview-sub">{humanGateReason(item.receipt?.gate.gate_reason ?? item.gate?.gate_reason ?? relativeProposal(item))}</p><SourceTag value="Historical replay" />
     <div className="flagship-timeline"><MiniTimeline item={item} />{marker && <p className="small"><strong>{marker.label}</strong><br /><time dateTime={marker.time}>{marker.time}</time></p>}</div>
-    <div className="preview-detail"><div><span className="eyebrow">At the proposal</span><strong>{humanAction(caseAction(item), item.earliest_utc)}</strong></div><div><span className="eyebrow">Bond at risk</span><strong className="mono">{amount(item.bond, item.currency) ?? "Not recorded"}</strong></div></div>
-    <div className="preview-footer"><span>Move past the cutoff. Re-check with SERV to see if it can proceed.</span><span aria-hidden="true">→</span></div>
+    <div className="preview-detail"><div><span className="eyebrow">At the proposal</span><TimingPill action={caseAction(item)} /></div><div><span className="eyebrow">Bond at risk</span><strong>{amount(item.bond, item.currency) ?? "Not recorded"}</strong></div></div>
+    <div className="preview-footer"><span>Explore the timeline and see what changes.</span><span aria-hidden="true">→</span></div>
   </Link>;
 }
 
@@ -150,8 +164,8 @@ function OutcomeChart({ stats }: { stats: Stats }) {
       const x = offset; offset += width;
       return <g key={key}><rect x={x} y="0" width={width} height="38" className={`outcome-${key}`} />{key === "TOO_EARLY" && <rect x={x} y="0" width={width} height="38" fill="url(#outcome-hatch)" />}<title>{outcomeNames[key]}: {count}</title></g>;
     })}</svg>
-    <p className="sample-caption">{stats.outcomes.TOO_EARLY} of {stats.total} sampled disputed requests settled as too early (2022–2026 sample).</p>
-    <div className="outcome-legend">{(Object.entries(stats.outcomes) as [Outcome, number][]).filter(([, count]) => count > 0).map(([key, count]) => <div key={key}><i className={`swatch outcome-${key}`} /><span>{key === "TOO_EARLY" ? "/// " : ""}{outcomeNames[key]}</span><strong className="mono">{count}</strong></div>)}</div>
+    <p className="sample-caption">{stats.outcomes.TOO_EARLY} of {stats.total} sampled disputed requests settled with UMA's TOO_EARLY value (2022–2026 sample). Disputed requests only; this is not the rate across all proposals.</p>
+    <div className="outcome-legend">{(Object.entries(stats.outcomes) as [Outcome, number][]).filter(([, count]) => count > 0).map(([key, count]) => <div key={key}><i className={`swatch outcome-${key}`} /><span>{key === "TOO_EARLY" ? "◷ " : ""}{outcomeNames[key]}</span><strong className="numeric">{count}</strong></div>)}</div>
     <details className="year-counts"><summary>View disputed proposals by year</summary><div className="table-scroll"><table><thead><tr><th>Proposal year</th>{Object.keys(stats.outcomes).filter((key) => stats.outcomes[key as Outcome] > 0).map((key) => <th key={key}>{outcomeNames[key as Outcome]}</th>)}</tr></thead><tbody>{Object.entries(stats.by_year).sort().map(([year, outcomes]) => <tr key={year}><th>{year}</th>{Object.keys(stats.outcomes).filter((key) => stats.outcomes[key as Outcome] > 0).map((key) => <td key={key}>{outcomes[key as Outcome]}</td>)}</tr>)}</tbody></table></div></details>
   </>;
 }
@@ -165,13 +179,13 @@ function CopyCaseId({ id, kind = "case" }: { id: string; kind?: "case" | "evalua
   return <div className="case-id-copy"><button type="button" className="text-button mono" title={id} aria-label={`Copy ${kind} ID ${id}`} onClick={copy}><span>{id.slice(0, 13)}…{id.slice(-6)}</span><small>Copy</small></button><span role="status">{feedback}</span></div>;
 }
 
-function DecisionChip({ decision }: { decision: string }) { return <span className="verdict-chip" data-decision={decision} title={humanDecision(decision)}>{humanDecision(decision)}</span>; }
+function DecisionChip({ decision }: { decision: string }) { return <span className="verdict-chip" data-decision={decision} title={`${decision}: ${humanDecision(decision)}`}><span aria-hidden="true">{decision === "SUPPORTED_NOW" ? "✓" : decision === "NOT_SUPPORTED_NOW" ? "◷" : "ⓘ"} </span>{decision === "SUPPORTED_NOW" ? "Timing is supported" : decision === "NOT_SUPPORTED_NOW" ? "Too early" : "Needs evidence"}</span>; }
 
 function SourceTag({ value }: { value: string }) { return <small className="source-tag">{value}</small>; }
 
 function CheckPage() {
-  const [url, setUrl] = useState("");
-  const [examples, setExamples] = useState<ExampleLink[]>([]);
+  const [url, setUrl] = useState(() => new URLSearchParams(window.location.search).get("url") ?? "");
+  const started = useRef(false);
   const [resolution, setResolution] = useState<LiveResolution | null>(null);
   const [marketId, setMarketId] = useState("");
   const [side, setSide] = useState(0);
@@ -180,8 +194,13 @@ function CheckPage() {
   const [busy, setBusy] = useState<"resolve" | "check" | null>(null);
   const [error, setError] = useState<{ message: string; rate: boolean } | null>(null);
   const [result, setResult] = useState<ShowcaseCase | null>(null);
-  useEffect(() => { const controller = new AbortController(); loadExamples(fetch, controller.signal)
-    .then((rows) => { if (!controller.signal.aborted) setExamples(rows); }).catch(() => {}); return () => controller.abort(); }, []);
+  useEffect(() => {
+    if (started.current) return;
+    started.current = true;
+    const query = new URLSearchParams(window.location.search);
+    const value = query.get("url");
+    if (value && query.get("resolve") === "1") void resolveMarket(value);
+  }, []);
   async function post<T>(path: string, body: unknown): Promise<T> {
     const response = await fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
     const payload = await response.json() as { error?: string; retry_after?: number };
@@ -210,10 +229,9 @@ function CheckPage() {
   function offset(hours: number) { setClock(new Date(Date.now() + hours * 3_600_000).toISOString().slice(0, 16)); setMode("custom"); }
   const market = resolution?.markets.find((m) => m.id === marketId);
   return <div className="page check-page"><p className="eyebrow">Before the bond / Gamma live</p><h1>Check a market</h1>
-    <form className="market-intake panel" onSubmit={(event) => { event.preventDefault(); void resolveMarket(url); }}>
-      <label htmlFor="market-url">Polymarket event or market URL</label><div className="url-row"><input id="market-url" type="url" required value={url} disabled={busy !== null} onChange={(event) => { setUrl(event.target.value); setResolution(null); setResult(null); }} placeholder="https://polymarket.com/event/…" /><button className="button primary" disabled={busy !== null}>{busy === "resolve" ? "Loading markets…" : "Find markets"}</button></div>
-      {examples.length > 0 && <div className="example-chips">{examples.map((example) => <button key={example.url} type="button" className="button small-button" disabled={busy !== null} title={`${example.url} — ${example.note}`} aria-label={`${example.label}: ${example.url}`} onClick={() => void resolveMarket(example.url)}>{example.label}</button>)}</div>}
-    </form>
+    <p className="page-intro">Find out whether the timing supports your proposal. Timing only, not outcome.</p>
+    <ol className="check-progress" aria-label="Check steps"><li aria-current={!resolution ? "step" : undefined}><span>1</span> Paste link</li><li aria-current={resolution && !result ? "step" : undefined}><span>2</span> Pick market and side</li><li aria-current={result ? "step" : undefined}><span>3</span> Result</li></ol>
+    <MarketLinkInput url={url} busy={busy !== null} onChange={(value) => { setUrl(value); setResolution(null); setResult(null); }} onResolve={(value) => void resolveMarket(value)} />
     {!resolution && <section className="check-explainer" aria-label="How to check a market"><ol>{[
       ["M7 12h10M13 8l4 4-4 4M5 5h14v14H5z", "Paste a Polymarket link"],
       ["M4 6h16M4 12h16M4 18h16M8 4v4M16 10v4M10 16v4", "Pick the market and side"],
@@ -293,8 +311,8 @@ function CaseWorkspace({ item: initial }: { item: ShowcaseCase }) {
     {!live && <div className="case-breadcrumb"><Link href="/">← Historical replay</Link><CopyCaseId id={item.case_id} /></div>}
     <div className="case-heading"><div><p className="eyebrow">{categoryName(item.category)} / {live ? "Gamma live · no oracle proposal" : "Historical replay"}</p><h1>{item.title}</h1></div>{!live && <span className="bond-chip">Bond <strong>{amount(item.bond, item.currency) ?? "not recorded"}</strong> at risk</span>}</div>
     <div className="case-workspace">
-      <section className="timeline-panel panel" aria-labelledby="timeline-title"><div className="panel-title"><div><p className="eyebrow">01 / The observation window</p><h2 id="timeline-title">Move the proposal.</h2></div><button className="button small-button" onClick={() => { setTime(original); setRemote(null); setMessage(""); }}>Reset ↺</button></div>
-        <p className="muted small">Drag the pin across the decisive time. Arrow keys move 1 minute; Shift + arrow moves 15.</p>
+      <section className="timeline-panel panel" aria-labelledby="timeline-title"><div className="panel-title"><div><p className="eyebrow">Explore the timing</p><h2 id="timeline-title">Move the proposal.</h2></div><button className="button small-button" onClick={() => { setTime(original); setRemote(null); setMessage(""); }}>Reset ↺</button></div>
+        <p className="muted small">Move the proposal to see when the timing changes. Arrow keys move 1 minute; Shift + arrow moves 15.</p>
         <Timeline item={timelineItem} time={time} gate={result.gate} cutoff={result.gate.code_cutoff_utc ?? source.decisive_time_utc} earlyNeedsEvidence={earlyYes(item.model_inputs)} reveal={reveal} onChange={setTime} />
         <div className="timeline-toolbar"><div><span className="eyebrow">{time === original ? "Actual proposal" : "Your proposal time"}</span><Time value={time} /></div><span className="stamp">Liveness / Oracle proposal</span></div>
         {!live && <div className="reveal-block"><button className="reveal-button" aria-expanded={reveal} aria-controls="settlement-result" onClick={() => setReveal(!reveal)}>{reveal ? "Hide UMA settlement" : "Reveal what UMA decided"} <span aria-hidden="true">{reveal ? "−" : "+"}</span></button>
@@ -305,7 +323,7 @@ function CaseWorkspace({ item: initial }: { item: ShowcaseCase }) {
         </div>}
       </section>
       <ActionCard result={result} source={source} action={action} simulated={simulated} time={time} sourceTag={sourceTag} receipt={receipt} reviewMatches={reviewMatches} busy={busy} message={message} recheck={recheck} onReceipt={setReviewedReceipt} servCalled={item.serv_called !== false} />
-      <section className="rules-panel panel"><p className="eyebrow">03 / The governing text</p><h2>Read the rule.</h2><p className="muted small">{live ? "Rules from Gamma’s current question and description, not onchain ancillary bytes. No oracle proposal exists yet." : "SERV’s quoted clause is highlighted in the original ancillary text."}</p>
+      <section className="rules-panel panel"><p className="eyebrow">The original rule</p><h2>Read the rule.</h2><p className="muted small">{live ? "Rules from Gamma’s current question and description, not onchain ancillary bytes. No oracle proposal exists yet." : "SERV’s quoted clause is highlighted in the original ancillary text."}</p>
         {live && item.live_packet && <p className="small muted">Gamma snapshot fetched {formatTime(item.live_packet.fetched_at)} UTC.</p>}
         <div className="rules-text">{item.rules_text.slice(0, offsets.start)}<mark id="governing-clause" tabIndex={-1}>{item.rules_text.slice(offsets.start, offsets.end)}</mark>{item.rules_text.slice(offsets.end)}</div>
         <div className="record-meta"><span className="eyebrow">{live ? "Gamma market ID" : "Request ID"}</span><code>{live ? item.live_packet?.market_id : item.request_id}</code>{!live && <External hash={item.proposal_tx_hash}>Proposal transaction</External>}</div>
@@ -333,15 +351,15 @@ function BenchmarkPage() {
     <section className="development-evidence"><p className="eyebrow">03 / Development evidence</p><h2>Development checks</h2>
     {data ? <><p className="small muted evidence-scope">{data.label} · Primary model: {primary?.model ?? "unavailable"}. Three repeated readings per case; these are development results.</p>{groups.map((model) => <section key={`${model.model}:${model.procedure}`} className="benchmark-model panel">
       <div className="benchmark-heading"><div><p className="eyebrow">{model.procedure === primary?.procedure ? "Primary procedure" : `Earlier procedure (${model.procedure})`}</p><h2>{model.model}</h2><p className="small mono muted">{model.procedure} · {model.runs.join(" · ")}</p></div><SourceTag value="Development set" /></div>
-      <div className="evidence-charts"><section aria-label="Dangerous approval chart"><h3>Dangerous approvals on too-early proposals</h3><p className="small muted">Each square is one check on a too-early proposal. Amber means approved.</p>
+      <div className="evidence-charts"><section aria-label="Dangerous approval chart"><h3>Dangerous approvals on too-early proposals</h3><p className="small muted">Each square is one check on a too-early proposal. Red × means approved too early.</p>
         {armOrder.map((arm) => { const metric = model.rows[arm]; return <div className="unit-row" key={arm}><span>{armNames[arm]}</span>{metric ? <><div className="unit-squares" role="img" aria-label={`${armNames[arm]}: ${metric.false_supported} dangerous approvals out of ${metric.premature_trials}`}>
-          {Array.from({ length: metric.premature_trials }, (_, index) => <i key={index} className={index < metric.false_supported ? "danger-fill" : ""} />)}</div><strong className="mono">{metric.false_supported}/{metric.premature_trials}</strong></> : <span className="muted">Not run</span>}</div>; })}
+          {Array.from({ length: metric.premature_trials }, (_, index) => <i key={index} className={index < metric.false_supported ? "danger-fill" : ""} />)}</div><strong className="numeric">{metric.false_supported}/{metric.premature_trials}</strong></> : <span className="muted">Not run</span>}</div>; })}
       </section><section aria-label="All check outcomes"><h3>What happened to all {Math.max(...armOrder.map((arm) => model.rows[arm]?.trials ?? 0))} checks</h3><p className="small muted">A correct abstention is counted as correct. Invalid or missing checks appear as gaps.</p>
         {armOrder.map((arm) => { const metric = model.rows[arm]; const buckets = metric && outcomeBuckets(metric); return <div className="stack-row" key={arm}><span>{armNames[arm]}</span>{metric && buckets ? <><div className="check-stack" role="img" aria-label={Object.entries(buckets).map(([key, value]) => `${bucketNames[key]}: ${value}`).join(", ")}>
-          {Object.entries(buckets).map(([key, value]) => value > 0 && <span key={key} className={`bucket-${key}`} style={{ width: `${100 * value / metric.trials}%` }} title={`${bucketNames[key]}: ${value}`}>{value}</span>)}</div><span className="mono small">{metric.trials}</span></> : <span className="muted">Not run</span>}</div>; })}
+          {Object.entries(buckets).map(([key, value]) => value > 0 && <span key={key} className={`bucket-${key}`} style={{ width: `${100 * value / metric.trials}%` }} title={`${bucketNames[key]}: ${value}`}>{value}</span>)}</div><span className="numeric small">{metric.trials}</span></> : <span className="muted">Not run</span>}</div>; })}
         <div className="chart-legend">{Object.entries(bucketNames).filter(([key]) => key !== "unscored" || armOrder.some((arm) => { const metric = model.rows[arm]; return metric && metric.valid < metric.trials; })).map(([key, name]) => <span key={key}><i className={`bucket-${key}`} />{name}</span>)}</div>
       </section></div>
-      <details className="evidence-table"><summary>Exact counts, consistency, tokens and recorded cost</summary><div className="table-scroll"><table><caption>{model.model} · {model.procedure}. Counts use all planned checks.</caption><thead><tr><th>Arm</th><th>Correct</th><th>Abstained (all)</th><th>Wrong but safe</th><th>Approved a too-early proposal</th><th>Unscored</th><th>Consistent cases</th><th>Tokens</th><th>Recorded cost</th></tr></thead><tbody>
+      <details className="evidence-table"><summary>Exact counts, consistency, tokens and recorded cost</summary><div className="table-scroll"><table><caption>{model.model} · {model.procedure}. Counts use all planned checks.</caption><thead><tr><th>Arm</th><th>Correct</th><th>Abstained (all)</th><th>Other incorrect answers</th><th>Approved a too-early proposal</th><th>Unscored</th><th>Consistent cases</th><th>Tokens</th><th>Recorded cost</th></tr></thead><tbody>
         {armOrder.map((arm) => { const metric = model.rows[arm]; const buckets = metric && outcomeBuckets(metric); return <tr key={arm}><th>{armNames[arm]}</th>{metric && buckets ? <><td>{metric.correct}/{metric.trials}</td><td>{metric.abstained}/{metric.trials}</td><td>{buckets.safe}</td><td>{metric.false_supported}/{metric.premature_trials}</td><td>{buckets.unscored}</td><td>{metric.consistent_cases}/{metric.cases}</td><td>{metric.tokens.toLocaleString()}</td><td>{metric.cost_usd === null ? "Unreported" : `$${metric.cost_usd.toFixed(4)}`}</td></> : <td colSpan={8}>Not run</td>}</tr>; })}
       </tbody></table></div></details><p className="small muted">Accuracy matches both decision and reason. Consistency requires three valid matching decisions and reasons. Deterministic checks reuse the same saved responses, tokens and cost; zero extra inference calls. Complementary runs are merged; the first available arm is used if runs overlap.</p>
     </section>)}</> : <p role="status">{error ? "Benchmark data is unavailable. Regenerate benchmark.json." : "Loading benchmark…"}</p>}
@@ -350,7 +368,7 @@ function BenchmarkPage() {
   </div>;
 }
 
-const bucketNames: Record<string, string> = { correct: "Correct", abstained: "Abstained", safe: "Wrong but safe", dangerous: "Dangerous approval", unscored: "Unscored" };
+const bucketNames: Record<string, string> = { correct: "Correct", abstained: "Held for evidence", safe: "Other incorrect answers", dangerous: "Dangerous approval", unscored: "Unscored" };
 const metricLabel = (key: string) => key === "run" ? "Run" : key.replace(/^serv_/u, "SERV · ").replace(/^gated_/u, "With second key · ").replace(/false_supported/gu, "dangerous approvals").replace(/consistent/gu, "consistent cases").replace(/_/gu, " ");
 
 function ReppoFeedbackLoop() {
@@ -362,7 +380,7 @@ function ReppoFeedbackLoop() {
   return <section className="reppo-loop method"><h2>Reppo feedback loop</h2><p>Reppo’s evaluator panel reviews saved verdicts; critiques become explicit, versioned procedure changes; every change is re-measured.</p>
     {!data && <p className="small muted">Feedback records are not available yet.</p>}
     {data && !data.changes.length && <p className="small muted">No procedure changes recorded yet.</p>}
-    {data?.changes.map((change, index) => { const before = change.dev_before as Record<string, unknown>; const after = change.dev_after as Record<string, unknown>; const keys = [...new Set([...Object.keys(before ?? {}), ...Object.keys(after ?? {})])]; return <article className="feedback-card panel" key={`${change.date}:${index}`}><div className="feedback-heading"><p className="mono small">{change.from_version} → {change.to_version} · {change.date}</p><span className={`verdict-chip ${change.accepted ? "feedback-accepted" : "feedback-rejected"}`}>{change.accepted ? "Accepted" : "Rejected"}</span></div><blockquote>“{humanText(change.critique_summary)}”</blockquote><p><strong>What changed:</strong> {humanText(change.change)}</p>
+    {data?.changes.map((change, index) => { const before = change.dev_before as Record<string, unknown>; const after = change.dev_after as Record<string, unknown>; const keys = [...new Set([...Object.keys(before ?? {}), ...Object.keys(after ?? {})])]; return <article className="feedback-card panel" key={`${change.date}:${index}`}><div className="feedback-heading"><p className="numeric small">{change.from_version} → {change.to_version} · {change.date}</p><span className={`verdict-chip ${change.accepted ? "feedback-accepted" : "feedback-rejected"}`}>{change.accepted ? "Accepted" : "Rejected"}</span></div><blockquote>“{humanText(change.critique_summary)}”</blockquote><p><strong>What changed:</strong> {humanText(change.change)}</p>
       {!!keys.length && <div className="table-scroll"><table className="change-metrics"><caption>Development before → after</caption><thead><tr><th>Measure</th><th>Before</th><th>After</th></tr></thead><tbody>{keys.map((key) => <tr key={key}><th>{metricLabel(key)}</th><td>{String(before?.[key] ?? "—")}</td><td>{String(after?.[key] ?? "—")}</td></tr>)}</tbody></table></div>}
       <div className="feedback-ids"><span className="small muted">Reppo evaluation IDs</span>{change.reppo_eval_ids.map((id) => <CopyCaseId key={id} id={id} kind="evaluation" />)}{!change.reppo_eval_ids.length && <span>None recorded</span>}</div></article>; })}
   </section>;

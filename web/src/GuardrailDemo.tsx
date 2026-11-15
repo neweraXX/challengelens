@@ -52,7 +52,7 @@ function GuardrailStrip({ counts }: { counts: GuardrailCounts }) {
         </div>;
       })}</div>
       <div className="guardrail-gate" style={{ left: `${frame.gateProgress * 100}%`, opacity: frame.checking && !frame.done ? 1 : 0 }} />
-      <p className="guardrail-legend">/// Too early · <span>✕ approved too early</span> · <span>✓ held for evidence</span></p>
+      <p className="guardrail-legend">◷ Too early · <span>✕ approved too early</span> · <span>− held for evidence</span></p>
     </div>
     <p className="guardrail-caption">Same proposals, same SERV readings. The second key holds them for evidence.</p>
     <p className="small muted guardrail-note">Blind test on unseen cases (n = {counts.total} proposals judged too early by UMA); upper 95% bound for the checked arm: {(counts.intervalHigh * 100).toFixed(1)}% (case-level Wilson).</p>

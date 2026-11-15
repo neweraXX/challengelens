@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { CSSProperties } from "react";
 import type { Receipt } from "../../src/gate/receipt";
 import type { ReviewJob } from "../../src/reppo/service";
 import "./ReppoReview.css";
@@ -69,20 +70,26 @@ export function ReppoReview({ receipt, enabled, prominent, onReceipt }: { receip
   const original = receipt?.original_gate_decision?.action ?? receipt?.action ?? "NEED_EVIDENCE";
   const consequence = summary ? reviewPolicy(receipt?.original_gate_decision?.final_decision ?? receipt?.final_decision ?? "INSUFFICIENT_EVIDENCE", summary, original) : null;
   return <section className={`reppo-review${prominent ? " reppo-prominent" : ""}`} aria-label="Second opinion from Reppo">
-    <h3>Second opinion (Reppo)</h3>{receipt && <p className="small muted">Reviews the saved receipt at {receipt.proposal_time_utc} ({receipt.gate_version}). Locally recomputed times need their own receipt.</p>}<p className="small">Reppo can only make the verdict more cautious. It never upgrades a too-early proposal or missing evidence to an approval and never supplies missing facts.</p>
+    <div className="review-heading"><span className="review-icon" aria-hidden="true">◎</span><h3>Second opinion (Reppo)</h3></div><p className="small muted">An independent review can ask us to hold a verdict. It cannot supply missing facts or turn a too-early proposal into an approval.</p>
     {prominent && !id && <p className="reppo-offer">Independent review is recommended: the rule reading, code cutoff or evidence needs another look.</p>}
     {!id && <><button type="button" className="button check-button" disabled={!enabled || busy} onClick={() => void ask()}>{busy ? "Queuing Reppo review…" : "Ask Reppo's evaluator panel"}</button><p className="small muted">440 credits for a new evaluation; this receipt is submitted once. Typically 30–90 seconds.</p></>}
     {!enabled && <p className="small muted">Run a check at this selected time to create a current receipt before asking Reppo.</p>}
     {pending && <p role="status">{job?.status === "PROCESSING" ? "Reviewing" : "Queued"} · {elapsed}s elapsed</p>}
     {job?.polling_timed_out && job.status !== "COMPLETED" && job.status !== "FAILED" && <p role="status">{job.error ?? "Polling stopped after the time limit. Refresh this evaluation; it will not be submitted again."}</p>}
     {job?.status === "FAILED" && <p role="status">Reppo evaluation failed. The original timing decision remains in force.</p>}
-    {summary && <div className="reppo-consequence" role="status"><strong>{typeof summary.score === "number" ? `${summary.score}/100` : "Score unavailable"} · {summary.route === "ship" ? "No objection" : summary.route === "block" ? "Approval blocked" : "Review requested"}</strong><p>{consequence?.held ? `Reppo asked for review${typeof summary.score === "number" ? ` (score ${summary.score})` : ""}: action is now Held for independent review.` : `Reppo ${summary.route === "ship" ? "did not object" : "returned its review"}: action stays ${humanAction(original)}.`}</p><p>{humanizeDecisions(summary.reason)}</p></div>}
+    {summary && <div className="reppo-consequence" data-route={consequence?.held ? "block" : summary.route} role="status">
+      <div className="review-summary"><div className="review-score-ring" style={{ "--score": `${Math.max(0, Math.min(100, summary.score ?? 0))}%` } as CSSProperties}><strong>{typeof summary.score === "number" ? <>{summary.score}<small>/100</small></> : "—"}</strong></div><div><span className="review-route"><span aria-hidden="true">{consequence?.held ? "Ⅱ" : summary.route === "ship" ? "✓" : "ⓘ"}</span> {consequence?.held ? "On hold" : summary.route === "ship" ? "No objection" : summary.route === "block" ? "Approval blocked" : "Review requested"}</span><p>{consequence?.held ? "Reppo asked for review, so this stays on hold after independent review." : `Reppo ${summary.route === "ship" ? "did not object" : "returned its review"}. The timing action stays ${humanAction(original)}.`}</p></div></div>
+      <p>{humanizeDecisions(summary.reason)}</p>
+    </div>}
+    <details className="review-details"><summary>Show details</summary>
+      {receipt && <p className="small muted">Reviews the saved receipt at {receipt.proposal_time_utc} ({receipt.gate_version}). Locally recomputed times need their own receipt.</p>}
     {evaluation?.status === "COMPLETED" && result && <div className="reppo-result"><div className="reppo-score"><strong>{evaluation.score}/100</strong><span className="stamp" data-route={evaluation.route}>{(evaluation.route ?? "review").replace(/_/gu, " ").toLowerCase()}</span><span>{String(result.confidence).toLowerCase()} confidence</span></div>
       <div className="reppo-rubrics">{scores.map((score) => <div key={score.name}><span>{humanizeDecisions(score.name)} · {score.score}/{score.max}</span><div className="reppo-track" role="meter" aria-label={score.name} aria-valuemin={0} aria-valuemax={score.max} aria-valuenow={Math.max(0, Math.min(score.max, score.score))}><i style={{ width: `${Math.max(0, Math.min(100, 100 * score.score / score.max))}%` }} /></div></div>)}</div>
       {scores.some((s) => s.assumed) && <p className="small muted">Rubrics without an explicit maximum use a 0–100 display scale.</p>}
       {!scores.length && <details><summary>Rubric scores</summary><pre>{humanizeDecisions(JSON.stringify(result.rubric_scores ?? null, null, 2))}</pre></details>}
     </div>}
     {id && <div className="reppo-id"><code>{id}</code><button type="button" className="text-button" onClick={() => { void navigator.clipboard.writeText(id).then(() => setCopied(true)).catch(() => setError("Copy unavailable. Select the evaluation ID to copy it.")); }}>{copied ? "Copied" : "Copy eval ID"}</button></div>}
+    </details>
     {error && <p role="alert" className="small">{error}</p>}
     {id && (error || (job?.polling_timed_out && job.status !== "COMPLETED" && job.status !== "FAILED")) && <button type="button" className="text-button" onClick={() => setRefresh((n) => n + 1)}>Refresh this evaluation</button>}
   </section>;

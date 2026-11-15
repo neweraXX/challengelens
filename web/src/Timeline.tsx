@@ -93,8 +93,8 @@ export function Timeline({ item, time, cutoff, earlyNeedsEvidence, reveal, onCha
         <rect x={left} y={barTop} width={decisiveX - left} height="76" className={needsEvidence ? "zone-evidence" : "zone-early"} />
         {!needsEvidence && <rect x={left} y={barTop} width={decisiveX - left} height="76" fill={`url(#${hatch})`} />}
         {decisive !== null && <rect x={decisiveX} y={barTop} width={right - decisiveX} height="76" className={verified ? "zone-decidable" : sports ? "zone-unverified" : "zone-evidence"} />}
-        <text x={left} y={barTop - 12} className="zone-label">{needsEvidence ? "? Needs evidence" : "/// Too early"}</text>
-        {decisive !== null && <text x={right} y={barTop - 12} textAnchor="end" className="zone-label">{event ? "Evidence observed" : sports ? <><tspan x={right} dy="-5">Estimated end</tspan><tspan x={right} dy="14">unverified</tspan></> : verified ? "Code cutoff passed" : compact ? "Unverified" : "? Needs evidence"}</text>}
+        <text x={left} y={barTop - 12} className="zone-label">{needsEvidence ? "ⓘ Needs evidence" : "◷ Too early"}</text>
+        {decisive !== null && <text x={right} y={barTop - 12} textAnchor="end" className="zone-label">{event ? "✓ Evidence observed" : sports ? <><tspan x={right} dy="-5">Estimated end</tspan><tspan x={right} dy="14">unverified</tspan></> : verified ? "✓ Code cutoff passed" : compact ? "Unverified" : "ⓘ Needs evidence"}</text>}
         {markers.map((marker) => <g className={`time-marker ${marker.kind}-marker`} key={marker.kind}><title>{marker.label}: {tooltip(marker.time)}</title><line x1={x(marker.time)} x2={x(marker.time)} y1="44" y2={barEnd} /><circle cx={x(marker.time)} cy="44" r="3" /></g>)}
         <line x1={left} x2={right} y1={barEnd} y2={barEnd} className="axis-line" />
         {decisive !== null && <line x1={decisiveX} x2={decisiveX} y1={barTop} y2={barEnd} className="cutoff-line"><title>Decisive time: {tooltip(decisive)}</title></line>}
