@@ -20,4 +20,4 @@ App: `https://challengelens.onrender.com`
 
 Video: `https://youtu.be/CQxjMUFcmE4`
 
-Post: `<X_POST_URL>`
+Post: `https://x.com/chimnon1993/status/2121840474336252368`

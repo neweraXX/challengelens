@@ -27,4 +27,4 @@ Try ChallengeLens: screen live UMA proposals, paste a Polymarket URL, or drag th
 - Replace placeholders and recount each post; keep each at or below 270 characters.
 - Attach the 2:30 video with captions. Confirm video numbers and dates match the screen.
 - Include and pin the hosted-app link; add the repository link where space permits.
-- Confirm @openservai and @reppo tags. Save the published URL as `<X_POST_URL>` in the submission form.
+- Confirm @openservai and @reppo tags. Save the published URL as `https://x.com/chimnon1993/status/2121840474336252368` in the submission form.
