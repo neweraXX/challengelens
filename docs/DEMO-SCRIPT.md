@@ -29,7 +29,7 @@ Replace `<HOSTED_URL>` with the deployed origin. Local equivalent: `http://local
 | API view | `<HOSTED_URL>/api` |
 | Held receipt, if available | `<HOSTED_URL>/api/receipts/<RECEIPT_ID>`; substitute an actual completed reviewed receipt ID |
 | Reppo critique and policy | `procedures/changes.jsonl`; `src/reppo/policy.ts` |
-| Closing links | `<HOSTED_URL>`, `<REPO_URL>`, `<VIDEO_URL>` |
+| Closing links | `<HOSTED_URL>`, `https://github.com/neweraXX/challengelens`, `<VIDEO_URL>` |
 
 ## Pre-recording checklist
 

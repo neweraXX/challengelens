@@ -8,7 +8,7 @@ ChallengeLens checks Polymarket/UMA proposal timing before a bond. Blind test: S
 
 ## Variant 2
 
-SERV reads and quotes the rule; code checks the clock; evidence checks the event. ChallengeLens returns Proceed, Wait, or missing evidence. Proceed checks timing only. Built for SERV Hackathon 02. @openservai @reppo <HOSTED_URL> <REPO_URL>
+SERV reads and quotes the rule; code checks the clock; evidence checks the event. ChallengeLens returns Proceed, Wait, or missing evidence. Proceed checks timing only. Built for SERV Hackathon 02. @openservai @reppo <HOSTED_URL> https://github.com/neweraXX/challengelens
 
 ## Variant 3
 
@@ -18,7 +18,7 @@ Try ChallengeLens: screen live UMA proposals, paste a Polymarket URL, or drag th
 
 1/3 ChallengeLens checks whether a Polymarket/UMA proposal's timing holds up, before a bond. SERV quotes the rules, code checks cutoffs, and evidence checks completion. Timing only, not outcome correctness. @openservai @reppo <HOSTED_URL>
 
-2/3 Blind test: SERV alone falsely approved 19/28 too-early cases; SERV + checks 0/28 (Wilson 95% upper bound 12.1%). Checks alone also had 0/28. Deterministic checks drove this result. Proceed coverage: 14/32. @openservai @reppo <REPO_URL>
+2/3 Blind test: SERV alone falsely approved 19/28 too-early cases; SERV + checks 0/28 (Wilson 95% upper bound 12.1%). Checks alone also had 0/28. Deterministic checks drove this result. Proceed coverage: 14/32. @openservai @reppo https://github.com/neweraXX/challengelens
 
 3/3 Reppo reviews saved verdicts and can hold Proceed, never upgrade. Its critique changed our procedure; accuracy improvement is unproven. Try the Live desk and replays. Not financial advice. @openservai @reppo <VIDEO_URL> <HOSTED_URL>
 

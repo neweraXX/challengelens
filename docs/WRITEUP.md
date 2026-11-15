@@ -14,7 +14,7 @@ The zero-false-approval result comes from deterministic checks. We do not claim 
 
 Limits: small sets; settlement labels are adjudication proxies; Proceed checks timing, not outcome correctness. Sports feeds lag and lack completion timestamps. Pasted checks use Gamma's current description; the desk uses on-chain ancillary text. The desk never recommends disputing. Not financial advice. Independent; unaffiliated with Polymarket, UMA, OpenServ or Reppo.
 
-Repository: `<REPO_URL>`
+Repository: `https://github.com/neweraXX/challengelens`
 
 App: `<HOSTED_URL>`
 
