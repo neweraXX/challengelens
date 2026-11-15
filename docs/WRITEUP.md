@@ -16,7 +16,7 @@ Limits: small sets; settlement labels are adjudication proxies; Proceed checks t
 
 Repository: `https://github.com/neweraXX/challengelens`
 
-App: `<HOSTED_URL>`
+App: `https://challengelens.onrender.com`
 
 Video: `<VIDEO_URL>`
 

@@ -15,21 +15,21 @@ Use the eight beats below. Live numbers must match the screen at recording time.
 
 ## Shot list
 
-Replace `<HOSTED_URL>` with the deployed origin. Local equivalent: `http://localhost:8080`.
+Replace `https://challengelens.onrender.com` with the deployed origin. Local equivalent: `http://localhost:8080`.
 
 | Shot | Exact URL or file path |
 | --- | --- |
-| Home / How it decides | `<HOSTED_URL>/` |
-| Live desk | `<HOSTED_URL>/live` |
-| Live snapshot / freshness | `<HOSTED_URL>/api/live` |
-| Paste and check | `<HOSTED_URL>/check` |
+| Home / How it decides | `https://challengelens.onrender.com/` |
+| Live desk | `https://challengelens.onrender.com/live` |
+| Live snapshot / freshness | `https://challengelens.onrender.com/api/live` |
+| Paste and check | `https://challengelens.onrender.com/check` |
 | Market selection | Copy a real open event/market URL from Polymarket immediately before recording; record the exact chosen URL in production notes. The saved examples in `web/public/data/examples.json` are candidates, not verified-open promises. |
-| Braves replay | `<HOSTED_URL>/cases/timing-1cb1c22e47ea5596f03eb22a` |
-| Blind test results | `<HOSTED_URL>/benchmark`; aggregate source: `web/public/data/sealed.json` |
-| API view | `<HOSTED_URL>/api` |
-| Held receipt, if available | `<HOSTED_URL>/api/receipts/<RECEIPT_ID>`; substitute an actual completed reviewed receipt ID |
+| Braves replay | `https://challengelens.onrender.com/cases/timing-1cb1c22e47ea5596f03eb22a` |
+| Blind test results | `https://challengelens.onrender.com/benchmark`; aggregate source: `web/public/data/sealed.json` |
+| API view | `https://challengelens.onrender.com/api` |
+| Held receipt, if available | `https://challengelens.onrender.com/api/receipts/<RECEIPT_ID>`; substitute an actual completed reviewed receipt ID |
 | Reppo critique and policy | `procedures/changes.jsonl`; `src/reppo/policy.ts` |
-| Closing links | `<HOSTED_URL>`, `https://github.com/neweraXX/challengelens`, `<VIDEO_URL>` |
+| Closing links | `https://challengelens.onrender.com`, `https://github.com/neweraXX/challengelens`, `<VIDEO_URL>` |
 
 ## Pre-recording checklist
 

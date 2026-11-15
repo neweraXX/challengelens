@@ -8,11 +8,11 @@ In a selected sample of disputed UMA requests from 2022–2026, 266 of 598 settl
 
 ## Try it
 
-Hosted app: `<HOSTED_URL>`. Three things to try in about two minutes:
+Hosted app: `https://challengelens.onrender.com`. It runs on Render's free plan, so the first request after idle time can take about a minute while the service wakes; the Live desk then refreshes about every three minutes. Three things to try in about two minutes:
 
 1. Open **Live desk** (`/live`). Check the snapshot time, proposals in challenge windows, bonds and missing evidence. Open a row's rules and evidence.
 2. Open **Check a market** (`/check`). Paste any Polymarket event or market URL, choose the market and proposed side, then check timing. Unsupported rules return a hold for evidence; a pasted URL does not guarantee support.
-3. Open **Braves replay** (`<HOSTED_URL>/cases/timing-1cb1c22e47ea5596f03eb22a`). Drag the proposal past the feed's final mark. Dragging is a local preview; a fresh SERV re-check needs the hosted service's key and creates a receipt.
+3. Open **Braves replay** (`https://challengelens.onrender.com/cases/timing-1cb1c22e47ea5596f03eb22a`). Drag the proposal past the feed's final mark. Dragging is a local preview; a fresh SERV re-check needs the hosted service's key and creates a receipt.
 
 Home (`/`) animates **How it decides**. Historical replay (`/cases`) contains 12 cases. Benchmark (`/benchmark`) and API (`/api`) expose the measurements and integration details.
 
@@ -122,7 +122,7 @@ The desk's deterministic screen can run without SERV, but then cannot provide ne
 Use the same origin as the app. Resolve a URL, select a returned `markets[].id` and outcome, then check:
 
 ```sh
-BASE='http://localhost:8080' # or replace with <HOSTED_URL>
+BASE='http://localhost:8080' # or replace with https://challengelens.onrender.com
 curl -sS "$BASE/api/market/resolve" \
   -H 'Content-Type: application/json' \
   --data '{"url":"https://polymarket.com/event/<EVENT_SLUG>"}'
